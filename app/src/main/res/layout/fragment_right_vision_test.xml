@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".visiontest.TestVisionRight">
+
+    <TextView
+        android:id="@+id/result_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:layout_margin="8dp"
+        android:layout_below="@id/progressBar"
+        android:textSize="14sp"
+        />
+
+    <TextView
+        android:id="@+id/data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/progressBar"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="8dp"
+        android:textSize="24sp"
+
+        />
+
+
+    <TextView
+        android:id="@+id/timerLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/progressBar"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="00"
+        android:textColor="@color/main_color"
+        android:textSize="24sp"
+        android:layout_alignParentEnd="true"
+        />
+
+    <Button
+        android:id="@+id/button_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/btn_background_selected"
+        android:text="@string/next"
+        android:textColor="@color/white"
+        android:shadowRadius="50"
+        android:shadowColor="@color/black"
+        android:paddingHorizontal="12dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="48dp"
+
+        />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="24dp"
+        android:layout_toStartOf="@+id/tv_progress"
+        android:indeterminate="false"
+        android:max="10"
+        android:minHeight="50dp"
+        android:progress="0"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/tv_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginHorizontal="10dp"
+        android:text="0/0"
+        android:textColor="@color/main_color" />
+
+
+    <ImageView
+        android:id="@+id/iv_image"
+        android:layout_width="360dp"
+        android:layout_height="360dp"
+        android:layout_centerInParent="true" />
+
+    <LinearLayout
+        android:id="@+id/main_test_variants"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:weightSum="2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <ImageButton
+                android:id="@+id/tv_option_one"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="24dp"
+                android:textColor="#7A8089"
+                android:textSize="18sp"
+                tools:text="Option 1"
+
+                />
+
+            <ImageButton
+                android:id="@+id/tv_option_two"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="24dp"
+                android:textColor="#7A8089"
+                android:textSize="18sp"
+                tools:text="Option 2"
+
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <ImageButton
+                android:id="@+id/tv_option_three"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="#7A8089"
+                android:textSize="18sp"
+                tools:text="Option 3"
+                />
+
+            <ImageButton
+                android:id="@+id/tv_option_four"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="24dp"
+                android:textColor="#7A8089"
+                android:textSize="18sp"
+                tools:text="Option 4" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+</RelativeLayout>

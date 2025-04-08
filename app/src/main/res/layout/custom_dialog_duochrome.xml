@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingHorizontal="12dp"
+    android:paddingTop="12dp"
+    android:background="@drawable/btn_background_unselected"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    >
+
+
+    <TextView
+        android:id="@+id/dialog_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text=""
+        android:textSize="18sp"
+        android:textStyle="bold"
+
+        />
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/rotate_ph"
+        app:lottie_speed="0.5"
+        />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+
+
+        <Button
+            android:id="@+id/dialog_start_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginVertical="10dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/btn_background_selected"
+            android:minHeight="32sp"
+            android:paddingHorizontal="12dp"
+            android:text="@string/start_test"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/dialog_cancel_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/btn_background_selected"
+            android:minHeight="32sp"
+            android:paddingHorizontal="12dp"
+            android:text="@string/cancel"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+</LinearLayout>

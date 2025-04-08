@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="bottom"
+    tools:context=".colorblindness.ColorBlindnessTest"
+    android:background="@color/white"
+    >
+
+    <ImageView
+        android:id="@+id/image_color_blindness"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        />
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/text_result"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_background_selected"
+            android:gravity="center"
+            android:text="@string/enter_text"
+            android:textColor="@color/only_light"
+            android:textSize="42sp"
+            android:textStyle="bold"
+
+
+            />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <Button
+                android:id="@+id/btn_one"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="2dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_background_selected"
+                android:minHeight="48dp"
+                android:text="1"
+                android:textColor="@color/only_light"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                style="?android:attr/buttonBarButtonStyle"
+
+                />
+
+
+            <Button
+                android:id="@+id/btn_two"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="2dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_background_selected"
+                android:minHeight="48dp"
+                android:text="2"
+                android:textColor="@color/only_light"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                style="?android:attr/buttonBarButtonStyle"
+
+                />
+
+
+            <Button
+                android:id="@+id/btn_three"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="2dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_background_selected"
+                android:minHeight="48dp"
+                android:text="3"
+                android:textColor="@color/only_light"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                style="?android:attr/buttonBarButtonStyle"
+
+                />
+
+            <Button
+                android:id="@+id/btn_four"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_background_selected"
+                android:minHeight="48dp"
+                android:text="4"
+                android:textColor="@color/only_light"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                style="?android:attr/buttonBarButtonStyle"
+
+                />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <Button
+                android:id="@+id/btn_five"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="2dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_background_selected"
+                android:minHeight="48dp"
+                android:text="5"
+                android:textColor="@color/only_light"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                style="?android:attr/buttonBarButtonStyle"
+
+                />
+
+            <Button
+                android:id="@+id/btn_six"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="2dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_background_selected"
+                android:minHeight="48dp"
+                android:text="6"
+                android:textColor="@color/only_light"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                style="?android:attr/buttonBarButtonStyle"
+
+                />
+
+            <Button
+                android:id="@+id/btn_seven"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="2dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_background_selected"
+                android:minHeight="48dp"
+                android:text="7"
+                android:textColor="@color/only_light"
+                android:textSize="32sp"
+                style="?android:attr/buttonBarButtonStyle"
+
+                />
+
+            <Button
+                android:id="@+id/btn_eight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_background_selected"
+                android:minHeight="48dp"
+                android:text="8"
+                android:textColor="@color/only_light"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                style="?android:attr/buttonBarButtonStyle"
+
+                />
+
+
+        </LinearLayout>
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:orientation="horizontal"
+            android:weightSum="4"
+            android:layout_marginBottom="4dp"
+            >
+
+            <ImageButton
+                android:id="@+id/btn_delete"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="2dp"
+                android:layout_weight="1"
+                android:src="@drawable/icon_trash"
+                android:scaleType="fitCenter"
+                android:background="@drawable/btn_background_selected"
+                android:padding="6dp"
+
+                style="?android:attr/buttonBarButtonStyle"
+
+                />
+
+            <Button
+                android:id="@+id/btn_nine"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginHorizontal="2dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_background_selected"
+                android:minHeight="48dp"
+                android:text="9"
+                android:textColor="@color/only_light"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                style="?android:attr/buttonBarButtonStyle"
+
+                />
+
+            <Button
+                android:id="@+id/btn_zero"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="2dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_background_selected"
+                android:minHeight="48dp"
+                android:text="0"
+                android:textColor="@color/only_light"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                style="?android:attr/buttonBarButtonStyle"
+
+                />
+
+            <ImageButton
+                android:id="@+id/btn_next"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_background_selected"
+                android:minHeight="48dp"
+                android:src="@drawable/back"
+                android:rotation="180"
+                android:scaleType="fitCenter"
+                style="?android:attr/buttonBarButtonStyle"
+
+                />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

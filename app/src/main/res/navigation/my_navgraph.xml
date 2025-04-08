@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_navgraph"
+    app:startDestination="@id/homeFragment"
+    >
+
+    <fragment
+        android:id="@+id/chooseLanguageFragment"
+        android:name="uz.kabir.checkeyesight.language.ChooseLanguageFragment"
+        tools:layout="@layout/fragment_choose_language">
+        <action
+            android:id="@+id/action_chooseLanguageFragment_to_viewPagerFragment"
+            app:destination="@id/viewPagerFragment"
+            app:enterAnim="@anim/nav_slide_in_right"
+            app:exitAnim="@anim/nav_slide_out_left"
+            app:popEnterAnim="@anim/nav_slide_in_left"
+            app:popExitAnim="@anim/nav_slide_out_right"
+            app:popUpTo="@id/chooseLanguageFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_chooseLanguageFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/chooseLanguageFragment"
+
+
+            app:exitAnim="@anim/nav_slide_out_left"
+            app:popUpToInclusive="true"
+            app:enterAnim="@anim/zoom_in"
+            app:popEnterAnim="@anim/nav_slide_in_left"
+            app:popExitAnim="@anim/nav_slide_out_right"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/viewPagerFragment"
+        android:name="uz.kabir.checkeyesight.viewpager.ViewPagerFragment"
+        tools:layout="@layout/fragment_view_pager">
+        <action
+            android:id="@+id/action_viewPagerFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/viewPagerFragment"
+            app:popUpToInclusive="true"
+
+            app:exitAnim="@anim/nav_slide_out_left"
+            app:enterAnim="@anim/zoom_in"
+            app:popEnterAnim="@anim/nav_slide_in_left"
+            app:popExitAnim="@anim/nav_slide_out_right"
+            />
+
+
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="uz.kabir.checkeyesight.home.HomeFragment"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_homeFragment_to_choosingConnectionFragment"
+            app:destination="@id/choosingConnection"
+            app:enterAnim="@anim/nav_slide_in_right"
+            app:exitAnim="@anim/nav_slide_out_left"
+            app:popEnterAnim="@anim/nav_slide_in_left"
+            app:popExitAnim="@anim/nav_slide_out_right"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true"
+
+            />
+        <action
+            android:id="@+id/action_homeFragment_to_colorBlindnessTest"
+            app:destination="@id/colorBlindnessTest"
+            app:enterAnim="@anim/nav_slide_in_right"
+            app:exitAnim="@anim/nav_slide_out_left"
+            app:popEnterAnim="@anim/nav_slide_in_left"
+            app:popExitAnim="@anim/nav_slide_out_right"
+            />
+        <action
+            android:id="@+id/action_homeFragment_to_duochromeTest"
+            app:destination="@id/duochromeTest"
+            app:enterAnim="@anim/nav_slide_in_right"
+            app:exitAnim="@anim/nav_slide_out_left"
+            app:popEnterAnim="@anim/nav_slide_in_left"
+            app:popExitAnim="@anim/nav_slide_out_right"
+            />
+        <action
+            android:id="@+id/action_homeFragment_to_chooseDistance"
+            app:destination="@id/chooseDistance"
+            app:popUpToInclusive="true"
+            app:enterAnim="@anim/nav_slide_in_right"
+            app:exitAnim="@anim/nav_slide_out_left"
+            app:popEnterAnim="@anim/nav_slide_in_left"
+            app:popExitAnim="@anim/nav_slide_out_right"
+            />
+        <action
+            android:id="@+id/action_homeFragment_to_mainRecovery"
+            app:destination="@id/mainRecovery"
+            app:enterAnim="@anim/nav_slide_in_right"
+            app:exitAnim="@anim/nav_slide_out_left"
+            app:popEnterAnim="@anim/nav_slide_in_left"
+            app:popExitAnim="@anim/nav_slide_out_right"
+            />
+        <action
+            android:id="@+id/action_homeFragment_to_mainNearsightedness"
+            app:destination="@id/mainNearsightedness"
+            app:enterAnim="@anim/nav_slide_in_right"
+            app:exitAnim="@anim/nav_slide_out_left"
+            app:popEnterAnim="@anim/nav_slide_in_left"
+            app:popExitAnim="@anim/nav_slide_out_right"
+            />
+        <action
+            android:id="@+id/action_homeFragment_to_amslerGrid"
+            app:destination="@id/amslerGrid"
+            app:enterAnim="@anim/nav_slide_in_right"
+            app:exitAnim="@anim/nav_slide_out_left"
+            app:popEnterAnim="@anim/nav_slide_in_left"
+            app:popExitAnim="@anim/nav_slide_out_right"
+            />
+        <action
+            android:id="@+id/action_homeFragment_to_mainFarsightedness"
+            app:destination="@id/mainFarsightedness"
+            app:enterAnim="@anim/nav_slide_in_right"
+            app:exitAnim="@anim/nav_slide_out_left"
+            app:popEnterAnim="@anim/nav_slide_in_left"
+            app:popExitAnim="@anim/nav_slide_out_right"
+            />
+        <action
+            android:id="@+id/action_homeFragment_to_mainRelaxation"
+            app:destination="@id/mainRelaxation"
+            app:enterAnim="@anim/nav_slide_in_right"
+            app:exitAnim="@anim/nav_slide_out_left"
+            app:popEnterAnim="@anim/nav_slide_in_left"
+            app:popExitAnim="@anim/nav_slide_out_right"
+            />
+        <action
+            android:id="@+id/action_homeFragment_to_leftEyeTest"
+            app:destination="@id/leftEyeTest"
+            app:enterAnim="@anim/nav_slide_in_right"
+            app:exitAnim="@anim/nav_slide_out_left"
+            app:popEnterAnim="@anim/nav_slide_in_left"
+            app:popExitAnim="@anim/nav_slide_out_right"
+
+            />
+        <action
+            android:id="@+id/action_homeFragment_to_nearVisionTest"
+            app:destination="@id/nearVisionTest" />
+        <action
+            android:id="@+id/action_homeFragment_to_contrastVisionTest"
+            app:destination="@id/contrastVisionTest"
+
+
+            app:enterAnim="@anim/nav_slide_in_right"
+            app:exitAnim="@anim/nav_slide_out_left"
+            app:popEnterAnim="@anim/nav_slide_in_left"
+            app:popExitAnim="@anim/nav_slide_out_right"
+            app:popUpTo="@id/colorBlindnessTest"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_homeFragment_to_calculate"
+            app:destination="@id/calculate" />
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="uz.kabir.checkeyesight.splash.SplashFragment"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splashFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true"
+            app:enterAnim="@anim/zoom_in"
+            app:popEnterAnim="@anim/nav_slide_in_left"
+            app:popExitAnim="@anim/nav_slide_out_right"
+
+
+            />
+
+        <action
+            android:id="@+id/action_splashFragment_to_chooseLanguageFragment"
+            app:destination="@id/chooseLanguageFragment"
+            app:enterAnim="@anim/nav_slide_in_right"
+            app:exitAnim="@anim/nav_slide_out_left"
+            app:popEnterAnim="@anim/nav_slide_in_left"
+            app:popExitAnim="@anim/nav_slide_out_right"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/leftVisionEye"
+        android:name="uz.kabir.checkeyesight.visiontest.TestVisionLeft"
+        tools:layout="@layout/fragment_first_vision_test">
+        <action
+            android:id="@+id/action_leftVisionTest_to_closingRightEye"
+            app:destination="@id/closingRightEye"
+            app:enterAnim="@anim/nav_slide_in_right"
+            app:exitAnim="@anim/nav_slide_out_left"
+            app:popEnterAnim="@anim/nav_slide_in_left"
+            app:popExitAnim="@anim/nav_slide_out_right"
+            app:popUpTo="@id/leftVisionEye"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/firstTabFragment"
+        android:name="uz.kabir.checkeyesight.tablayout.FirstTabFragment"
+        tools:layout="@layout/fragment_first_tab"/>
+    <fragment
+        android:id="@+id/secondTabFragment"
+        android:name="uz.kabir.checkeyesight.tablayout.SecondTabFragment"
+        tools:layout="@layout/fragment_second_tab" />
+
+    <fragment
+        android:id="@+id/closingLeftEye"
+        android:name="uz.kabir.checkeyesight.visiontest.abouttest.ClosingLeftEye"
+        tools:layout="@layout/fragment_closing_left_eye">
+        <action
+            android:id="@+id/action_closingLeftEye_to_leftVisionTest"
+            app:destination="@id/leftVisionEye"
+            app:enterAnim="@anim/nav_slide_in_right"
+            app:exitAnim="@anim/nav_slide_out_left"
+            app:popEnterAnim="@anim/nav_slide_in_left"
+            app:popExitAnim="@anim/nav_slide_out_right"
+            app:popUpTo="@id/closingLeftEye"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_closingLeftEye_to_swipeTestBySymbols"
+            app:destination="@id/swipeTestBySymbols"
+            app:enterAnim="@anim/nav_slide_in_right"
+            app:exitAnim="@anim/nav_slide_out_left"
+            app:popEnterAnim="@anim/nav_slide_in_left"
+            app:popExitAnim="@anim/nav_slide_out_right"
+            app:popUpTo="@id/closingLeftEye"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/VPNewFragment"
+        android:name="uz.kabir.checkeyesight.visiontest.firstViewPager.VPNewFragment"
+        tools:layout="@layout/fragment_v_p_new">
+        <action
+            android:id="@+id/action_VPNewFragment_to_closingLeftEye"
+            app:destination="@id/closingLeftEye"
+            app:enterAnim="@anim/nav_slide_in_right"
+            app:exitAnim="@anim/nav_slide_out_left"
+            app:popEnterAnim="@anim/nav_slide_in_left"
+            app:popExitAnim="@anim/nav_slide_out_right"
+            app:popUpTo="@id/VPNewFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/closingRightEye"
+        android:name="uz.kabir.checkeyesight.visiontest.abouttest.ClosingRightEye"
+        tools:layout="@layout/fragment_closing_right_eye">
+        <action
+            android:id="@+id/action_closingRightEye_to_rightVisionTest"
+            app:destination="@id/rightVisionTest"
+            app:enterAnim="@anim/nav_slide_in_right"
+            app:exitAnim="@anim/nav_slide_out_left"
+            app:popEnterAnim="@anim/nav_slide_in_left"
+            app:popExitAnim="@anim/nav_slide_out_right"
+            app:popUpTo="@id/closingRightEye"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_closingRightEye_to_swipeTestBySymbolsRight"
+            app:destination="@id/swipeTestBySymbolsRight"
+            app:enterAnim="@anim/nav_slide_in_right"
+            app:exitAnim="@anim/nav_slide_out_left"
+            app:popEnterAnim="@anim/nav_slide_in_left"
+            app:popExitAnim="@anim/nav_slide_out_right"
+            app:popUpTo="@id/closingRightEye"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/rightVisionTest"
+        android:name="uz.kabir.checkeyesight.visiontest.TestVisionRight"
+        tools:layout="@layout/fragment_right_vision_test">
+        <action
+            android:id="@+id/action_rightVisionTest_to_resultScreen"
+            app:destination="@id/resultScreen"
+            app:enterAnim="@anim/nav_slide_in_right"
+            app:exitAnim="@anim/nav_slide_out_left"
+            app:popEnterAnim="@anim/nav_slide_in_left"
+            app:popExitAnim="@anim/nav_slide_out_right"
+            app:popUpTo="@id/rightVisionTest"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultScreen"
+        android:name="uz.kabir.checkeyesight.visiontest.ResultScreen"
+        tools:layout="@layout/fragment_result_screen">
+        <action
+            android:id="@+id/action_resultScreen_to_viewResult"
+            app:destination="@id/viewResult"
+            app:enterAnim="@anim/nav_slide_in_right"
+            app:exitAnim="@anim/nav_slide_out_left"
+            app:popEnterAnim="@anim/nav_slide_in_left"
+            app:popExitAnim="@anim/nav_slide_out_right" />
+        <action
+            android:id="@+id/action_resultScreen_to_homeFragment"
+            app:destination="@id/homeFragment"
+
+            app:exitAnim="@anim/nav_slide_out_left"
+            app:popUpToInclusive="true"
+            app:enterAnim="@anim/zoom_in"
+            app:popEnterAnim="@anim/nav_slide_in_left"
+            app:popExitAnim="@anim/nav_slide_out_right"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/swipeTestBySymbols"
+        android:name="uz.kabir.checkeyesight.swipetest.SwipeTestBySymbolsLeft"
+        tools:layout="@layout/fragment_swipe_test_by_symbols">
+        <action
+            android:id="@+id/action_swipeTestBySymbols_to_closingRightEye"
+            app:destination="@id/closingRightEye"
+            app:enterAnim="@anim/nav_slide_in_right"
+            app:exitAnim="@anim/nav_slide_out_left"
+            app:popEnterAnim="@anim/nav_slide_in_left"
+            app:popExitAnim="@anim/nav_slide_out_right"
+            app:popUpTo="@id/swipeTestBySymbols"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/swipeTestBySymbolsRight"
+        android:name="uz.kabir.checkeyesight.swipetest.SwipeTestBySymbolsRight"
+        tools:layout="@layout/fragment_swipe_test_by_symbols_right">
+        <action
+            android:id="@+id/action_swipeTestBySymbolsRight_to_resultScreen"
+            app:destination="@id/resultScreen"
+            app:enterAnim="@anim/nav_slide_in_right"
+            app:exitAnim="@anim/nav_slide_out_left"
+            app:popEnterAnim="@anim/nav_slide_in_left"
+            app:popExitAnim="@anim/nav_slide_out_right"
+            app:popUpTo="@id/swipeTestBySymbolsRight"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewResult"
+        android:name="uz.kabir.checkeyesight.db.ViewResult"
+        tools:layout="@layout/fragment_view_result" >
+        <action
+            android:id="@+id/action_viewResult_to_lineChartFragment"
+            app:destination="@id/lineChartFragment"
+            app:enterAnim="@anim/nav_slide_in_right"
+            app:exitAnim="@anim/nav_slide_out_left"
+            app:popEnterAnim="@anim/nav_slide_in_left"
+            app:popExitAnim="@anim/nav_slide_out_right" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/lineChartFragment"
+        android:name="uz.kabir.checkeyesight.linechart.LineChartFragment"
+        tools:layout="@layout/fragment_line_chart" />
+    <fragment
+        android:id="@+id/choosingConnection"
+        android:name="uz.kabir.checkeyesight.bluetoothconnect.ChoosingConnection"
+        tools:layout="@layout/fragment_choosing_connection">
+
+        <action
+            android:id="@+id/action_choosingConnection_to_writeFragment"
+            app:destination="@id/writeFragment"
+            app:enterAnim="@anim/nav_slide_in_right"
+            app:exitAnim="@anim/nav_slide_out_left"
+            app:popEnterAnim="@anim/nav_slide_in_left"
+            app:popExitAnim="@anim/nav_slide_out_right" />
+        <action
+            android:id="@+id/action_choosingConnection_to_readFragment"
+            app:destination="@id/readFragment"
+            app:enterAnim="@anim/nav_slide_in_right"
+            app:exitAnim="@anim/nav_slide_out_left"
+            app:popEnterAnim="@anim/nav_slide_in_left"
+            app:popExitAnim="@anim/nav_slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/readFragment"
+        android:name="uz.kabir.checkeyesight.bluetoothconnect.ReadFragment"
+        tools:layout="@layout/fragment_read" />
+
+    <fragment
+        android:id="@+id/writeFragment"
+        android:name="uz.kabir.checkeyesight.bluetoothconnect.WriteFragment"
+        tools:layout="@layout/fragment_write" />
+    <fragment
+        android:id="@+id/colorBlindnessTest"
+        android:name="uz.kabir.checkeyesight.colorblindness.ColorBlindnessTest"
+        tools:layout="@layout/fragment_color_blindness_test">
+        <action
+            android:id="@+id/action_colorBlindnessTest_to_resultColorBlindness"
+            app:destination="@id/resultColorBlindness"
+            app:enterAnim="@anim/nav_slide_in_right"
+            app:exitAnim="@anim/nav_slide_out_left"
+            app:popEnterAnim="@anim/nav_slide_in_left"
+            app:popExitAnim="@anim/nav_slide_out_right"
+            app:popUpTo="@id/colorBlindnessTest"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultColorBlindness"
+        android:name="uz.kabir.checkeyesight.colorblindness.ResultColorBlindness"
+        tools:layout="@layout/fragment_result_color_blindness">
+        <action
+            android:id="@+id/action_resultColorBlindness_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/resultColorBlindness"
+            app:exitAnim="@anim/nav_slide_out_left"
+            app:popUpToInclusive="true"
+            app:enterAnim="@anim/zoom_in"
+            app:popEnterAnim="@anim/nav_slide_in_left"
+            app:popExitAnim="@anim/nav_slide_out_right"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/astigmatismTest"
+        android:name="uz.kabir.checkeyesight.astigmatism.AstigmatismTest"
+        tools:layout="@layout/fragment_astigmatism_test" >
+        <action
+            android:id="@+id/action_astigmatismTest_to_rightEyeTest"
+            app:destination="@id/rightEyeTest"
+            app:enterAnim="@anim/nav_slide_in_right"
+            app:exitAnim="@anim/nav_slide_out_left"
+            app:popEnterAnim="@anim/nav_slide_in_left"
+            app:popExitAnim="@anim/nav_slide_out_right"
+            app:popUpTo="@id/astigmatismTest"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_astigmatismTest_to_resultAstigmatism"
+            app:destination="@id/resultAstigmatism"
+            app:enterAnim="@anim/nav_slide_in_right"
+            app:exitAnim="@anim/nav_slide_out_left"
+            app:popEnterAnim="@anim/nav_slide_in_left"
+            app:popExitAnim="@anim/nav_slide_out_right"
+            app:popUpTo="@id/astigmatismTest"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="answers_left"
+            app:argType="integer"
+            android:defaultValue="-1"
+            />
+
+    </fragment>
+    <fragment
+        android:id="@+id/duochromeTest"
+        android:name="uz.kabir.checkeyesight.duochrometest.DuochromeTest"
+        tools:layout="@layout/fragment_duochrome_test" >
+        <action
+            android:id="@+id/action_duochromeTest_to_resultColorBlindness"
+            app:destination="@id/resultColorBlindness"
+            app:enterAnim="@anim/nav_slide_in_right"
+            app:exitAnim="@anim/nav_slide_out_left"
+            app:popEnterAnim="@anim/nav_slide_in_left"
+            app:popExitAnim="@anim/nav_slide_out_right"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/noteScreen"
+        android:name="uz.kabir.checkeyesight.note.NoteScreen"
+        tools:layout="@layout/fragment_note_screen"
+        />
+
+    <fragment
+        android:id="@+id/testScreenSecond"
+        android:name="uz.kabir.checkeyesight.visiontest.firstViewPager.TestScreenSecond"
+        android:label="fragment_test_screen_second"
+        tools:layout="@layout/fragment_test_screen_second" />
+    <fragment
+        android:id="@+id/testScreenThird"
+        android:name="uz.kabir.checkeyesight.visiontest.firstViewPager.TestScreenThird"
+        android:label="fragment_test_screen_third"
+        tools:layout="@layout/fragment_test_screen_third" />
+
+    <fragment
+        android:id="@+id/chooseDistance"
+        android:name="uz.kabir.checkeyesight.visiontest.abouttest.ChooseDistance"
+        android:label="fragment_choose_distance"
+        tools:layout="@layout/fragment_choose_distance" >
+        <action
+            android:id="@+id/action_chooseDistance_to_VPNewFragment"
+            app:destination="@id/VPNewFragment"
+            app:enterAnim="@anim/nav_slide_in_right"
+            app:exitAnim="@anim/nav_slide_out_left"
+            app:popEnterAnim="@anim/nav_slide_in_left"
+            app:popExitAnim="@anim/nav_slide_out_right"
+            />
+        <argument
+            android:name="position"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/mainRecovery"
+        android:name="uz.kabir.checkeyesight.exercises.recovery.MainRecovery"
+        android:label="fragment_main_recovery"
+        tools:layout="@layout/fragment_main_recovery" />
+    <fragment
+        android:id="@+id/mainNearsightedness"
+        android:name="uz.kabir.checkeyesight.exercises.nearsightedness.MainNearsightedness"
+        android:label="fragment_main_nearsightedness"
+        tools:layout="@layout/fragment_main_nearsightedness" />
+    <fragment
+        android:id="@+id/amslerGrid"
+        android:name="uz.kabir.checkeyesight.amslergrid.AmslerGrid"
+        android:label="fragment_amsler_grid"
+        tools:layout="@layout/fragment_amsler_grid" />
+    <fragment
+        android:id="@+id/mainFarsightedness"
+        android:name="uz.kabir.checkeyesight.exercises.farsightedness.MainFarsightedness"
+        android:label="fragment_main_farsightedness"
+        tools:layout="@layout/fragment_main_farsightedness" />
+    <fragment
+        android:id="@+id/mainRelaxation"
+        android:name="uz.kabir.checkeyesight.exercises.relaxation.MainRelaxation"
+        android:label="fragment_main_relaxtion"
+        tools:layout="@layout/fragment_main_relaxtion" />
+    <fragment
+        android:id="@+id/leftEyeTest"
+        android:name="uz.kabir.checkeyesight.astigmatism.LeftEyeTest"
+        android:label="fragment_left_eye_test"
+        tools:layout="@layout/fragment_left_eye_test" >
+        <action
+            android:id="@+id/action_leftEyeTest_to_astigmatismTest2"
+            app:destination="@id/astigmatismTest"
+            app:enterAnim="@anim/nav_slide_in_right"
+            app:exitAnim="@anim/nav_slide_out_left"
+            app:popEnterAnim="@anim/nav_slide_in_left"
+            app:popExitAnim="@anim/nav_slide_out_right"
+            app:popUpTo="@id/leftEyeTest"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/rightEyeTest"
+        android:name="uz.kabir.checkeyesight.astigmatism.RightEyeTest"
+        android:label="fragment_right_eye_test"
+        tools:layout="@layout/fragment_right_eye_test" >
+        <action
+            android:id="@+id/action_rightEyeTest_to_astigmatismTest"
+            app:destination="@id/astigmatismTest"
+            app:enterAnim="@anim/nav_slide_in_right"
+            app:exitAnim="@anim/nav_slide_out_left"
+            app:popEnterAnim="@anim/nav_slide_in_left"
+            app:popExitAnim="@anim/nav_slide_out_right"
+            app:popUpTo="@id/rightEyeTest"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="answer"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultAstigmatism"
+        android:name="uz.kabir.checkeyesight.astigmatism.ResultAstigmatism"
+        android:label="fragment_result_astigmatism"
+        tools:layout="@layout/fragment_result_astigmatism" >
+        <action
+            android:id="@+id/action_resultAstigmatism_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/zoom_in"
+            app:exitAnim="@anim/nav_slide_out_left"
+            app:popEnterAnim="@anim/nav_slide_in_left"
+            app:popExitAnim="@anim/nav_slide_out_right"
+            app:popUpTo="@id/resultAstigmatism"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/nearVisionTest"
+        android:name="uz.kabir.checkeyesight.nearvisiontest.NearVisionTest"
+        android:label="fragment_near_vision_test"
+        tools:layout="@layout/fragment_near_vision_test" />
+    <fragment
+        android:id="@+id/contrastVisionTest"
+        android:name="uz.kabir.checkeyesight.contrast.ContrastVisionTest"
+        android:label="fragment_contrast_vision_test"
+        tools:layout="@layout/fragment_contrast_vision_test" />
+    <fragment
+        android:id="@+id/calculate"
+        android:name="uz.kabir.checkeyesight.calculate.Calculate"
+        android:label="fragment_calculate"
+        tools:layout="@layout/fragment_calculate"
+
+        >
+        <action
+            android:id="@+id/action_calculate_to_showResultGlass2"
+            app:destination="@id/showResultGlass2" />
+    </fragment>
+    <fragment
+        android:id="@+id/showResultGlass2"
+        android:name="uz.kabir.checkeyesight.calculate.ShowResultGlass"
+        android:label="fragment_show_result_glass"
+        tools:layout="@layout/fragment_show_result_glass" />
+    <fragment
+        android:id="@+id/alarmMainScreen"
+        android:name="uz.kabir.checkeyesight.alarm.AlarmMainScreen"
+        android:label="fragment_alarm_main_screen"
+        tools:layout="@layout/fragment_alarm_main_screen" />
+
+
+</navigation>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/only_light"
+    tools:context=".bluetoothconnect.WriteFragment">
+
+    <RelativeLayout
+        android:id="@+id/linear_variants"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/bac_with_corner"
+        android:visibility="gone"
+        android:layout_margin="16dp"
+        >
+
+
+        <ImageButton
+            android:id="@+id/tv_option_four"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="16dp"
+            android:layout_toStartOf="@id/centerView"
+            android:background="@drawable/letter_background"
+            android:scaleType="centerCrop"
+            android:padding="10dp"
+            android:src="@drawable/e_chart_left"
+
+            />
+
+        <View
+            android:id="@+id/centerView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerInParent="true" />
+
+        <ImageButton
+
+            android:id="@+id/tv_option_three"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="16dp"
+            android:layout_toEndOf="@id/centerView"
+            android:background="@drawable/letter_background"
+            android:padding="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/e_chart_right"
+
+
+            />
+
+        <ImageButton
+            android:id="@+id/tv_option_two"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_above="@id/centerView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/letter_background"
+            android:padding="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/e_chart_up" />
+
+        <ImageButton
+            android:id="@+id/tv_option_one"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_below="@id/centerView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/letter_background"
+            android:padding="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/e_chart_down" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_find_devices"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="16dp"
+        android:visibility="visible">
+
+        <ListView
+            android:id="@+id/lv_devices"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/status"
+            android:layout_alignStart="@id/status"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="16dp"
+            android:layout_toStartOf="@+id/btn_list_devices"
+            android:background="@drawable/only_bottom_radius"
+            android:backgroundTint="#17297DFF"
+            android:paddingBottom="10dp"
+            android:scrollbars="none" />
+
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_marginHorizontal="32dp"
+            android:background="@drawable/btn_background_unselected"
+            android:backgroundTint="@color/white"
+            android:gravity="center"
+            android:text="Status"
+            android:textSize="20sp" />
+
+
+        <Button
+            android:id="@+id/btn_list_devices"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_below="@id/status"
+            android:layout_alignRight="@id/status"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/btn_background_selected"
+            android:text="Devices"
+            android:textColor="@color/white" />
+    </RelativeLayout>
+
+
+</RelativeLayout>

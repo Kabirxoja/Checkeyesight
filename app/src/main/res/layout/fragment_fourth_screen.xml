@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_night"
+    tools:context=".viewpager.screen.FourthScreen">
+
+    <!-- THIRD VIEW PAGER SCREEN -->
+
+
+    <Button
+        android:id="@+id/third_screen_button"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        android:layout_marginHorizontal="20dp"
+        android:background="@drawable/btn_background_selected"
+        android:text="@string/done"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:maxLines="2"
+        android:text="@string/welcome_to_app"
+        android:textColor="@color/white"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toTopOf="@+id/third_screen_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="5dp"
+            android:background="@drawable/btn_background_unselected"
+            android:backgroundTint="@color/pale_color"
+
+            />
+
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="5dp"
+            android:layout_marginStart="7dp"
+            android:background="@drawable/btn_background_unselected"
+            android:backgroundTint="@color/pale_color"
+
+            />
+
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="5dp"
+            android:layout_marginStart="7dp"
+            android:background="@drawable/btn_background_unselected"
+            android:backgroundTint="@color/pale_color"
+
+            />
+
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginStart="7dp"
+            android:background="@drawable/btn_background_unselected"
+
+
+            />
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

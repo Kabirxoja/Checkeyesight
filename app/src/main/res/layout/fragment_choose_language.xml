@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_night"
+    tools:context=".language.ChooseLanguageFragment"
+
+    >
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/choose_language"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/gridLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.928" />
+
+    <GridLayout
+        android:id="@+id/gridLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="16dp"
+        android:columnCount="2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5">
+
+        <RelativeLayout
+            android:id="@+id/btn_uzbek_selected"
+            android:layout_width="120dp"
+            android:layout_height="80dp"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginVertical="8dp"
+            android:background="@drawable/btn_background_selected"
+            android:gravity="center"
+            android:paddingHorizontal="4dp"
+            android:paddingTop="8dp"
+
+            >
+
+            <ImageView
+                android:id="@+id/img_id"
+                android:layout_width="65dp"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/flag_uzbekistan" />
+
+            <TextView
+                android:id="@+id/txt_uzbek"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/img_id"
+                android:layout_centerHorizontal="true"
+                android:text="@string/uzbek"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+
+                />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/btn_karakalpak_selected"
+            android:layout_width="120dp"
+            android:layout_height="80dp"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginVertical="8dp"
+            android:background="@drawable/btn_background_selected"
+            android:gravity="center"
+            android:paddingHorizontal="4dp"
+            android:paddingTop="8dp"
+
+            >
+
+            <ImageView
+                android:id="@+id/img_kaa"
+                android:layout_width="65dp"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/flag_karakalpagistan" />
+
+            <TextView
+                android:id="@+id/txt_karakalpak"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/img_kaa"
+                android:layout_centerHorizontal="true"
+                android:text="@string/karakalpak"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/btn_english_selected"
+            android:layout_width="120dp"
+            android:layout_height="80dp"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginVertical="8dp"
+            android:background="@drawable/btn_background_selected"
+            android:gravity="center"
+            android:paddingHorizontal="4dp"
+            android:paddingTop="8dp">
+
+            <ImageView
+                android:id="@+id/img_uk"
+                android:layout_width="65dp"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/flag_uk" />
+
+            <TextView
+                android:id="@+id/txt_uk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/img_uk"
+                android:layout_centerHorizontal="true"
+                android:text="@string/english"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/btn_french_selected"
+            android:layout_width="120dp"
+            android:layout_height="80dp"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginVertical="8dp"
+            android:background="@drawable/btn_background_selected"
+            android:gravity="center"
+            android:paddingHorizontal="4dp"
+            android:paddingTop="8dp"
+
+            >
+
+            <ImageView
+                android:id="@+id/img_fr"
+                android:layout_width="65dp"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/flag_france" />
+
+            <TextView
+                android:id="@+id/txt_france"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/img_fr"
+                android:layout_centerHorizontal="true"
+                android:text="@string/france"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+
+                />
+        </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:id="@+id/btn_portuguese_selected"
+            android:layout_width="120dp"
+            android:layout_height="80dp"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginVertical="8dp"
+            android:background="@drawable/btn_background_selected"
+            android:gravity="center"
+            android:paddingHorizontal="4dp"
+            android:paddingTop="8dp"
+
+            >
+
+            <ImageView
+                android:id="@+id/img_pt"
+                android:layout_width="65dp"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/flag_portugal" />
+
+            <TextView
+                android:id="@+id/txt_portugal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/img_pt"
+                android:layout_centerHorizontal="true"
+                android:text="@string/portugal"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+
+                />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/btn_russian_selected"
+            android:layout_width="120dp"
+            android:layout_height="80dp"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginVertical="8dp"
+            android:background="@drawable/btn_background_selected"
+            android:gravity="center"
+            android:paddingHorizontal="4dp"
+            android:paddingTop="8dp"
+
+            >
+
+            <ImageView
+                android:id="@+id/img_ru"
+                android:layout_width="65dp"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/flag_russia" />
+
+            <TextView
+                android:id="@+id/txt_russia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/img_ru"
+                android:layout_centerHorizontal="true"
+                android:text="@string/russian"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+
+                />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/btn_spanish_selected"
+            android:layout_width="120dp"
+            android:layout_height="80dp"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginVertical="8dp"
+            android:background="@drawable/btn_background_selected"
+            android:gravity="center"
+            android:paddingHorizontal="4dp"
+            android:paddingTop="8dp"
+
+            >
+
+            <ImageView
+                android:id="@+id/img_es"
+                android:layout_width="65dp"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/flag_spain" />
+
+            <TextView
+                android:id="@+id/txt_spain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/img_es"
+                android:layout_centerHorizontal="true"
+                android:text="@string/spain"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+
+                />
+        </RelativeLayout>
+
+
+
+
+
+    </GridLayout>
+
+    <Button
+        android:id="@+id/complete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_background_unselected"
+        android:text="@string/choose"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gridLayout2"
+        app:layout_constraintVertical_bias="0.5" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

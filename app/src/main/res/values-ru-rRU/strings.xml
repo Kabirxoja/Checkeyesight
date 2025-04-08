@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Check Eyesight</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="next">Следующий</string>
+    <string name="home">Дом</string>
+
+    <string name="title1">Проверка зрения по символу "E"</string>
+    <string name="title2">Проверка зрения по символу "С"</string>
+    <string name="title3">Алфавитный тест на зрение</string>
+    <string name="title4">Проверка зрения по числам</string>
+    <string name="title5">Дальтонизм</string>
+    <string name="title6">Дуохромный тест зрения</string>
+    <string name="title7">Проверка зрения на астигматизм</string>
+    <string name="title8">Тест подключения Bluetooth "E"</string>
+    <string name="title9">Тест Амслера</string>
+
+    <string name="second_screen">Упражнение для глаз</string>
+    <string name="first_screen">Тест зрения</string>
+    <string name="third_screen">Итак, начните защищать твои глаза</string>
+
+    <string name="tab_layout1">Проверка зрения</string>
+    <string name="tab_layout2">Упражнение для глаз</string>
+
+
+    <string name="close_app_question">Вы хотите выйти из программы?</string>
+    <string name="close_test_question">Вы хотите прервать тест?</string>
+    <string name="close_eye_exercise">Вы хотите закончить упражнение для глаз?</string>
+    <string name="answer_yes">Да</string>
+    <string name="answer_no">Нет</string>
+
+    <string name="history">История</string>
+    <string name="note">Напоминание</string>
+    <string name="language">Язык</string>
+
+    <string name="delete">Удалить</string>
+    <string name="enter_text">Текст..\.</string>
+
+    <string name="text_is_empty">Текст не должен быть пустым!</string>
+
+    <string name="select_options">Выберите данный вариант</string>
+    <string name="name">Имя.\..</string>
+    <string name="info">Инфо</string>
+    <string name="skip">Пропускать</string>
+    <string name="check_your_eyesight">Проверьте свое зрение</string>
+    <string name="train_your_eyes">Вы можете тренировать свои глаза</string>
+    <string name="lets_go">Поехали</string>
+    <string name="distance">Вы можете повысить точность теста, указав точное расстояние до экрана в сантиметрах (40–400)</string>
+    <string name="select_distance">Выберите расстояние</string>
+    <string name="sit_down">Садиться</string>
+    <string name="close_curtain">Убедитесь, что ваше устройство не отражает свет</string>
+    <string name="block_light">Блокировать лишний свет</string>
+    <string name="correct_height">Отрегулируйте до нужной высоты</string>
+    <string name="height_device">Убедитесь, что вы держите устройство на уровне глаз пациента</string>
+    <string name="stay_distance">Соблюдать указанную дистанцию</string>
+    <string name="check_distance">Убедитесь, что вы держите устройство на расстоянии, которое вы выбрали ранее.</string>
+
+    <string name="close_left_eye">Закрыть левый глаз</string>
+    <string name="close_right_eye">Закрыть правый глаз</string>
+    <string name="close_eye_with_hand">Вы также можете закрыть глаза рукой</string>
+    <string name="welcome_to_app">Спасибо, что выбрали нас!</string>
+    <string name="done">Завершить</string>
+    <string name="start_test">Начать тест</string>
+    <string name="cancel">Отмена</string>
+
+    <string name="distance_is_empty">Расстояние должно быть выбрано</string>
+    <string name="left_eye">Левый глаз</string>
+    <string name="right_eye">Правый глаз</string>
+    <string name="date_result">Число</string>
+    <string name="delete_test_items">Удалить результаты теста</string>
+    <string name="need_turn_on_bluetooth_text">Чтобы начат,вам нужно включить Bluetooth</string>
+
+
+    <string name="restoration_of_vision">Восстановление зрения</string>
+    <string name="exercise_for_farsightedness">Упражнение для дальнозоркости</string>
+    <string name="exercise_for_nearsightedness">Упражнение для близорукости</string>
+    <string name="relaxation_of_vision">Восстановление зрения</string>
+
+
+    <string name="exercise_up_and_down">Движение глаз вверх и вниз</string>
+    <string name="exercise_diagonal">Диагональное движение глаз</string>
+    <string name="exercise_left_near">Закройте левый глаз и сосредоточьтесь сначала на ближнем объекте, а затем на дальнем объекте</string>
+    <string name="exercise_right_near">Закройте правый глаз и сосредоточьтесь сначала на ближнем объекте, а затем на дальнем объекте</string>
+    <string name="exercise_snake_trail">Змеиная тропа</string>
+    <string name="exercise_blink_fast">Закрывайте глаза каждые две секунды</string>
+    <string name="exercise_blink">Закройте глаза на 2 секунды, затем откройте их на 5 секунд</string>
+    <string name="exercise_palming">Пальминг</string>
+    <string name="exercise_head_spinning">Двигайте головой слева направо, фокусируя взгляд на одной и той же точке</string>
+    <string name="exercise_focus_nose">Смотрим на кончик носа</string>
+    <string name="exercise_massage_eyebrows">Массаж бровей</string>
+    <string name="exercise_half_closed">Широко раскрываем глаза а затем прищуриваемся</string>
+    <string name="exercise_rectangle">Прямоугольное движение глаз</string>
+    <string name="exercise_hand_observation">Сосредоточьтесь на своей руке, затем переместите ее вправо</string>
+    <string name="exercise_rotate_left">Вращаем глаза и смотрим влево</string>
+    <string name="exercise_rotate_right">Вращаем глаза и смотрим вправо</string>
+    <string name="exercise_horizontal">Движение глаз слева направо</string>
+    <string name="exercise_massage_eyes">Массаж глаз. Легкое надавливание с вибрированием</string>
+
+
+    <string name="near_vision_test_level_250">This text has the largest font and is the initial test</string>
+    <string name="near_vision_test_level_200">The text is getting smaller and its level is 200</string>
+    <string name="near_vision_test_level_160">The text is getting smaller and its level is 160</string>
+    <string name="near_vision_test_level_125">The text is getting smaller and its level is 125</string>
+    <string name="near_vision_test_level_100">The text is getting smaller and its level is 100</string>
+    <string name="near_vision_test_level_80">The text is getting smaller and its level is 80</string>
+    <string name="near_vision_test_level_63">The text is getting smaller and its level is 63</string>
+    <string name="near_vision_test_level_50">The text is getting smaller and its level is 50</string>
+    <string name="near_vision_test_level_40">The text is getting smaller and its level is 40</string>
+    <string name="near_vision_test_level_32">The text is getting smaller and its level is 32</string>
+    <string name="near_vision_test_level_25">The text is getting smaller and its level is 25</string>
+    <string name="near_vision_test_level_20">The text is getting smaller and its level is 20</string>
+    <string name="near_vision_test_level_16">The text is getting smaller and its level is 16</string>
+
+    <string name="info_duochrome_test">
+     Дуохромный тест обычно используется для оценки того, дальнозорки вы или близоруки (или слишком слабы или слишком сильны линзы, которые вы носите). Этот тест работает по принципу, что длины волн красного и зеленого света фокусируются глазом немного по-разному: красный цвет ближе к сетчатке глаза при близорукости (то есть четче), а зеленый фокусируется ближе к сетчатке глаза при дальнозоркости.
+     \nПримечания:
+        \n1.Дуохромный тест бесполезен, если ваша острота зрения не ниже 20/40 и выше.
+        \n2. Дуохромный тест обычно неприменим в молодом возрасте (до 20 лет), так как символы будут четко проявляться с обеих сторон. Этот тест обычно рекомендуется в более старшем возрасте и/или в случае проблем со зрением.
+     \nИнструкции!!!
+        \n1. Проведите тест при естественном освещении. Искусственный свет расширяет зрачок, что увеличивает хроматическую аберрацию глаза.
+        \n2. Держите телефон на расстоянии примерно 40 см от глаз (вытяните руки или положите телефон/планшет на что-нибудь). Центр экрана должен быть примерно на уровне глаз. Если вы носите очки или контактные линзы, не снимайте их.
+        \n3. Закройте левый глаз левыми руками.
+        \n4. Посмотрите на буквы с красной стороны, затем посмотрите на буквы с зеленой стороны. Если вы видите буквы на красном фоне более контрастными и черными, это означает, что вы близоруки. Теперь закройте правый глаз правой рукой и сделайте то же самое.
+    </string>
+
+
+    <string name="info_astigmatism_test">
+     Астигматизм — это состояние зрения, которое вызывает нечеткое зрение из-за неправильной формы роговицы, прозрачной передней оболочки глаза или иногда искривления хрусталика внутри глаза. В этом случае роговица не является полностью круглым куполом, а имеет форму футбольного мяча.
+     \nАстигматизм затрудняет различение мелких деталей как вблизи, так и на расстоянии. Если у вас нескорректированный астигматизм, у вас могут быть различные симптомы, такие как нечеткость зрения, усталость глаз, усталость глаз или головные боли. Астигматизм можно быстро и легко исправить с помощью очков, астигматических контактных линз или лазерной хирургии.
+     \nИнструкции!!!
+         \n1. Держите телефон на расстоянии примерно 40 см от глаз. Центр экрана должен быть примерно на уровне ваших глаз. Проверяйте один глаз за раз.
+         \n2. На следующем экране внимательно наблюдайте за каждой линией или квадратом.
+         \n3. Все ли линии черного цвета и одинаковой толщины? Все ли квадраты одного черного цвета? Или один или несколько цветов выглядят серыми?
+         \nЕсли вы видите некоторые линии серыми или искаженными, возможно, у вас астигматизм.
+     </string>
+
+    <string name="info_amslergrid_test">
+        Сетка Амслера представляет собой сетку горизонтальных и вертикальных линий, используемую для наблюдения за центральным полем зрения человека. Это диагностический инструмент, который помогает в обнаружении нарушений зрения, вызванных изменениями в сетчатке, особенно в макуле, а также в зрительном нерве и зрительном пути к мозгу.
+        \nУпражнения
+        \n1. Разместите телефон на расстоянии прибл. 40 см  от ваши глаза с сеткой, установленной на уровне глаз.
+        \n2. Посмотрите на точку в центре сетки.
+        \n3. Закройте левый глаз левой рукой, продолжая смотреть на точку правым глазом. Не отводите взгляд от точки.
+        \n4. Изменилась ли точка или квадраты вокруг точки? формы или исчезают, когда вы закрыли один глаз? Вы видите какое-либо размытие или искажение в сетке?
+        \n5. Теперь повторите все шаги, прикрывая правый глаз.
+        \n6. Нажмите Старт, чтобы выполнить тест.</string>
+
+    <string name="info_duochrome_dialog">Что такое Дуохромный тест?</string>
+    <string name="info_astigmatism_dialog">Что такое Астигматизм?</string>
+    <string name="info_amslergrid_dialog">Что такое сетка Амслера?</string>
+
+    <string name="info_color_blindness_test">Дальтонизм — это тест, который измеряет вашу способность различать цвета. Дальтонизм чаще всего имеет генетическую природу, но может также возникать из-за повреждения глаз, нервов или головного мозга или из-за воздействия определенных химических веществ.
+    \nИнструкции
+        \n1. Разместите телефон на расстоянии прибл. 40 см от ваших глаз, каждый круг должен быть на уровне глаз.
+        \n2. Попробуйте определить скрытый номер в течение 5 секунд, однако нет ограничения по времени. Затем нажмите на изображение, чтобы увидеть ответ с анализом.
+        \n3. Смахните экран в сторону и перейдите к следующему тесту
+    </string>
+    <string name="info_color_blindness_dialog">Что такое тест дальтонизм?</string>
+    <string name="choose_language">Выберите язык</string>
+    <string name="uzbek">Узбекский</string>
+    <string name="karakalpak">Каракалпакский</string>
+    <string name="english">Английский</string>
+    <string name="russian">Русский</string>
+
+    <string name="title10">Проверка зрения вблизи</string>
+    <string name="astigmatism_picture">Что было на картинке?</string>
+    <string name="same_line">Все линии одинаковы</string>
+    <string name="blurry_line">Имеются размытые линии</string>
+    <string name="astigmatism_result">Результат астигматизма</string>
+    <string name="has_astigmatism_left">У вашего левого глаза астигматизм</string>
+    <string name="has_no_astigmatism_left">У вашего левого глаза нормальное зрение</string>
+    <string name="has_astigmatism_right">У вашего правого глаза астигматизм</string>
+    <string name="has_no_astigmatism_right">У вашего правого глаза нормальное зрение</string>
+    <string name="rotate_phone">Поверните телефон</string>
+    <string name="eye_exercise_done">Молодец, ты выполнил эту тренировку!</string>
+    <string name="txt_congratulations">Поздравляем!</string>
+    <string name="share">Делиться</string>
+    <string name="rate_us">Оцените нас</string>
+    <string name="information">Информация</string>
+    <string name="feedback">Отправить отзыв</string>
+    <string name="exit">Выход</string>
+    <string name="france">Французский</string>
+    <string name="indonesia">Малайский</string>
+    <string name="portugal">Португальский</string>
+    <string name="spain">Испанский</string>
+    <string name="title11">Таблица контрастной чувствительности</string>
+    <string name="result">Результат:\t</string>
+    <string name="choose">Выбирать</string>
+    <string name="okay">Хорошо</string>
+    <string name="conversion_table">Таблица преобразования зрения</string>
+    <string name="recommended_glasses">Рекомендуемые очки</string>
+    <string name="alarm_soon">Скоро.\..</string>
+    <string name="distance_meter">Расстояние (м)</string>
+    <string name="schedule_break">Запланировать перерыв</string>
+    <string name="infinity">Бесконечность</string>
+    <string name="n_a">Непригодный</string>
+
+    <string name="info_near_vision_dialog" >Тест проводится на 40 см.</string>
+
+    <!-- Information About Test -->
+    <string name="info_tumbling_E_chart_headline">Что такое таблица Tumbling E?</string>
+    <string name="info_tumbling_E_chart">Таблица Tumbling E: Эта таблица особенно полезна для тех, кто не умеет читать буквы, например, для маленьких детей или неграмотных людей. Она отображает заглавную букву «E» в различных ориентациях (вверх, вниз, влево, вправо), а тестируемый указывает, в какую сторону указывают «пальцы» буквы E.</string>
+
+    <string name="info_landolt_C_chart_headline">Что такое таблица C Ландольта?</string>
+    <string name="info_landolt_C_chart">Таблица C Ландольта: Эта таблица, также известная как кольцо Ландольта или разорванное кольцо, представляет собой круги с зазором с одной стороны. Тестируемый определяет место зазора. Этот тест считается очень точным и часто используется в исследованиях и для людей, не знакомых с латинским алфавитом.</string>
+
+    <string name="info_snellen_chart_headline">Что такое таблица Снеллена?</string>
+    <string name="info_snellen_chart">Таблица Снеллена: Самый распространенный тип таблицы для проверки зрения, таблица Снеллена отображает ряды букв, уменьшающиеся в размере сверху вниз. Тестируемый читает наименьшую строку букв, которую он может ясно видеть. Эта таблица используется для измерения остроты зрения, результаты выражаются в виде дроби (например, 20/20).</string>
+
+    <string name="info_snellen_number_chart_headline">Что такое таблица Снеллена «Число»?</string>
+    <string name="info_snellen_number_chart">Таблица Снеллена «Число» для проверки зрения — это разновидность традиционной таблицы Снеллена, в которой вместо букв используются цифры. Это делает ее подходящей для людей, не знающих латинский алфавит, или для маленьких детей, которые еще не научились читать. Как и в стандартной таблице Снеллена, цифры расположены в порядке уменьшения сверху вниз. Тестируемый определяет наименьший ряд цифр, которые он может ясно видеть, определяя остроту своего зрения.</string>
+
+
+    <string name="info_bluetooth">"*После того, как телефон соединит два устройства по bluetooth, можно приступать к тестированию.\n*Для этого на обоих устройствах должен быть включен Bluetooth и предоставлено несколько разрешений. Если первая попытка не удалась, попробуйте еще раз.\n*Испытание проводится с расстояния 4 м"</string>
+
+    <string name="info_contrast">"Тестирование контрастной чувствительности — это тип визуальной оценки, используемый для оценки способности человека различать разные уровни контраста. Контрастная чувствительность имеет решающее значение для различных зрительных задач, таких как чтение, вождение автомобиля и распознавание объектов в условиях низкой освещенности. Тест на чувствительность измеряет способность человека обнаруживать разницу между светлыми и темными элементами в зрительном стимуле, обычно представленном в виде узоров или букв.\n""*Тест проводится на 40 см\n"</string>
+
+    <string name="color_blindness_detected">Цветовая слепота обнаружена</string>
+    <string name="color_blindness_not_detected">Цветовая слепота не обнаружена</string>
+
+
+</resources>
+

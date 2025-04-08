@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_night"
+    tools:context=".visiontest.ResultScreen"
+    tools:layout_editor_absoluteX="-12dp"
+    tools:layout_editor_absoluteY="0dp">
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout4"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/relativeLayout3"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="6dp"
+            android:text="@string/right_eye"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+
+            />
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/textView3"
+            android:src="@drawable/vp_close_left_eye"
+
+
+            />
+
+        <TextView
+            android:id="@+id/right_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView3"
+            android:layout_alignParentEnd="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginEnd="16dp"
+            android:text="0"
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            android:textStyle="bold"
+
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout3"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        app:layout_constraintEnd_toStartOf="@+id/relativeLayout4"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/left_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView2"
+            android:layout_alignParentEnd="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginEnd="16dp"
+            android:text="0"
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            android:textStyle="bold"
+
+
+            />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="6dp"
+            android:text="@string/left_eye"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+
+            />
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/textView2"
+            android:src="@drawable/vp_close_right_eye"
+
+
+            />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/to_home"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_tab_unselected"
+        android:minWidth="150dp"
+        android:orientation="horizontal"
+        android:padding="6dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/to_history"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/icon_house"
+            android:backgroundTint="@color/dark_and_light"
+
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/home"
+            android:textColor="@color/dark_and_light"
+            android:textSize="18sp"
+            android:textStyle="bold"
+
+
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/to_history"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginTop="64dp"
+        android:background="@drawable/bg_tab_unselected"
+        android:minWidth="150dp"
+        android:orientation="horizontal"
+        android:padding="6dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout3">
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/icon_history"
+            android:backgroundTint="@color/dark_and_light"
+
+            />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/history"
+            android:textColor="@color/dark_and_light"
+            android:textSize="18sp"
+            android:textStyle="bold"
+
+            />
+
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="172dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="28dp"
+        android:elevation="10dp"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/to_home">
+
+        <ImageView
+            android:id="@+id/image_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/step_1"
+            tools:layout_editor_absoluteX="32dp"
+            tools:layout_editor_absoluteY="405dp" />
+
+    </androidx.cardview.widget.CardView>
+
+    <SeekBar
+        android:id="@+id/seek_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:background="@drawable/btn_background_selected"
+        android:max="13"
+        android:padding="4dp"
+        android:progressBackgroundTint="@color/white"
+        android:progressTint="@color/only_night"
+        android:thumb="@drawable/ic_seekbar_indicator"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_view"
+        app:layout_constraintVertical_bias="0.194" />
+
+    <TextView
+        android:id="@+id/text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="0,0"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

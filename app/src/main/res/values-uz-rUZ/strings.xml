@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Check Eyesight</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="next">Keyingi</string>
+    <string name="home">Uy</string>
+
+    <string name="title1">E diagrammasi</string>
+    <string name="title2">Landolt C (Landolt halqasi) </string>
+    <string name="title3">Snellen diagrammasi </string>
+    <string name="title4">Raqamlar bo\'yicha ko\'z testi</string>
+    <string name="title5">Rang ko\'rligi (Daltonizm)</string>
+    <string name="title6">Duoxrom ko\'rish testi</string>
+    <string name="title7">Astigmatizm testi</string>
+    <string name="title8">Ikkita qurilma orqali "E" diagramma testi (Bluetooth)</string>
+    <string name="title9">Amsler testi</string>
+
+    <string name="second_screen">Ko\'z mashqi</string>
+    <string name="first_screen">Ko\'z Test</string>
+    <string name="third_screen">Ko\'zingizni himoya qilishni boshlang</string>
+    <string name="tab_layout1">Ko\'rish testi</string>
+    <string name="tab_layout2">Ko\'rish mashqi</string>
+
+    <string name="close_app_question">Dasturdan chiqmoqchimisiz?</string>
+    <string name="close_test_question">Testni muddatidan avval tugatmoqchimisiz?</string>
+    <string name="close_eye_exercise">Ko\'z mashqini tugatmoqchimisiz?</string>
+    <string name="answer_yes">Ha</string>
+    <string name="answer_no">Yo\'q</string>
+
+    <string name="history">Tarix</string>
+    <string name="note">Eslatma</string>
+    <string name="language">Til</string>
+
+    <string name="delete">O\'chirish</string>
+    <string name="enter_text">Matn..\.</string>
+
+    <string name="text_is_empty">Matn bo\'sh bo\'lmasligi kerak!</string>
+
+    <string name="select_options">Berilgan variantni tanlang</string>
+    <string name="name">Ism.\..</string>
+    <string name="info">Ma\'lumot</string>
+    <string name="skip">O\'tkazib yuborish</string>
+    <string name="check_your_eyesight">Ko\'z ko\'rishini tekshirish</string>
+    <string name="train_your_eyes">Ko\'z mashqlarini bajarishingiz mumkin</string>
+    <string name="lets_go">Qani ketdik</string>
+    <string name="distance">Ekranga aniq masofani santimetrda (40–400) ko\'rsatib, testning aniqligini oshirishingiz mumkin.</string>
+    <string name="select_distance">Masofani tanlang</string>
+    <string name="sit_down">Stulga o\'tiring</string>
+    <string name="close_curtain">Qurilmangiz hech qanday yorug\'likni aks ettirmasligingizga ishonch hosil qiling</string>
+    <string name="block_light">Ortiqcha yorug\'likni yopish</string>
+    <string name="correct_height">To\'g\'ri balandlikda moslash</string>
+    <string name="height_device">Qurilmani bemorning ko\'zi darajasida ushlab turganingizga ishonch hosil qiling</string>
+
+    <string name="stay_distance">Belgilagan masofa tutib turish</string>
+    <string name="check_distance">Aldınlaw tańlaǵan aralıqńızde qurılmanı ustap turǵanıńızǵa isenim payda etiń.</string>
+
+    <string name="close_left_eye">Chap ko\'zingizni yoping</string>
+    <string name="close_right_eye">O\'ng ko\'zingizni yoping</string>
+    <string name="close_eye_with_hand">Ko\'zingizni qo\'llingiz orqali ham yopishingiz mumkin</string>
+    <string name="welcome_to_app">Bizni tanlaganligingiz uchun tashakkur!</string>
+    <string name="done">Tugalash</string>
+    <string name="start_test">Testni boshlash</string>
+    <string name="cancel">Chiqish</string>
+
+    <string name="distance_is_empty">Masofa tanlanishi kerak</string>
+    <string name="left_eye">Chap ko\'z</string>
+    <string name="right_eye">O\'ng ko\'z</string>
+    <string name="date_result">Sana</string>
+    <string name="delete_test_items">Sinov natijalari o\'chirilsinmi?</string>
+    <string name="need_turn_on_bluetooth_text">Ishga tushurish uchun Bluetoothni yoqishingiz kerak</string>
+
+    <string name="restoration_of_vision">Ko\'rish qobiliyatini tiklash</string>
+    <string name="exercise_for_farsightedness">Uzoqni ko\'rmaslik uchun mashq</string>
+    <string name="exercise_for_nearsightedness">Yaqinni ko\'rmaslik uchun mashq</string>
+    <string name="relaxation_of_vision">Ko\'rish qobiliyatini tiklash</string>
+
+    <string name="exercise_up_and_down">Ko\'z harakati yuqoriga va pastga</string>
+    <string name="exercise_diagonal">Ko\'zning diagonal harakati</string>
+    <string name="exercise_left_near">Chap ko\'zingizni yuming va diqqatni avval yaqin ob\'ektga, so\'ngra uzoq masofaga qarating</string>
+    <string name="exercise_right_near">O\'ng ko\'zingizni yuming va diqqatingizni avval yaqin ob\'ektga, so\'ngra uzoq masofaga qarating</string>
+    <string name="exercise_snake_trail">Ilon izi</string>
+    <string name="exercise_blink_fast">Har ikki soniyada ko\'zingizni yuming</string>
+    <string name="exercise_blink">Ko\'zingizni 2 soniya davomida yoping,keyin 5 soniya oching</string>
+    <string name="exercise_palming">Palming</string>
+    <string name="exercise_head_spinning">Ko\'zlaringizni bir nuqtaga qaratib, boshingizni chapga o\'ngga siljiting</string>
+    <string name="exercise_focus_nose">Burunning uchiga qarang</string>
+    <string name="exercise_massage_eyebrows">Qoshlarni massajlash</string>
+    <string name="exercise_half_closed">Ko\'zingizni katta oching va keyin ko\'zingizni qising</string>
+    <string name="exercise_rectangle">To\'rtburchak ko\'z harakati</string>
+    <string name="exercise_rotate_left">Ko\'zimizni aylana bo\'ylab aylantiramiz va chapga qaraymiz</string>
+    <string name="exercise_rotate_right">Ko\'zimizni aylana bo\'ylab aylantiramiz va o\'ngga qaraymiz</string>
+    <string name="exercise_hand_observation">Qo\'lingizni to\'g\'riga va o\'ngga harakatlantiring, qo\'lingizga qaragan holatda</string>
+    <string name="exercise_horizontal">Chapdan o\'ngga ko\'z harakati</string>
+    <string name="exercise_massage_eyes">Ko\'z massaji. Ko\'z qovoqlariga yengillik bilan uqalang</string>
+
+    <string name="near_vision_test_level_250">Ushbu matn eng katta shriftda va dastlabki sinov</string>
+    <string name="near_vision_test_level_200">Matn kichrayadi va uning darajasi 200 ga teng</string>
+    <string name="near_vision_test_level_160">Matn kichrayadi va uning darajasi 160 ga teng</string>
+    <string name="near_vision_test_level_125">Matn kichrayadi va uning darajasi 125 ga teng</string>
+    <string name="near_vision_test_level_100">Matn kichrayadi va uning darajasi 100 ga teng</string>
+    <string name="near_vision_test_level_80">Matn kichrayadi va 80-darajaga erishadi</string>
+    <string name="near_vision_test_level_63">Matn kichrayadi va 63-darajaga ega</string>
+    <string name="near_vision_test_level_50">Matn kichrayadi va 50-darajaga ega</string>
+    <string name="near_vision_test_level_40">Matn kichrayadi va 40-darajaga ko\'tariladi</string>
+    <string name="near_vision_test_level_32">Matn kichrayadi va 32-darajaga ko\'tariladi</string>
+    <string name="near_vision_test_level_25">Matn kichrayadi va 25-darajaga ko\'tariladi</string>
+    <string name="near_vision_test_level_20">Matn kichrayadi va 20-darajaga ko\'tariladi</string>
+    <string name="near_vision_test_level_16">Matn kichrayadi va 16-darajaga ega</string>
+
+    <string name="info_duochrome_test">
+         Duoxrom testi odatda sizning uzoqni yoki qisqani ko\'ra olishingizni (yoki siz kiygan linzalar juda zaif yoki juda kuchli) aniqlash uchun ishlatiladi.Ushbu test qizil va yashil yorug\'likning to\'lqin uzunliklari ko\'z tomonidan bir oz boshqacha yo\'naltirilganlig, qizil qisqa ko\'rish bilan ratinaga yaqinroq (ya\'ni aniqroq) va yashil uzoqdan ko\'rishda to\'r pardaga yaqinroq bo\'lishi printsipi asosida ishlaydi.
+        \nEslatmalar:
+        \n1. Ko\'rish keskinligingiz darajasida kamida 20/40 yoki undan yuqori bo\'lsa, duoxrom testi hech qanday ahamiyatga ega emas
+        \n2. Duoxrom testi odatda yosh yoshda (20 yoshgacha) qo\'llanilmaydi, chunki belgilar har ikki tomonda ham aniq ko\'rinadi. Ushbu test odatda keksa yoshda va yoki ko\'rish muammolari bo\'lsa tavsiya etiladi.
+        \nKo\'rsatmalar!!!
+        \n1. Testni tabiiy yorug\'likda bajaring. Sun\'iy yorug\'lik ko\'z qorachig\'ini kengaytiradi, bu esa ko\'zdagi xromatik aberatsiyani oshiradi.
+        \n2. Telefoningizni ko\'zingizdan taxminan 40 sm uzoqlikda tuting (qo\'llaringizni cho\'zing yoki telefon/planshetni biror narsaga qo\'ying). Ekranning markazi taxminan ko\'zlar darajasida bo\'lishi kerak. Agar siz ko\'zoynak yoki kontaktli linzalar kiysangiz, ularni yechmang.
+        \n3. Chap ko\'zingizni chap qo\'llaringiz bilan yoping.
+        \n4. Qizil tomondagi harflarga qarang, so\'ngra ichidagi harflarga qarangyashil tomoni.
+        Agar siz qizil fonda harflarni kattaroq kontrast va qora rangda ko\'rsangiz, bu sizning uzoqni ko\'ra olmaysiz. Endi o\'ng ko\'zingizni o\'ng qo\'lingiz bilan yoping va xuddi shuni takrorlang
+    </string>
+
+    <string name="info_astigmatism_test">
+    Astigmatizm - shox pardaning noto\'g\'ri shakli, ko\'zning aniq old qopqog\'i yoki ba\'zan ko\'z ichidagi linzalarning egriligi tufayli ko\'rishning xiralashishiga olib keladigan ko\'rish holati. Bu holda shox parda to\'liq dumaloq gumbaz emas, lekin u ko\'proq futbolga o\'xshaydi.
+    Astigmatizm nozik tafsilotlarni yaqindan yoki uzoqdan ko\'rishni qiyinlashtiradi. Agar sizda tuzatilmagan astigmatizm bo\'lsa, sizda loyqa ko\'rish, ko\'z charchoqlari, charchagan ko\'zlar yoki bosh og\'rig\'i kabi turli xil alomatlar bo\'lishi mumkin. Astigmatizmni ko\'zoynak, astigmatik kontakt linzalari yoki lazerli jarrohlik yordamida tez va oson tuzatish mumkin.
+    \nKo\'rsatmalar!!!
+    \n1. Telefoningizni ko\'zingizdan taxminan 40 sm uzoqlikda tuting. Ekranning markazi taxminan ko\'zlaringiz darajasida bo\'lishi kerak. Bir vaqtning o\'zida bir ko\'zni sinab ko\'ring.
+    \n2. Keyingi ekranda har bir chiziq yoki kvadratni diqqat bilan kuzating.
+    \n3. Barcha chiziqlar qora rangda va bir xil qalinlikdami? Hamma kvadratlar bir xil qora rangdami? Yoki bir yoki bir nechta rang kulrang ko\'rinadi? Agar siz kulrang yoki buzilgan ba\'zi chiziqlarni ko\'rsangiz, sizda astigmatizm bo\'lishi mumkin.
+    </string>
+
+    <string name="info_amslergrid_test">
+    Amsler tarmog\'i - bu odamning markaziy ko\'rish maydonini kuzatish uchun ishlatiladigan gorizontal va vertikal chiziqlar. Bu ko\'zning to\'r pardasi, xususan, makula, shuningdek, optik asab va miyaga ko\'rish yo\'lidagi o\'zgarishlar natijasida kelib chiqqan ko\'rish buzilishlarini aniqlashga yordam beradigan diagnostika vositasi.
+    \nKo\'rsatmalar
+    \n1. Telefoningizni taxminan 40 sm joylashtiring va qurilmani ko\'zingiz turgan balandlikka qadar ushlab turing
+    \n2. To\'rning markazidagi nuqtaga qarang.
+    \n3. O\'ng ko\'z bilan nuqtaga qarashni davom ettirib, chap ko\'zingizni chap qo\'lingiz bilan yoping. Ko\'zlaringizni nuqtadan siljitmang.
+    \n4. Bir ko\'zni yopib qo\'yganingizda nuqta atrofidagi nuqta yoki kvadratchalar shakli o\'zgarganmi yoki yo\'qolganmi? Chiziqda xiralik yoki buzilishni bormi?
+    \n5. Endi o\'ng ko\'zingizni yopgan holda barcha amallarni takrorlang.
+    \n6. Sinovni bajarish uchun Start tugmasini bosing
+    </string>
+
+    <string name="info_duochrome_dialog">Duochrome test nima?</string>
+    <string name="info_astigmatism_dialog">Astigmatizm nima</string>
+    <string name="info_amslergrid_dialog">Amsler grid nima?</string>
+
+
+    <string name="info_color_blindness_test">Rang ko\'rligi testi ranglarni farqlash qobiliyatingizni o\'lchaydigan testdir. Rang ko\'rligi ko\'pincha genetik xususiyatga ega, lekin ko\'zlar, asablar yoki miyaning shikastlanishi yoki ba\'zi kimyoviy moddalar ta\'siri tufayli ham paydo bo\'lishi mumkin.
+     \nKo\'rsatmalar
+         \n1. Telefonni taxminan masofada joylashtiring. Ko\'zlaringizdan 40 sm, har bir doira ko\'z darajasida bo\'lishi kerak.
+         \n2. Yashirin raqamni 5 soniya ichida aniqlashga harakat qiling, ammo vaqt chegarasi yo\'q. Keyin tahlil bilan javobni ko\'rish uchun rasm ustiga bosing.
+         \n3. Ekranni yonga yusing va keyingi testga o\'ting
+     </string>
+    <string name="info_color_blindness_dialog"> Ranglarni ko\'rligi testi nima?</string>
+    <string name="choose_language">Tilni tanlang</string>
+    <string name="uzbek">O\'zbekcha</string>
+    <string name="karakalpak">Qoraqalpoqcha</string>
+    <string name="english">Inglizcha</string>
+    <string name="russian">Ruscha</string>
+    <string name="title10">Yaqin ko\'rish testi</string>
+
+    <string name="astigmatism_picture">Rasmda nima ko\'rindi?</string>
+    <string name="same_line">Barcha chiziqlar bir xil</string>
+    <string name="blurry_line">Xira chiziqlar bor</string>
+    <string name="astigmatism_result">Astigmatizm natijasi</string>
+    <string name="has_no_astigmatism_left">Chap ko\'zingizni ko\'rishi normal</string>
+    <string name="has_astigmatism_left">Chap ko\'zingizda astigmatizm bor</string>
+    <string name="has_no_astigmatism_right">O\'ng ko\'zingizni ko\'rishi normal</string>
+    <string name="has_astigmatism_right">O\'ng ko\'zingizda astigmatizm bor</string>
+
+    <string name="rotate_phone">Telefoningizni o\'giring</string>
+    <string name="eye_exercise_done">Ajoyib, siz ushbu mashqni yakunladingiz</string>
+    <string name="txt_congratulations">Tabriklaymiz!</string>
+    <string name="share">Ulashish</string>
+    <string name="rate_us">Baholash</string>
+    <string name="information">Ma\'lumot</string>
+    <string name="feedback">Fikr-mulohaza yuborish</string>
+    <string name="exit">Chiqish</string>
+    <string name="france">Fransuzcha</string>
+    <string name="indonesia">Malaycha</string>
+    <string name="portugal">Portugalcha</string>
+    <string name="spain">Ispancha</string>
+    <string name="title11">Kontrast sezgirligi jadvali</string>
+    <string name="result">Natija:\t</string>
+    <string name="choose">Tanlash</string>
+    <string name="okay">Yaxshi</string>
+    <string name="conversion_table">Ko\'rishdagi o\'lchovlarni o\'zgarish jadvali</string>
+    <string name="recommended_glasses">Tavsiya etilgan ko\'zoynak</string>
+    <string name="alarm_soon">Tez kunda.\..</string>
+    <string name="distance_meter">Masofa (m)</string>
+    <string name="schedule_break">Tanaffusni rejalashtirish</string>
+    <string name="infinity">Cheksizlik</string>
+    <string name="n_a">Qo\'llanilmaydi</string>
+
+    <string name="info_near_vision_dialog">Sinov 40 sm masofada o\'tkaziladi</string>
+
+    <!-- Information About Test -->
+    <string name="info_tumbling_E_chart_headline">Tumbling E diagrammasi nima?</string>
+    <string name="info_tumbling_E_chart">Tumbling E: Bu jadval, ayniqsa, yosh bolalar yoki savodsiz odamlar kabi harflarni o\'qiy olmaydiganlar uchun foydalidir. U “E” bosh harfini turli yo\'nalishlarda (yuqoriga, pastga, chapga, o\'ngga) ko\'rsatadi va tekshirilayotgan shaxs E ning “barmoqlari” qaysi tomonga ishora qilishini ko\'rsatadi.</string>
+
+    <string name="info_snellen_chart_headline">Snellen diagrammasi nima?</string>
+    <string name="info_snellen_chart">Snellen diagrammasi: Ko\'z jadvalining eng keng tarqalgan turi, Snellen diagrammasi yuqoridan pastgacha o\'lchami kichrayadigan harflar qatorlarini ko\'rsatadi. Sinovdan o\'tgan odam aniq ko\'ra oladigan harflarning eng kichik qatorini o\'qiydi. Ushbu jadval ko\'rish keskinligini o\'lchash uchun ishlatiladi, natijalar kasr sifatida ifodalanadi (masalan, 20/20).</string>
+
+    <string name="info_landolt_C_chart_headline">Landolt C diagrammasi nima?</string>
+    <string name="info_landolt_C_chart">Landolt C: Landolt halqasi yoki singan halqasi sifatida ham tanilgan, bu diagrammada bir tomonida bo\'shliq bo\'lgan doiralar mavjud. Sinovdan o\'tgan shaxs bo\'shliqning joylashishini aniqlaydi. Ushbu test juda aniq hisoblanadi va ko\'pincha tadqiqotda va lotin alifbosi bilan tanish bo\'lmagan odamlar uchun qo\'llaniladi.</string>
+
+    <string name="info_snellen_number_chart_headline">Snellen "raqami" diagrammasi nima?</string>
+    <string name="info_snellen_number_chart">Snellen "Raqam" ko\'z jadvali harflar o\'rniga raqamlardan foydalanadigan an\'anaviy Snellen jadvalining o\'zgarishidir. Bu lotin alifbosini bilmaydigan odamlar yoki hali o\'qishni o\'rganmagan yosh bolalar uchun mos keladi. Standart Snellen grafigi singari, raqamlar yuqoridan pastgacha kichrayadigan o\'lchamlarda joylashtirilgan. Sinovdan o\'tayotgan shaxs, ko\'rish keskinligini aniq ko\'ra oladigan eng kichik raqamlar qatorini aniqlaydi.</string>
+
+    <string name="info_bluetooth">
+        "*Telefon ikkita qurilmani bluetooth orqali ulagandan so'ng, sinovni boshlashingiz mumkin.\n
+         *Buning uchun ikkala qurilmada ham Bluetooth yoqilgan boʻlishi va bir nechta ruxsatlar berilishi kerak, agar birinchi urinish muvaffaqiyatsiz bo'lsa, qayta urinib ko'ing.\n
+         *Sinov 4 m masofadan o'tkaziladi"</string>
+
+    <string name="info_contrast">"Kontrast sezuvchanlik testi - bu odamning turli darajadagi kontrastni farqlash qobiliyatini baholash uchun ishlatiladigan vizual baholashning bir turi. Kontrast sezuvchanligi turli vizual vazifalar uchun, masalan, o\'qish, haydash va kam yorug\'lik sharoitida ob\'ektlarni tanib olish uchun juda muhimdir. Kontrast. sezuvchanlik testi odamning vizual stimulda yorug\'lik va qorong\'u elementlar o\'rtasidagi farqni aniqlash qobiliyatini o\'lchaydi, odatda naqsh yoki naqsh shaklida taqdim etiladi. harflar \n""*Sinov 40 sm da o\'tkaziladi \n"</string>
+
+    <string name="color_blindness_detected">Rang ko\'rligi aniqlandi</string>
+    <string name="color_blindness_not_detected">Rang ko\'rligi aniqlanmadi</string>
+
+</resources>

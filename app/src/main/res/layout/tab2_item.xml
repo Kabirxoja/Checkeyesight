@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="120dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="0dp"
+        app:cardMaxElevation="0dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="10dp"
+
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@color/light_and_dark"
+
+            >
+
+            <ImageView
+                android:id="@+id/image_tab2"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="20dp"
+                android:src="@drawable/ic_eye_focus"
+
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="8dp"
+                android:layout_toStartOf="@+id/image_tab2"
+
+
+                >
+
+
+            <TextView
+                android:id="@+id/title_tab2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Это коммент "
+                android:textColor="@color/dark_and_light"
+                android:textSize="18sp"
+                android:textStyle="bold"
+
+                />
+
+            </LinearLayout>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

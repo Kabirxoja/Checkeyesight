@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Check Eyesight</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Strings used for fragments for navigation -->
+    <string name="next">Next</string>
+    <string name="home">Home</string>
+
+    <string name="title1">Tumbling E chart</string>
+    <string name="title2">Landolt C (Landolt ring)</string>
+    <string name="title3">Snellen chart</string>
+    <string name="title4">Numbers vision test</string>
+    <string name="title5">Color blindness</string>
+    <string name="title6">Duochrome vision test</string>
+    <string name="title7">Astigmatism vision test</string>
+    <string name="title8">E chart test through two devices (Bluetooth)</string>
+    <string name="title9">Amsler test</string>
+
+    <string name="second_screen">Eye Exercise</string>
+    <string name="first_screen">Eye Test</string>
+    <string name="third_screen">So, start to protect your eyes</string>
+
+    <string name="tab_layout1">Eyesight test</string>
+    <string name="tab_layout2">Eye exercise</string>
+
+    <string name="close_app_question">Do you want to exit the program?</string>
+    <string name="close_test_question">Do you want to abort the test? </string>
+    <string name="close_eye_exercise">Do you want to finish the eye exercise?</string>
+    <string name="answer_yes">Yes</string>
+    <string name="answer_no">No</string>
+
+    <string name="history">History</string>
+    <string name="note">Note</string>
+    <string name="language">Language</string>
+
+    <string name="delete">Delete</string>
+    <string name="enter_text">Text..\.</string>
+
+    <string name="text_is_empty">The text must not be empty!</string>
+
+    <string name="select_options">Select the given option</string>
+    <string name="name">Name.\..</string>
+    <string name="info">Info</string>
+    <string name="skip">Skip</string>
+    <string name="check_your_eyesight">Check your eyesight</string>
+    <string name="train_your_eyes">You can train your eyes</string>
+    <string name="lets_go">Let\'s go</string>
+    <string name="distance">You can improve the accuracy of the test by specifying the exact distance to the screening centimeters (40–400)</string>
+    <string name="select_distance">Select the distance</string>
+    <string name="sit_down">Sit down</string>
+    <string name="close_curtain">Make sure you are not reflecting any light with your device</string>
+    <string name="block_light">Block out excess light</string>
+    <string name="correct_height">Adjust to the correct height</string>
+    <string name="height_device">Make sure you are holding the device at the patient\'s eye level</string>
+    <string name="stay_distance">Keep the specified distance</string>
+    <string name="check_distance">Make sure you are holding the device at the distance you selected earlier.</string>
+
+    <string name="close_left_eye">Close left eye</string>
+    <string name="close_right_eye">Close right eye</string>
+    <string name="close_eye_with_hand">You can also cover your eyes with your hand</string>
+    <string name="welcome_to_app">Thank you for choosing us!</string>
+    <string name="done">Done</string>
+    <string name="start_test">Start test</string>
+    <string name="cancel">Cancel</string>
+
+    <string name="distance_is_empty">Distance must be selected</string>
+    <string name="left_eye">Left eye\t\t</string>
+    <string name="right_eye">Right eye</string>
+    <string name="date_result">Date</string>
+    <string name="delete_test_items">Delete test results</string>
+    <string name="need_turn_on_bluetooth_text">You need to turn on Bluetooth to get started</string>
+
+
+    <string name="restoration_of_vision">#1. Eyesight recovery</string>
+    <string name="exercise_for_farsightedness">#3. Exercise for farsightedness</string>
+    <string name="exercise_for_nearsightedness">#2. Exercise for nearsightedness</string>
+    <string name="relaxation_of_vision">#4. Restoration of vision</string>
+
+    <string name="exercise_up_and_down">Up and down eye motion</string>
+    <string name="exercise_diagonal">Diagonal eye motion</string>
+    <string name="exercise_left_near">Close your left eye and focus first on the near object then on the far distance</string>
+    <string name="exercise_right_near">Close your right eye and focus first on the near object then on the far distance</string>
+    <string name="exercise_snake_trail">Snake trail</string>
+    <string name="exercise_blink_fast">Close your eyes every two seconds</string>
+    <string name="exercise_blink">Close your eyes for 2 seconds, then open them for 5 seconds</string>
+    <string name="exercise_palming">Palming</string>
+    <string name="exercise_head_spinning">Move your head left to right while focusing your gaze on the same point</string>
+    <string name="exercise_focus_nose">Focus on your nose</string>
+    <string name="exercise_massage_eyebrows">Eyebrows massage</string>
+    <string name="exercise_half_closed">Widely open your eyes, then squint</string>
+    <string name="exercise_rectangle">Rectangular eye motion</string>
+    <string name="exercise_hand_observation">Focus on your hand, then move it right</string>
+    <string name="exercise_rotate_left">Leftward circular eye motion</string>
+    <string name="exercise_rotate_right">Leftward circular eye motion</string>
+    <string name="exercise_horizontal">Left to right eye motion</string>
+    <string name="exercise_massage_eyes">Eye massage. Slightly press and imitate gentle vibration on your eyelids</string>
+
+
+    <string name="near_vision_test_level_250">This text has the largest font and is the initial test</string>
+    <string name="near_vision_test_level_200">The text is getting smaller and its level is 200</string>
+    <string name="near_vision_test_level_160">The text is getting smaller and its level is 160</string>
+    <string name="near_vision_test_level_125">The text is getting smaller and its level is 125</string>
+    <string name="near_vision_test_level_100">The text is getting smaller and its level is 100</string>
+    <string name="near_vision_test_level_80">The text is getting smaller and its level is 80</string>
+    <string name="near_vision_test_level_63">The text is getting smaller and its level is 63</string>
+    <string name="near_vision_test_level_50">The text is getting smaller and its level is 50</string>
+    <string name="near_vision_test_level_40">The text is getting smaller and its level is 40</string>
+    <string name="near_vision_test_level_32">The text is getting smaller and its level is 32</string>
+    <string name="near_vision_test_level_25">The text is getting smaller and its level is 25</string>
+    <string name="near_vision_test_level_20">The text is getting smaller and its level is 20</string>
+    <string name="near_vision_test_level_16">The text is getting smaller and its level is 16</string>
+
+
+    <string name="info_duochrome_test">
+        A Duochrome Test is commonly used to estimate whether you are long or short sighted (or whether the lenses you are wearing are too weak or too strong). This test works on the principle that the wavelengths of red and green light are focused slightly differently by the eye, red being closer to the ratina with short sight (i.e. clearer) and green focused closer to the retina in long sight.
+        \nNotes:
+        \n1.The duochrome test is of no value, if your visual acuity is atleast 20/40 or better.
+        \n2. The duochrome test is usually not applicable at a young age (under 20), since the characters will appear clearly on both sides. This test is usually advised at an older age and/or in case of vision problems.
+        \nInstructions!!!
+        \n1.Perform the test in natural light. Artificial light dilates the pupil, which increases the chromatic aberration in the eye.
+        \n2.Hold your phone approximately 40 cm from your eyes (strech your arms, or place the phone/tablet on something). The center of the screen should be approximately at the level of eyes. If you wear eyeglasses or contact lenses, do not take them off.
+        \n3.Cover your left eye with your left hands.
+        \n4.Look at the letters on the red side then look at the letters in the green side.If you see the letters on the red background with greater contrast and blacker, it means you are short-sighted. Now cover your right eye with your right hand and do the same.
+    </string>
+
+
+    <string name="info_astigmatism_test">
+    Astigmatism is a vision condition that cause blurred vision due either to the irregular shape of the cornea, the clear front cover of the eye, or sometimes the curvature of the lens inside the eye. In this case the cornea is not fully a circular dome, but it is shaped more like a football.
+    \nAstigmatism makes it difficult to see fine details, either close up or from a distance. If you have uncorrected astigmatism, you can have varios symptoms such as blurry vision, eyestrain, tired eyes or headaches. Astigmatism can be quickly and easily corrected with eyeglasses, astigmatic contact lenses or laser surgery.
+    \nInstructions!!!
+        \n1.Hold your phone approximately 40 cm from your eyes. The centre of the screen should be approximately at the level of your eyes. Test one eye at a time.
+        \n2.On the next screen observe each lines or squares carefully.
+        \n3. Are all the lines black in color and are equally thick? Are all the squares in the same black in color? Or does one or more colors appear gray?
+        \nIf you see some lines gray or distorted, you may have astigmatism.
+    </string>
+
+    <string name="info_amslergrid_test">
+        The Amsler grid is a grid of horizontal and vertical lines used to monitor a person\'s central visual field. It is a diagnostic tool that aids in the detection of visual disturbances caused by changes in the retina, particularly the macula, as well as the optic nerve and the visual pathway to the brain.
+        \nInstructions
+        \n1. Place your phone approx. 40 cm from your eyes with the grid set at eye level.
+        \n2. Look at the dot in the center of the grid.
+        \n3. Cover your left eye with your left hand while continuing to look at the dot with your right eye. Do not move your gaze from the dot.
+        \n4. Did the dot or squares around the dot change shapes or disappear when you covered one eye? Do you see any blur or distortion in the grid?
+        \n5. Now repeat all steps, covering your right eye.
+        \n6. Click Start to do the test.</string>
+
+
+    <string name="info_duochrome_dialog">What is a Duochrome?</string>
+    <string name="info_astigmatism_dialog">What is a Astigmatism?</string>
+    <string name="info_amslergrid_dialog">What is an Amsler Grid?</string>
+
+    <string name="info_color_blindness_test">The Color Blindness test is a test to measure your ability to perceive differences between colours. Color blindness is most often of genetic nature, but may also occur because of eye, nerve, or brain damage, or due to exposure to certain chemicals.
+    \nInstructions
+    \n1. Place your phone approx. 40 cm from your eyes with each circle set at eye level.
+    \n2. Try to identify the hidden number within 5 seconds, however there is no time limit. Then click the image to see the answer with an analysis.
+    \n3. Swipe the screen to the side and go to the next test
+    </string>
+    <string name="info_color_blindness_dialog">What is a Color Blindness test?</string>
+    <string name="choose_language">Choose language</string>
+    <string name="uzbek">Uzbek</string>
+    <string name="karakalpak">Karakalpak</string>
+    <string name="english">English</string>
+    <string name="russian">Russian</string>
+    <string name="france">French</string>
+    <string name="indonesia">Malay</string>
+    <string name="portugal">Portuguese</string>
+    <string name="spain">Spanish</string>
+    <string name="title10">Near vision test</string>
+
+    <string name="astigmatism_picture">What the picture looks like?</string>
+    <string name="same_line">All lines are the same</string>
+    <string name="blurry_line">There are blurry lines</string>
+    <string name="astigmatism_result">Astigmatism result</string>
+    <string name="has_astigmatism_left">Your left eye has astigmatism</string>
+    <string name="has_no_astigmatism_left">Your left eye has normal vision</string>
+    <string name="has_astigmatism_right">Your right eye has astigmatism</string>
+    <string name="has_no_astigmatism_right">Your right eye has normal vision</string>
+    <string name="rotate_phone">Turn your phone</string>
+    <string name="eye_exercise_done">Well done, you\'ve completed this workout!</string>
+    <string name="txt_congratulations">Congratulations!</string>
+    <string name="share">share</string>
+    <string name="rate_us">rate_us</string>
+    <string name="information">information</string>
+    <string name="feedback">Feedback</string>
+    <string name="exit">Exit</string>
+    <string name="title11">Contrast sensitivity chart</string>
+    <string name="result">Result:\t</string>
+    <string name="choose">Choose</string>
+    <string name="okay">Okay</string>
+    <string name="conversion_table">Vision conversion table</string>
+    <string name="recommended_glasses">Recommended glasses</string>
+    <string name="alarm_soon">Soon.\..</string>
+    <string name="schedule_break">Schedule a break</string>
+    <string name="infinity">Infinity</string>
+    <string name="n_a">Not applicable</string>
+    <string name="distance_meter">Distance (m)</string>
+
+    <string name="info_near_vision_dialog">Test is held at 40 cm</string>
+
+    <!-- Information About Test -->
+    <string name="info_tumbling_E_chart_headline">What is a Tumbling E chart?</string>
+    <string name="info_tumbling_E_chart">Tumbling E: This chart is especially useful for those who cannot read letters, like young children or people who are illiterate. It displays the capital letter "E" in various orientations (up, down, left, right), and the person being tested indicates which way the "fingers" of the E are pointing.</string>
+
+    <string name="info_landolt_C_chart_headline">What is a Landolt C chart?</string>
+    <string name="info_landolt_C_chart">Landolt C: Also known as the Landolt ring or broken ring, this chart features circles with a gap on one side. The person being tested identifies the location of the gap. This test is considered highly accurate and is often used in research and for people who are not familiar with the Latin alphabet.</string>
+
+    <string name="info_snellen_chart_headline">what is a Snellen Chart</string>
+    <string name="info_snellen_chart">Snellen chart: The most common type of eye chart, the Snellen chart displays rows of letters that decrease in size from top to bottom. The person being tested reads the smallest line of letters they can see clearly. This chart is used to measure visual acuity, with results expressed as a fraction (e.g., 20/20).</string>
+
+    <string name="info_snellen_number_chart_headline">what is a Snellen "Number" Chart?</string>
+    <string name="info_snellen_number_chart">A Snellen "Number" Eye Chart is a variation of the traditional Snellen chart that uses numbers instead of letters. This makes it suitable for people who do not know the Latin alphabet or for young children who have not yet learned to read. Like the standard Snellen chart, the numbers are arranged in decreasing sizes from top to bottom. The person being tested identifies the smallest row of numbers they can clearly see, determining their visual acuity.</string>
+
+
+    <string name="info_bluetooth">"*After the phone connects two devices via bluetooth, you can start testing.\n" "*This requires both devices to have Bluetooth turned on and a few permissions granted, if the first attempt fails, please try again.\n" "*The test is carried out from a distance of 4 m"</string>
+
+    <string name="info_contrast">"Contrast sensitivity testing is a type of visual assessment used to evaluate a person\'s ability to distinguish between different levels of contrast.Contrast sensitivity is crucial for various visual tasks, such as reading, driving, and recognizing objects in low-light conditions.A contrast sensitivity test measures a person\'s ability to detect the difference between light and dark elements in a visual stimulus, typically presented in the form of patterns or letters. \n""*Test is held at 40 cm \n"</string>
+
+    <string name="color_blindness_detected">Color blindness was detected</string>
+    <string name="color_blindness_not_detected">Color blindness was not detected</string>
+
+</resources>

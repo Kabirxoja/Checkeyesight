@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">comprobar la vista</string>
+    <string name="hello_blank_fragment">Hola fragmento en blanco</string>
+
+    <!-- Strings used for fragments for navigation -->
+    <string name="next">Próxima</string>
+    <string name="home">Hogar</string>
+
+    <string name="title1">Prueba de visión Símbolo "E"</string>
+    <string name="title2">Prueba de visión Símbolo "C"</string>
+    <string name="title3">Prueba de visión del alfabeto</string>
+    <string name="title4">Prueba de visión de números</string>
+    <string name="title5">daltonismo</string>
+    <string name="title6">Prueba de visión duocromática</string>
+    <string name="title7">Prueba de visión de astigmatismo</string>
+    <string name="title8">Prueba de conexión Bluetooth "E"</string>
+    <string name="title9">Prueba de Amsler</string>
+
+    <string name="second_screen">Ejercicio para los ojos</string>
+    <string name="first_screen">Examen de ojos</string>
+    <string name="third_screen">Entonces, comienza a proteger tus ojos.</string>
+
+    <string name="tab_layout1">prueba de la vista</string>
+    <string name="tab_layout2">ejercicio ocular</string>
+
+    <string name="close_app_question">Quieres salir del programa?</string>
+    <string name="close_test_question">Quiere cancelar la prueba?</string>
+    <string name="close_eye_exercise">Quieres terminar el ejercicio de los ojos?</string>
+    <string name="answer_yes">Sí</string>
+    <string name="answer_no">No</string>
+
+    <string name="history">Historia</string>
+    <string name="note">Nota</string>
+    <string name="language">Idioma</string>
+
+    <string name="delete">Borrar</string>
+    <string name="enter_text">Texto..\.</string>
+
+    <string name="text_is_empty">El texto no debe estar vacío!</string>
+
+    <string name="select_options">Seleccione la opción dada</string>
+    <string name="name">Nombre.\..</string>
+    <string name="info">Información</string>
+    <string name="skip">Saltar</string>
+    <string name="check_your_eyesight">revisa tu vista</string>
+    <string name="train_your_eyes">Puedes entrenar tus ojos</string>
+    <string name="lets_go">Vamos</string>
+    <string name="distance">Puede mejorar la precisión de la prueba especificando la distancia exacta a los centímetros de detección (40–400)</string>
+    <string name="select_distance">Seleccione la distancia</string>
+    <string name="sit_down">siéntate</string>
+    <string name="close_curtain">Asegúrese de no reflejar ninguna luz con su dispositivo</string>
+    <string name="block_light">Bloquea el exceso de luz</string>
+    <string name="correct_height">Ajustar a la altura correcta</string>
+    <string name="height_device">Asegúrese de sostener el dispositivo a la altura de los ojos del paciente.</string>
+    <string name="stay_distance">Mantenga la distancia especificada</string>
+    <string name="check_distance">Asegúrese de sostener el dispositivo a la distancia que seleccionó anteriormente.</string>
+
+    <string name="close_left_eye">Cierra el ojo izquierdo</string>
+    <string name="close_right_eye">Cierra el ojo derecho</string>
+    <string name="close_eye_with_hand">También puedes taparte los ojos con la mano.</string>
+    <string name="welcome_to_app">Gracias por elegirnos!</string>
+    <string name="done">Hecho</string>
+    <string name="start_test">Iniciar prueba</string>
+    <string name="cancel">Cancelar</string>
+
+    <string name="distance_is_empty">Se debe seleccionar la distancia</string>
+    <string name="left_eye">Ojo izquierdo</string>
+    <string name="right_eye">Ojo derecho</string>
+    <string name="date_result">Fecha</string>
+    <string name="delete_test_items">Eliminar resultados de la prueba</string>
+    <string name="need_turn_on_bluetooth_text">Tienes que activar el Bluetooth para empezar</string>
+
+
+    <string name="restoration_of_vision">recuperación de la vista</string>
+    <string name="exercise_for_farsightedness">Ejercicio para la hipermetropía</string>
+    <string name="exercise_for_nearsightedness">Ejercicio para la miopía</string>
+    <string name="relaxation_of_vision">Restauración de la visión</string>
+
+    <string name="exercise_up_and_down">Movimiento ocular arriba y abajo</string>
+    <string name="exercise_diagonal">Movimiento ocular en diagonal</string>
+    <string name="exercise_left_near">Cierra el ojo izquierdo y concéntrate primero en el objeto cercano y luego en la lejanía.</string>
+    <string name="exercise_right_near">Cierra el ojo derecho y concéntrate primero en el objeto cercano y luego en la lejanía.</string>
+    <string name="exercise_snake_trail">rastro de serpiente</string>
+    <string name="exercise_blink_fast">Cierra los ojos cada dos segundos</string>
+    <string name="exercise_blink">Cierra los ojos durante 2 segundos, luego ábrelos durante 5 segundos.</string>
+    <string name="exercise_palming">Palmear</string>
+    <string name="exercise_head_spinning">Mueva su cabeza de izquierda a derecha mientras enfoca su mirada en el mismo punto</string>
+    <string name="exercise_focus_nose">Concéntrate en tu nariz</string>
+    <string name="exercise_massage_eyebrows">masaje de cejas</string>
+    <string name="exercise_half_closed">Abre bien los ojos, luego entrecierra los ojos</string>
+    <string name="exercise_rectangle">Movimiento ocular rectangular</string>
+    <string name="exercise_hand_observation">Enfócate en tu mano, luego muévela a la derecha</string>
+    <string name="exercise_rotate_left">Movimiento ocular circular hacia la izquierda</string>
+    <string name="exercise_rotate_right">Movimiento ocular circular hacia la izquierda</string>
+    <string name="exercise_horizontal">Movimiento de ojos de izquierda a derecha</string>
+    <string name="exercise_massage_eyes">Masaje ocular. Presiona ligeramente e imita una suave vibración en tus párpados</string>
+
+
+    <string name="near_vision_test_level_250">Este texto tiene la fuente más grande y es la prueba inicial</string>
+    <string name="near_vision_test_level_200">El texto es cada vez más pequeño y su nivel es 200</string>
+    <string name="near_vision_test_level_160">El texto es cada vez más pequeño y su nivel es 160</string>
+    <string name="near_vision_test_level_125">El texto es cada vez más pequeño y su nivel es 125</string>
+    <string name="near_vision_test_level_100">El texto es cada vez más pequeño y su nivel es 100</string>
+    <string name="near_vision_test_level_80">El texto es cada vez más pequeño y su nivel es 80</string>
+    <string name="near_vision_test_level_63">El texto es cada vez más pequeño y su nivel es 63</string>
+    <string name="near_vision_test_level_50">El texto es cada vez más pequeño y su nivel es 50</string>
+    <string name="near_vision_test_level_40">El texto es cada vez más pequeño y su nivel es 40</string>
+    <string name="near_vision_test_level_32">El texto es cada vez más pequeño y su nivel es 32</string>
+    <string name="near_vision_test_level_25">El texto es cada vez más pequeño y su nivel es 25</string>
+    <string name="near_vision_test_level_20">El texto es cada vez más pequeño y su nivel es 20</string>
+    <string name="near_vision_test_level_16">El texto es cada vez más pequeño y su nivel es 16</string>
+
+
+    <string name="info_duochrome_test">
+    Una prueba de duocromo se usa comúnmente para estimar si usted es hipermétrope o miope (o si los lentes que usa son demasiado débiles o demasiado fuertes). Esta prueba funciona según el principio de que el ojo enfoca las longitudes de onda de la luz roja y verde de forma ligeramente diferente, estando el rojo más cerca de la ratina con miopía (es decir, más claro) y el verde enfocado más cerca de la retina con miopía.
+         \nNotas:
+         \n1.La prueba de duocromo no tiene valor si su agudeza visual es al menos 20/40 o mejor.
+         \n2. La prueba del duocromo no suele ser aplicable a una edad temprana (menores de 20 años), ya que los caracteres aparecerán claramente en ambos lados. Esta prueba suele recomendarse a una edad más avanzada y/o en caso de problemas de visión.
+         \nInstrucciones!!!
+         \n1.Realice la prueba con luz natural. La luz artificial dilata la pupila, lo que aumenta la aberración cromática en el ojo.
+         \n2. Sostenga su teléfono a aproximadamente 40 cm de sus ojos (estire los brazos o coloque el teléfono o la tableta sobre algo). El centro de la pantalla debe estar aproximadamente al nivel de los ojos. Si usa anteojos o lentes de contacto, no se los quite.
+         \n3.Cúbrase el ojo izquierdo con la mano izquierda.
+         \n4.Mire las letras en el lado rojo y luego mire las letras en el lado verde. Si ve las letras en el fondo rojo con mayor contraste y más negras, significa que es miope. Ahora cubre tu ojo derecho con tu mano derecha y haz lo mismo.
+    </string>
+
+
+    <string name="info_astigmatism_test">
+   El astigmatismo es una afección de la visión que causa visión borrosa debido a la forma irregular de la córnea, la cubierta frontal transparente del ojo o, a veces, la curvatura del cristalino dentro del ojo. En este caso, la córnea no es completamente una cúpula circular, sino que tiene una forma más parecida a una pelota de fútbol.
+     \nEl astigmatismo dificulta ver los detalles finos, ya sea de cerca o de lejos. Si tienes astigmatismo no corregido, puedes tener varios síntomas como visión borrosa, vista cansada, ojos cansados o dolores de cabeza. El astigmatismo se puede corregir rápida y fácilmente con anteojos, lentes de contacto astigmáticos o cirugía láser.
+     \nInstrucciones!!!
+         \n1.Sostenga su teléfono a aproximadamente 40 cm de sus ojos. El centro de la pantalla debe estar aproximadamente al nivel de tus ojos. Pruebe un ojo a la vez.
+         \n2.En la siguiente pantalla observe cada línea o cuadrado cuidadosamente.
+         \n3. Todas las líneas son de color negro y tienen el mismo grosor? ¿Son todos los cuadrados del mismo color negro? ¿O uno o más colores aparecen grises?
+         \nSi ve algunas líneas grises o distorsionadas, es posible que tenga astigmatismo.
+    </string>
+
+    <string name="info_amslergrid_test">
+      La cuadrícula de Amsler es una cuadrícula de líneas horizontales y verticales que se utiliza para monitorear el campo visual central de una persona. Es una herramienta de diagnóstico que ayuda en la detección de alteraciones visuales causadas por cambios en la retina, particularmente en la mácula, así como en el nervio óptico y la vía visual al cerebro.
+         \nInstrucciones
+         \n1. Coloque su teléfono aprox. 40 cm de sus ojos con la rejilla a la altura de los ojos.
+         \n2. Mira el punto en el centro de la cuadrícula.
+         \n3. Cubre tu ojo izquierdo con tu mano izquierda mientras continúas mirando el punto con tu ojo derecho. No muevas tu mirada del punto.
+         \n4. ¿El punto o los cuadrados alrededor del punto cambiaron de forma o desaparecieron cuando cubrió un ojo? ¿Ves algún desenfoque o distorsión en la cuadrícula?
+         \n5. Ahora repite todos los pasos, cubriendo tu ojo derecho.
+         \n6. Haga clic en Iniciar para hacer la prueba.
+       </string>
+
+
+    <string name="info_duochrome_dialog">Qué es un Duocromo?</string>
+    <string name="info_astigmatism_dialog">Qué es un astigmatismo?</string>
+    <string name="info_amslergrid_dialog">Qué es una rejilla de Amsler?</string>
+
+    <string name="info_color_blindness_test">La prueba de daltonismo es una prueba para medir su capacidad de percibir diferencias entre colores. El daltonismo suele ser de naturaleza genética, pero también puede ocurrir debido a daños en los ojos, los nervios o el cerebro, o debido a la exposición a ciertas sustancias químicas.
+     \nInstrucciones
+     \n1. Coloque su teléfono aprox. 40 cm de tus ojos con cada círculo a la altura de los ojos.
+     \n2. Intenta identificar el número oculto en 5 segundos, sin embargo, no hay límite de tiempo. Luego haga clic en la imagen para ver la respuesta con un análisis.
+     \n3. Deslice la pantalla hacia un lado y vaya a la siguiente prueba
+    </string>
+    <string name="info_color_blindness_dialog">Qué es una prueba de daltonismo?</string>
+    <string name="choose_language">Elige lengua</string>
+    <string name="uzbek">uzbeco</string>
+    <string name="karakalpak">Karakalpak</string>
+    <string name="english">Inglés</string>
+    <string name="russian">Rusa</string>
+    <string name="title10">Prueba de visión de cerca</string>
+
+    <string name="astigmatism_picture">Cómo se ve la imagen?</string>
+    <string name="same_line">Todas las lineas son iguales</string>
+    <string name="blurry_line">Hay líneas borrosas</string>
+    <string name="astigmatism_result">resultado de astigmatismo</string>
+    <string name="has_astigmatism_left">Su ojo izquierdo tiene astigmatismo.</string>
+    <string name="has_no_astigmatism_left">Su ojo izquierdo tiene una visión normal.</string>
+    <string name="has_astigmatism_right">Tu ojo derecho tiene astigmatismo.</string>
+    <string name="has_no_astigmatism_right">Su ojo derecho tiene una visión normal.</string>
+    <string name="rotate_phone">Convierte tu teléfono</string>
+    <string name="eye_exercise_done">Bien hecho, has completado este entrenamiento!</string>
+    <string name="txt_congratulations">Felicidades!</string>
+    <string name="share">compartir</string>
+    <string name="rate_us">Nos califica</string>
+    <string name="information">información</string>
+    <string name="feedback">Comentario</string>
+    <string name="exit">Salida</string>
+    <string name="france">Francesa</string>
+    <string name="indonesia">Malaya</string>
+    <string name="portugal">Portuguesa</string>
+    <string name="spain">Española</string>
+    <string name="title11">Tabla de sensibilidad al contraste</string>
+    <string name="result">Resultado:\t</string>
+    <string name="choose">Elegir</string>
+    <string name="okay">Bueno</string>
+    <string name="conversion_table">Tabla de conversión de visión</string>
+    <string name="recommended_glasses">Gafas recomendadas</string>
+    <string name="alarm_soon">Pronto.\..</string>
+    <string name="distance_meter">Distancia (m)</string>
+    <string name="schedule_break">Programar un descanso</string>
+    <string name="infinity">Infinidad</string>
+    <string name="n_a">No aplica</string>
+
+    <string name="info_near_vision_dialog">La prueba se lleva a cabo a 40 cm.</string>
+
+    <!-- Information About Test -->
+    <string name="info_tumbling_E_chart_headline">¿Qué es la tabla Tumbling E?</string>
+    <string name="info_tumbling_E_chart">Tabla Tumbling E: Esta tabla es especialmente útil para aquellas personas que no pueden leer letras, como niños pequeños o personas analfabetas. Muestra la letra mayúscula "E" en varias orientaciones (arriba, abajo, izquierda, derecha) y la persona que se somete a la prueba indica en qué dirección apuntan los "dedos" de la E.</string>
+
+    <string name="info_snellen_chart_headline">¿Qué es la tabla de Snellen?</string>
+    <string name="info_snellen_chart">Tabla de Snellen: El tipo más común de tabla optométrica, la tabla de Snellen muestra filas de letras que disminuyen de tamaño de arriba a abajo. La persona que se somete a la prueba lee la línea de letras más pequeña que puede ver con claridad. Esta tabla se utiliza para medir la agudeza visual y los resultados se expresan como una fracción (p. ej., 20/20).</string>
+
+    <string name="info_landolt_C_chart_headline">¿Qué es la tabla Landolt C?</string>
+    <string name="info_landolt_C_chart">Landolt C: También conocida como anillo de Landolt o anillo roto, esta tabla presenta círculos con un espacio en un lado. La persona que se somete a la prueba identifica la ubicación del espacio. Esta prueba se considera muy precisa y se utiliza a menudo en investigaciones y para personas que no están familiarizadas con el alfabeto latino.</string>
+
+    <string name="info_snellen_number_chart_headline">¿Qué es una tabla de números de Snellen?</string>
+    <string name="info_snellen_number_chart">La tabla de números de Snellen es una variación de la tabla tradicional de Snellen que utiliza números en lugar de letras. Esto la hace adecuada para personas que no conocen el alfabeto latino o para niños pequeños que aún no han aprendido a leer. Al igual que la tabla de Snellen estándar, los números están ordenados en tamaños decrecientes de arriba a abajo. La persona que se somete a la prueba identifica la fila más pequeña de números que puede ver claramente, lo que determina su agudeza visual.</string>
+
+
+    <string name="info_bluetooth">
+        "*Después de que el teléfono conecte dos dispositivos a través de bluetooth, puede comenzar a probar.\n
+         *Esto requiere que ambos dispositivos tengan Bluetooth activado y algunos permisos otorgados, si el primer intento falla, inténtalo de nuevo.\n
+         *La prueba se realiza a una distancia de 4 m"
+    </string>
+
+    <string name="info_contrast">
+        "La prueba de sensibilidad al contraste es un tipo de evaluación visual que se usa para evaluar la capacidad de una persona para distinguir entre diferentes niveles de contraste.
+        La sensibilidad al contraste es crucial para varias tareas visuales, como leer, conducir y reconocer objetos en condiciones de poca luz.
+        Una prueba de contraste La prueba de sensibilidad mide la capacidad de una persona para detectar la diferencia entre elementos claros y oscuros en un estímulo visual, que normalmente se presenta en forma de patrones o letras. \n"
+        "*La prueba se lleva a cabo a 40 cm \n"</string>
+
+    <string name="color_blindness_detected">Se detectó daltonismo</string>
+    <string name="color_blindness_not_detected">No se detectó daltonismo</string>
+
+
+
+</resources>

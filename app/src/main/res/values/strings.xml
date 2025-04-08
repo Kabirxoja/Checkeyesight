@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Check Eyesight</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="next">Next</string>
+    <string name="home">Home</string>
+
+    <string name="title1">Symbol "E" vision test</string>
+    <string name="title2">Symbol "C" vision test</string>
+    <string name="title3">Alphabet vision test</string>
+    <string name="title4">Numbers vision test</string>
+    <string name="title5">Color blindness</string>
+    <string name="title6">Duochrome vision test</string>
+    <string name="title7">Astigmatism vision test</string>
+    <string name="title8">Bluetooth connect "E" test</string>
+    <string name="title9">Amsler test</string>
+
+    <string name="second_screen">SECOND SCREEN</string>
+    <string name="first_screen">FIRST SCREEN</string>
+    <string name="third_screen">THIRD SCREEN</string>
+
+    <string name="tab_layout1">Tab Layout 1</string>
+    <string name="tab_layout2">Tab Layout 2</string>
+
+
+    <string name="close_app_question">Do you want to exit the program?</string>
+    <string name="close_test_question">Do you want to abort the test? </string>
+    <string name="close_eye_exercise">Do you want to finish the eye exercise?</string>
+    <string name="answer_yes">Yes</string>
+    <string name="answer_no">No</string>
+
+    <string name="history">History</string>
+    <string name="note">Note</string>
+    <string name="language">Language</string>
+
+    <string name="delete">Delete</string>
+    <string name="enter_text">Text..\.</string>
+
+    <string name="text_is_empty">The text must not be empty!</string>
+
+    <string name="select_options">Select the given option</string>
+    <string name="name">Name.\..</string>
+    <string name="info">Info</string>
+    <string name="skip">Skip</string>
+    <string name="check_your_eyesight">Check your eyesight</string>
+    <string name="train_your_eyes">train_your_eyes</string>
+    <string name="lets_go">Let\'s go</string>
+    <string name="distance">Distance</string>
+    <string name="select_distance">Select the distance</string>
+    <string name="sit_down">Sit down</string>
+    <string name="close_curtain">Close curtain</string>
+    <string name="block_light">Block out excess light</string>
+    <string name="correct_height">Adjust to the correct height</string>
+    <string name="height_device">Height_device</string>
+    <string name="stay_distance">Keep the specified distance</string>
+    <string name="check_distance">Make sure you are holding the device at the distance you selected earlier.</string>
+    <string name="close_left_eye">Close_Left_Eye</string>
+    <string name="close_right_eye">Close_Right_Eye</string>
+    <string name="close_eye_with_hand">Close_Eye_With_Hand</string>
+    <string name="welcome_to_app">welcome to app</string>
+    <string name="done">Done</string>
+    <string name="start_test">Start test</string>
+    <string name="cancel">Cancel</string>
+
+    <string name="distance_is_empty">Distance must be selected</string>
+    <string name="left_eye">Left eye</string>
+    <string name="right_eye">Right eye</string>
+    <string name="date_result">Date</string>
+    <string name="delete_test_items">Delete test results</string>
+    <string name="need_turn_on_bluetooth_text">Text_Turn_On_Bluetooth</string>
+
+    <string name="restoration_of_vision">Restoration of vision</string>
+    <string name="exercise_for_farsightedness">Exercise for_farsightedness</string>
+    <string name="exercise_for_nearsightedness">Exercise for_nearsightedness</string>
+    <string name="relaxation_of_vision">Restoration of vision</string>
+
+    <string name="exercise_up_and_down">Up_and_Down</string>
+    <string name="exercise_diagonal">Diagonal</string>
+    <string name="exercise_left_near">Close your left eye and focus first on the near object then on the far distance</string>
+    <string name="exercise_right_near">Close your right eye and focus first on the near object then on the far distance</string>
+    <string name="exercise_snake_trail">Snake trail</string>
+    <string name="exercise_blink_fast">Blink every two seconds</string>
+    <string name="exercise_blink">Close your eyes for 2 seconds, then open them for 5 seconds</string>
+    <string name="exercise_palming">Palming</string>
+    <string name="exercise_head_spinning">Move your head left to right while focusing your gaze on the same point</string>
+    <string name="exercise_focus_nose">Focus on your nose</string>
+    <string name="exercise_massage_eyebrows">Eyebrows massage</string>
+    <string name="exercise_half_closed">Widely open your eyes, then squint</string>
+    <string name="exercise_rectangle">Rectangular eye motion</string>
+    <string name="exercise_hand_observation">Focus on your hand, then move it right</string>
+    <string name="exercise_rotate_left" />
+    <string name="exercise_rotate_right" />
+    <string name="exercise_horizontal" />
+
+    <string name="near_vision_test_level_250">This text has the largest font and is the initial test</string>
+    <string name="near_vision_test_level_200">The text is getting smaller and its level is 200</string>
+    <string name="near_vision_test_level_160">The text is getting smaller and its level is 160</string>
+    <string name="near_vision_test_level_125">The text is getting smaller and its level is 125</string>
+    <string name="near_vision_test_level_100">The text is getting smaller and its level is 100</string>
+    <string name="near_vision_test_level_80">The text is getting smaller and its level is 80</string>
+    <string name="near_vision_test_level_63">The text is getting smaller and its level is 63</string>
+    <string name="near_vision_test_level_50">The text is getting smaller and its level is 50</string>
+    <string name="near_vision_test_level_40">The text is getting smaller and its level is 40</string>
+    <string name="near_vision_test_level_32">The text is getting smaller and its level is 32</string>
+    <string name="near_vision_test_level_25">The text is getting smaller and its level is 25</string>
+    <string name="near_vision_test_level_20">The text is getting smaller and its level is 20</string>
+    <string name="near_vision_test_level_16">The text is getting smaller and its level is 16</string>
+
+
+    <string name="info_color_blindness_test">Duochrome test</string>
+    <string name="info_color_blindness_dialog">Duochrome dialog</string>
+
+    <string name="info_duochrome_dialog">What is a Duochrome?</string>
+    <string name="info_duochrome_test">Duochrome test info</string>
+
+    <string name="info_astigmatism_dialog">What is a Astigmatism?</string>
+    <string name="info_astigmatism_test">Astigmatism test info</string>
+
+    <string name="info_amslergrid_dialog">What is an Amsler Grid?</string>
+    <string name="info_amslergrid_test">Amsler test info</string>
+    <string name="choose_language">Choose language</string>
+    <string name="uzbek">Uzbek</string>
+    <string name="karakalpak">Karakalpak</string>
+    <string name="english">English</string>
+    <string name="russian">Russian</string>
+    <string name="france">French</string>
+    <string name="indonesia">Malay</string>
+    <string name="portugal">Portuguese</string>
+    <string name="spain">Spanish</string>
+    <string name="title10">Near vision test</string>
+
+    <string name="astigmatism_picture">astigmatism_picture</string>
+    <string name="same_line">same_line</string>
+    <string name="blurry_line">blurry_line</string>
+    <string name="astigmatism_result">astigmatism_result</string>
+    <string name="has_astigmatism_left">Your left eye has astigmatism</string>
+    <string name="has_no_astigmatism_left">Your left eye has normal vision</string>
+    <string name="has_astigmatism_right">Your right eye has astigmatism</string>
+    <string name="has_no_astigmatism_right">Your right eye has normal vision</string>
+    <string name="rotate_phone">turn your phone</string>
+    <string name="eye_exercise_done" />
+    <string name="exercise_massage_eyes" />
+    <string name="txt_congratulations" />
+    <string name="share">share</string>
+    <string name="rate_us">rate_us</string>
+    <string name="feedback">Feedback</string>
+    <string name="exit">exit</string>
+    <string name="information" translatable="false" />
+    <string name="title11">Contrast</string>
+    <string name="result">Result</string>
+    <string name="choose">Choose</string>
+    <string name="okay">Okay</string>
+    <string name="conversion_table">conversion_table</string>
+    <string name="recommended_glasses">Recommended glasses prescription</string>
+    <string name="alarm_soon">Soon.\..</string>
+    <string name="distance_meter">distance_meter</string>
+    <string name="schedule_break">schedule_break</string>
+    <string name="infinity">infinity</string>
+    <string name="n_a">n_a</string>
+
+    <string name="info_near_vision_dialog"/>
+
+    <!-- Information About Test -->
+    <string name="info_tumbling_E_chart_headline"/>
+    <string name="info_tumbling_E_chart"/>
+
+    <string name="info_snellen_chart_headline"/>
+    <string name="info_snellen_chart"/>
+
+    <string name="info_landolt_C_chart_headline"/>
+    <string name="info_landolt_C_chart"/>
+
+    <string name="info_snellen_number_chart_headline"/>
+    <string name="info_snellen_number_chart"/>
+
+
+    <string name="info_bluetooth" />
+    <string name="info_contrast">Contrast</string>
+
+    <string name="color_blindness_detected"></string>
+    <string name="color_blindness_not_detected"></string>
+
+
+
+</resources>

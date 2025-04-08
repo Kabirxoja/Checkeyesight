@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#689F38</color>
+    <color name="teal_700">#7C0C32</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="info_color1">#2E9E1E</color>
+
+    <color name="tab_back_unselect">#FFFFFF</color>
+
+    <color name="color_blindness_text">#1B5E20</color>
+
+    <color name="main_color">#279494</color>
+
+    <color name="colorGreen">#4BB543</color>
+    <color name="colorWhite">#FFFFFF</color>
+
+    <color name="dark_night">#279494</color>
+    <color name="tab_text_unselected">#80222222</color>
+
+    <color name="light_and_dark">#E9F5F5</color>
+    <color name="dark_and_light">#279494</color>
+
+    <color name="pale_color">#D6D6D6</color>
+    <color name="only_night">#126060</color>
+    <color name="only_light">#E9F5F5</color>
+    <color name="line_chart_color_1">#FFC107</color>
+    <color name="line_chart_color_2">#36F4A2</color>
+
+    <color name="white_to_night">#FFFFFFFF</color>
+    <color name="night_to_white">#279494</color>
+
+    <color name="light_and_night">#279494</color>
+    <color name="night_and_light">#0a3535</color>
+
+</resources>

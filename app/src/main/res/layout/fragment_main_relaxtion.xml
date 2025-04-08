@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".exercises.relaxation.MainRelaxation">
+
+    <TextView
+        android:id="@+id/txt_type_exercise"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:gravity="center"
+        android:textColor="@color/dark_night"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/my_animation_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+
+        />
+
+    <ImageView
+        android:id="@+id/next_timer_btn"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/background_circle_dark"
+        android:padding="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/progress_bar"
+        app:layout_constraintEnd_toEndOf="@+id/progress_bar"
+        app:layout_constraintStart_toStartOf="@+id/progress_bar"
+        app:layout_constraintTop_toTopOf="@+id/progress_bar" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/my_animation_view"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_repeatCount="3" />
+
+    <TextView
+        android:id="@+id/text_congratulations"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tabriklaymiz!"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/my_animation_view" />
+
+    <LinearLayout
+        android:id="@+id/to_home"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/bg_tab_unselected"
+        android:orientation="horizontal"
+        android:padding="6dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_congratulations"
+        app:layout_constraintVertical_bias="0.0">
+
+        <ImageView
+            android:layout_width="24sp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/icon_house"
+            android:backgroundTint="@color/dark_and_light"
+
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/home"
+            android:textColor="@color/dark_and_light"
+            android:textSize="18sp"
+            android:textStyle="bold"
+
+
+            />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginBottom="36dp"
+        android:background="@drawable/bg_tab_unselected"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="4dp"
+            android:gravity="center"
+            android:text="00:00"
+            android:textColor="@color/dark_and_light"
+            android:textSize="16sp"
+            android:textStyle="bold"
+
+            />
+
+        <TextView
+            android:id="@+id/txt_main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="4dp"
+            android:layout_toStartOf="@+id/main_timer_btn"
+            android:gravity="center"
+            android:text="00:00"
+            android:textColor="@color/dark_and_light"
+            android:textSize="16sp"
+            android:textStyle="bold"
+
+
+            />
+
+        <SeekBar
+            android:id="@+id/seek_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_toStartOf="@+id/txt_main"
+            android:layout_toEndOf="@+id/textView4"
+            android:layoutDirection="rtl"
+            android:padding="4dp"
+            android:progressBackgroundTint="@color/dark_and_light"
+            android:progressTint="@color/only_night"
+            android:thumb="@drawable/ic_small_seekbar_indicator"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/main_timer_btn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/btn_background_selected"
+            android:padding="9dp" />
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="5dp"
+        android:indeterminate="false"
+        android:max="5"
+        android:progress="0"
+        android:progressDrawable="@drawable/circular_progress_bar"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/my_animation_view"
+        app:layout_constraintEnd_toEndOf="@+id/my_animation_view"
+        app:layout_constraintStart_toStartOf="@+id/my_animation_view"
+        app:layout_constraintTop_toTopOf="@+id/my_animation_view" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

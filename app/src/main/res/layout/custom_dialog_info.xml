@@ -1,0 +1,84 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingHorizontal="12dp"
+    android:paddingTop="12dp"
+    android:background="@drawable/btn_background_unselected"
+
+    >
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+
+            >
+            <TextView
+                android:id="@+id/dialog_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Dialog Title"
+                android:textSize="18sp"
+                android:textStyle="bold"
+
+                />
+            <TextView
+                android:id="@+id/info_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:textSize="14sp"
+
+                />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+
+
+                <Button
+                    android:id="@+id/dialog_start_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginVertical="10dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/btn_background_selected"
+                    android:minHeight="32sp"
+                    android:paddingHorizontal="12dp"
+                    android:text="@string/start_test"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/dialog_cancel_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
+                    android:layout_marginStart="16dp"
+                    android:background="@drawable/btn_background_selected"
+                    android:minHeight="32sp"
+                    android:paddingHorizontal="12dp"
+                    android:text="@string/cancel"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+</ScrollView>
