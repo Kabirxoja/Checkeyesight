@@ -1,4 +1,4 @@
-package uz.kabir.checkeyesight.db
+package uz.kabir.checkeyesight.history;
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 
 
 @Entity(tableName = "Users")
-data class User(
+data class HistoryEntity(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
     val id : Int,

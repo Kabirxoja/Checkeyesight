@@ -5,7 +5,5 @@ object Constants {
     const val IS_REGISTERED = "isRegistered"
     const val LANGUAGE_COUNTRY = "languageCountry"
     const val LANGUAGE = "language"
-
-
-
+    const val KEY_PENDING_NAV = "pending_navigation"
 }

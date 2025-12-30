@@ -11,18 +11,29 @@
         <item
             android:id="@+id/nav_choose_lan"
             android:title="@string/language"
-            android:icon="@drawable/icon_globus"
+            android:icon="@drawable/icon_language"
             />
         <item
             android:id="@+id/nav_alarm"
             android:title="@string/schedule_break"
-            android:icon="@drawable/ic_clock"
+            android:icon="@drawable/icon_alarm"
             />
         <item
             android:id="@+id/nav_calculate"
             android:title="@string/recommended_glasses"
-            android:icon="@drawable/ic_convert_glasses"
+            android:icon="@drawable/icon_calculate"
             />
+        <item
+            android:id="@+id/nav_share"
+            android:title="@string/share"
+            android:icon="@drawable/icon_share"
+            />
+        <item
+            android:id="@+id/nav_rate"
+            android:title="@string/rate_us"
+            android:icon="@drawable/icon_rate"
+            />
+
         <item
             android:id="@+id/nav_exit"
             android:title="@string/exit"

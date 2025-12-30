@@ -338,7 +338,7 @@
     </fragment>
     <fragment
         android:id="@+id/viewResult"
-        android:name="uz.kabir.checkeyesight.db.ViewResult"
+        android:name="uz.kabir.checkeyesight.history.ViewResult"
         tools:layout="@layout/fragment_view_result" >
         <action
             android:id="@+id/action_viewResult_to_lineChartFragment"

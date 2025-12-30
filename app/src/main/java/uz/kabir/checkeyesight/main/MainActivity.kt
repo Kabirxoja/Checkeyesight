@@ -5,7 +5,6 @@ import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.content.pm.ActivityInfo
-import android.content.res.Configuration
 import android.graphics.drawable.ColorDrawable
 import android.os.Build
 import android.os.Bundle
@@ -15,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.widget.SwitchCompat
 import androidx.core.content.ContextCompat
+import androidx.core.net.toUri
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.*
@@ -24,9 +24,10 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.navigation.NavigationView
-import java.util.*
 import uz.kabir.checkeyesight.R
 import uz.kabir.checkeyesight.language.Constants
+import uz.kabir.checkeyesight.language.Constants.KEY_PENDING_NAV
+import uz.kabir.checkeyesight.language.LanguageHelper
 
 
 class MainActivity : AppCompatActivity() {
@@ -36,22 +37,15 @@ class MainActivity : AppCompatActivity() {
     private var drawerLayout: DrawerLayout? = null
     private lateinit var listener: NavController.OnDestinationChangedListener
 
-    private var language = ""
-    private var lanCountry = ""
 
     companion object {
-        // Using a constant to make the code cleaner.
         private const val MAX_BRIGHTNESS = 1F
+        private const val appPackageName = "uz.kabir.checkeyesight"
     }
 
-    // Our stored previous brightness.
     private var previousBrightness = MAX_BRIGHTNESS
-
-
     private lateinit var sharedPreferences: SharedPreferences
     private lateinit var editor: SharedPreferences.Editor
-
-
     private var navOptions: NavOptions? = null
 
 
@@ -60,30 +54,20 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
         sharedPreferences = getSharedPreferences("theme", MODE_PRIVATE)
         editor = sharedPreferences.edit()
 
 
-        // Get the saved theme preference
         val isDarkModeOn = sharedPreferences.getBoolean("isDarkModeOn", false)
 
 
-        // Set the new theme based on the current theme
         if (isDarkModeOn) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-            //change status bar
-
         } else {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-            //change status bar
-
         }
 
         supportActionBar?.setHomeAsUpIndicator(R.drawable.burger)
-
-
-        saveChooseLanguage()
 
         navController = findNavController(R.id.fragment)
         drawerLayout = findViewById(R.id.drawer_layout)
@@ -127,8 +111,7 @@ class MainActivity : AppCompatActivity() {
 
 
 
-        listener =
-            NavController.OnDestinationChangedListener { controller, destination, arguments ->
+        listener = NavController.OnDestinationChangedListener { controller, destination, arguments ->
                 when (destination.id) {
                     R.id.homeFragment -> {
                         window?.clearFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
@@ -186,17 +169,37 @@ class MainActivity : AppCompatActivity() {
                                         .navigate(R.id.calculate, null, navOptions)
                                 }
 
+                                R.id.nav_share -> {
+                                    val shareIntent = Intent(Intent.ACTION_SEND).apply {
+                                        type = "text/plain"
+                                        putExtra(
+                                            Intent.EXTRA_TEXT,
+                                            "https://play.google.com/store/apps/details?id=$appPackageName"
+                                        )
+                                    }
+                                    val chooser = Intent.createChooser(shareIntent, "Share via")
+                                    startActivity(chooser)
+                                }
+
+                                R.id.nav_rate -> {
+                                    try{
+                                        val marketIntent = Intent(Intent.ACTION_VIEW, "market://details?id=$appPackageName".toUri()).apply {
+                                            addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                                        }
+                                        startActivity(marketIntent)
+                                    }catch(e:Exception){
+                                        val webIntent = Intent(Intent.ACTION_VIEW, "https://play.google.com/store/apps/details?id=$appPackageName".toUri()).apply {
+                                            addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                                        }
+                                        startActivity(webIntent)
+                                    }
+                                }
+
                                 R.id.nav_exit -> {
                                     finish()
                                 }
-
-
-                                // Add more cases for additional menu items
                             }
-
-                            // Close the drawer
                             drawerLayout2.closeDrawer(GravityCompat.START)
-
                             true
                         }
 
@@ -514,6 +517,33 @@ class MainActivity : AppCompatActivity() {
             }
     }
 
+    private fun handlePendingNavigation() {
+
+        val pref = getSharedPreferences(
+            Constants.SHARED_PREFERENCE_NAME,
+            MODE_PRIVATE
+        )
+
+        val shouldNavigate = pref.getBoolean(KEY_PENDING_NAV, false)
+        if (!shouldNavigate) return
+
+        pref.edit().putBoolean(KEY_PENDING_NAV, false).apply()
+
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.fragment) as NavHostFragment
+
+        val navController = navHostFragment.navController
+
+        val onBoardingFinished =
+            getSharedPreferences("onBoarding", MODE_PRIVATE).getBoolean("Finished", false)
+
+        if (onBoardingFinished) {
+            navController.navigate(R.id.homeFragment)
+        } else {
+            navController.navigate(R.id.viewPagerFragment)
+        }
+    }
+
 
     override fun onStart() {
         navController.addOnDestinationChangedListener(listener)
@@ -538,41 +568,21 @@ class MainActivity : AppCompatActivity() {
         return super.onCreateOptionsMenu(menu)
     }
 
-
-    private fun saveChooseLanguage() {
-        val shp: SharedPreferences = applicationContext.getSharedPreferences(
-            Constants.SHARED_PREFERENCE_NAME, Context.MODE_PRIVATE
-        )
-        language = shp.getString(Constants.LANGUAGE, "")!!
-        lanCountry = shp.getString(Constants.LANGUAGE_COUNTRY, "")!!
-        val locale = Locale(language, lanCountry)
-
-        println("lan  $language")
-
-        Locale.setDefault(locale)
-        val config = Configuration()
-        config.locale = locale
-        resources.updateConfiguration(config, resources.displayMetrics)
-        applicationContext.resources?.updateConfiguration(
-            config,
-            applicationContext.resources?.displayMetrics
-        )
-    }
-
-
     private fun restartApp() {
         startActivity(Intent(applicationContext, this@MainActivity::class.java))
         finish()
     }
 
-    override fun onDestroy() {
-        val attributes = window.attributes
-        // Set the brightness to previousBrightness.
-        attributes.screenBrightness = previousBrightness
-        window.attributes = attributes
-        // Don't forget to called super.onDestroy()
-        super.onDestroy()
+
+    override fun attachBaseContext(newBase: Context) {
+        val wrapped = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            newBase
+        } else {
+            LanguageHelper.wrapContext(newBase)
+        }
+        super.attachBaseContext(wrapped)
     }
+
 
     private fun fullBrightness() {
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
@@ -587,17 +597,6 @@ class MainActivity : AppCompatActivity() {
         params.screenBrightness =
             WindowManager.LayoutParams.BRIGHTNESS_OVERRIDE_NONE
         window.attributes = params
-    }
-
-
-    override fun onConfigurationChanged(newConfig: Configuration) {
-        super.onConfigurationChanged(newConfig)
-        // Checks the orientation of the screen
-        if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            saveChooseLanguage()
-        } else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT) {
-            saveChooseLanguage()
-        }
     }
 
     private fun changeStatusBarColorLight(isDarkModeOn: Boolean) {
@@ -622,7 +621,20 @@ class MainActivity : AppCompatActivity() {
         window.statusBarColor = ContextCompat.getColor(applicationContext, R.color.white)
     }
 
+    override fun onDestroy() {
+        val attributes = window.attributes
+        // Set the brightness to previousBrightness.
+        attributes.screenBrightness = previousBrightness
+        window.attributes = attributes
+        // Don't forget to called super.onDestroy()
+        super.onDestroy()
+    }
 
+
+    override fun onPostCreate(savedInstanceState: Bundle?) {
+        super.onPostCreate(savedInstanceState)
+        handlePendingNavigation()
+    }
 }
 
 

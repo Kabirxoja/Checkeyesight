@@ -14,8 +14,8 @@ import android.widget.ImageButton
 import androidx.navigation.fragment.findNavController
 import uz.kabir.checkeyesight.R
 import uz.kabir.checkeyesight.databinding.FragmentRightVisionTestBinding
-import uz.kabir.checkeyesight.db.User
-import uz.kabir.checkeyesight.db.UserDatabase
+import uz.kabir.checkeyesight.history.HistoryEntity
+import uz.kabir.checkeyesight.history.UserDatabase
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -235,7 +235,7 @@ class TestVisionRight : Fragment() {
 
             val database = UserDatabase.initDatabase(requireContext())
             database.userDao()
-                .insertUser(User(0, leftEyeCount.toString(), rightEyeCount.toString(), dateTime))
+                .insertUser(HistoryEntity(0, leftEyeCount.toString(), rightEyeCount.toString(), dateTime))
 
             findNavController().navigate(R.id.action_rightVisionTest_to_resultScreen, bundle)
         }

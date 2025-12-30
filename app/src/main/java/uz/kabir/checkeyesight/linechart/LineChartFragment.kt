@@ -15,8 +15,8 @@ import com.github.mikephil.charting.data.LineDataSet
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
 import uz.kabir.checkeyesight.R
 import uz.kabir.checkeyesight.databinding.FragmentLineChartBinding
-import uz.kabir.checkeyesight.db.User
-import uz.kabir.checkeyesight.db.UserDatabase
+import uz.kabir.checkeyesight.history.HistoryEntity
+import uz.kabir.checkeyesight.history.UserDatabase
 
 
 class LineChartFragment : Fragment() {
@@ -24,7 +24,7 @@ class LineChartFragment : Fragment() {
     private var viewBinding: FragmentLineChartBinding? = null
     private val binding get() = viewBinding!!
 
-    private lateinit var list: MutableList<User>
+    private lateinit var list: MutableList<HistoryEntity>
     private lateinit var database: UserDatabase
 
     private lateinit var label: ArrayList<String>
@@ -38,7 +38,7 @@ class LineChartFragment : Fragment() {
 
         database = UserDatabase.initDatabase(requireContext())
 
-        list = database.userDao().getAllUsers() as MutableList<User>
+        list = database.userDao().getAllUsers() as MutableList<HistoryEntity>
 
         setLineChartData()
 

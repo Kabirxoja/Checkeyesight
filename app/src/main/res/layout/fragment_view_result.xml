@@ -7,7 +7,7 @@
     android:background="@color/dark_night"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    tools:context=".db.ViewResult"
+    tools:context=".history.ViewResult"
 
     >
     
@@ -88,7 +88,7 @@
         app:fastScrollHorizontalTrackDrawable="@drawable/fast_line_scroll"
         app:fastScrollVerticalThumbDrawable="@drawable/fast_thumb_scroll"
         app:fastScrollVerticalTrackDrawable="@drawable/fast_line_scroll"
-        tools:listitem="@layout/row_item_db" />
+        tools:listitem="@layout/item_history" />
 
 
 </RelativeLayout>

@@ -1,4 +1,4 @@
-package uz.kabir.checkeyesight.db
+package uz.kabir.checkeyesight.history;
 
 import android.os.Bundle
 import android.view.*
@@ -11,11 +11,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import uz.kabir.checkeyesight.R
 import uz.kabir.checkeyesight.databinding.FragmentViewResultBinding
 
-class ViewResult : Fragment(), DataBaseRVA.OnUserClickedListener {
+class ViewResult: Fragment(), HistoryAdapter.OnUserClickedListener {
 
-    private lateinit var list: MutableList<User>
+    private lateinit var list: MutableList<HistoryEntity>
     private lateinit var database: UserDatabase
-    private lateinit var rvAdapter: DataBaseRVA
+    private lateinit var rvAdapter: HistoryAdapter
 
     private var viewBinding : FragmentViewResultBinding?=null
     private val binding get() = viewBinding
@@ -27,19 +27,14 @@ class ViewResult : Fragment(), DataBaseRVA.OnUserClickedListener {
 
         viewBinding = FragmentViewResultBinding.inflate(inflater,container,false)
         database = UserDatabase.initDatabase(requireContext())
-        list = database.userDao().getAllUsers() as MutableList<User>
-        rvAdapter = DataBaseRVA(list)
+        list = database.userDao().getAllUsers() as MutableList<HistoryEntity>
+        rvAdapter = HistoryAdapter(list)
         list.reverse()
         binding?.recyclerView?.layoutManager = LinearLayoutManager(requireContext())
         val itemDecoration = DividerItemDecoration(requireContext(), LinearLayoutManager.VERTICAL)
         binding?.recyclerView?.addItemDecoration(itemDecoration)
         binding?.recyclerView?.adapter = rvAdapter
         rvAdapter.setOnUserClickedListener(this)
-
-
-
-
-
 
         return binding?.root
     }

@@ -1,4 +1,4 @@
-package uz.kabir.checkeyesight.db
+package uz.kabir.checkeyesight.history;
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
@@ -10,14 +10,14 @@ import androidx.recyclerview.widget.RecyclerView
 import uz.kabir.checkeyesight.R
 
 
-class DataBaseRVA(private val list: MutableList<User>): RecyclerView.Adapter<DataBaseRVA.ViewHolder>() {
+class HistoryAdapter(private val list: MutableList<HistoryEntity>): RecyclerView.Adapter<HistoryAdapter.ViewHolder>() {
 
     private lateinit var listener: OnUserClickedListener
 
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.row_item_db,parent,false))
+        return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_history,parent,false))
     }
 
     @SuppressLint("SetTextI18n")
@@ -55,7 +55,7 @@ class DataBaseRVA(private val list: MutableList<User>): RecyclerView.Adapter<Dat
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    fun deleteData(user: User){
+    fun deleteData(user: HistoryEntity){
         list.remove(user)
         notifyDataSetChanged()
     }

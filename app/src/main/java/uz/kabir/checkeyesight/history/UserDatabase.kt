@@ -1,13 +1,14 @@
-package uz.kabir.checkeyesight.db
+package uz.kabir.checkeyesight.history;
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = [User::class], version = 1)
-abstract class UserDatabase : RoomDatabase() {
-    abstract fun userDao(): Dao
+@Database(entities = [HistoryEntity::class], version = 1)
+abstract class UserDatabase: RoomDatabase() {
+
+    abstract fun userDao(): Dao // Dao interface implementatsiya shu yerda bo'ladi
 
     companion object {
         fun initDatabase(context: Context): UserDatabase {

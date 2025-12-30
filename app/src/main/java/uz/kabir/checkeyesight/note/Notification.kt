@@ -61,7 +61,7 @@ class Notification {
         {
             val builder = NotificationCompat.Builder(context)
                 .setDefaults(NotificationCompat.DEFAULT_ALL)
-                .setSmallIcon(R.drawable.ic_clock)
+                .setSmallIcon(R.drawable.icon_history)
                 .setContentTitle("TIME IS COMING")
                 .setContentText(message)
                 .setContentIntent(PendingIntent.getActivities(context, 0, arrayOf(intent), PendingIntent.FLAG_UPDATE_CURRENT))
