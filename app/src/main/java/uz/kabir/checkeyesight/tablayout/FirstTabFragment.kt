@@ -25,9 +25,7 @@ class FirstTabFragment : Fragment(), AdapterView.OnItemClickListener,
     private var viewBinding: FragmentFirstTabBinding? = null
     private val binding get() = viewBinding!!
 
-
     private val navController by lazy(LazyThreadSafetyMode.NONE) { view?.findNavController() }
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -45,6 +43,7 @@ class FirstTabFragment : Fragment(), AdapterView.OnItemClickListener,
             // In portrait
             binding.recyclerViewTab1.layoutManager = GridLayoutManager(requireContext(), 1)
         }
+        photoAdapter = RecyclerTab1(requireContext())
         photoAdapter = RecyclerTab1(requireContext())
         binding.recyclerViewTab1.adapter = photoAdapter
         photoAdapter.setOnClickListener(this)

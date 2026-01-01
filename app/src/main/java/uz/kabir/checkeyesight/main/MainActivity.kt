@@ -67,7 +67,7 @@ class MainActivity : AppCompatActivity() {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         }
 
-        supportActionBar?.setHomeAsUpIndicator(R.drawable.burger)
+        supportActionBar?.setHomeAsUpIndicator(R.drawable.icon_burger)
 
         navController = findNavController(R.id.fragment)
         drawerLayout = findViewById(R.id.drawer_layout)
@@ -107,7 +107,7 @@ class MainActivity : AppCompatActivity() {
         graph.setStartDestination(R.id.splashFragment)
         navHostFragment.navController.graph = graph
 
-        supportActionBar?.setHomeAsUpIndicator(R.drawable.burger)
+        supportActionBar?.setHomeAsUpIndicator(R.drawable.icon_burger)
 
 
 
@@ -125,7 +125,7 @@ class MainActivity : AppCompatActivity() {
                         supportActionBar?.show()
                         supportActionBar?.setShowHideAnimationEnabled(false)
                         supportActionBar?.elevation = 0F
-                        supportActionBar?.setHomeAsUpIndicator(R.drawable.burger)
+                        supportActionBar?.setHomeAsUpIndicator(R.drawable.icon_burger)
 
 
                         //change language drawer items

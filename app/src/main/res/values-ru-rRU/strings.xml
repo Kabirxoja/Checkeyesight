@@ -219,6 +219,18 @@
     <string name="color_blindness_detected">Цветовая слепота обнаружена</string>
     <string name="color_blindness_not_detected">Цветовая слепота не обнаружена</string>
 
+    <string name="monday">Понедельник</string>
+    <string name="tuesday">Вторник</string>
+    <string name="wednesday">Среда</string>
+    <string name="thursday">Четверг</string>
+    <string name="friday">Пятница</string>
+    <string name="saturday">Суббота</string>
+    <string name="sunday">Воскресенье</string>
+
+    <string name="set_alarm">Установить напоминание</string>
+    <string name="which_day">Какой день?</string>
+    <string name="which_time">Какое время?</string>
+    <string name="select">Выберите</string>
 
 </resources>
 

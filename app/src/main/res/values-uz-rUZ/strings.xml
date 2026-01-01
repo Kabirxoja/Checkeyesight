@@ -220,4 +220,17 @@
     <string name="color_blindness_detected">Rang ko\'rligi aniqlandi</string>
     <string name="color_blindness_not_detected">Rang ko\'rligi aniqlanmadi</string>
 
+    <string name="monday">Dushanba</string>
+    <string name="tuesday">Seshanba</string>
+    <string name="wednesday">Chorshanba</string>
+    <string name="thursday">Payshanba</string>
+    <string name="friday">Juma</string>
+    <string name="saturday">Shanba</string>
+    <string name="sunday">Yakshanba</string>
+
+    <string name="set_alarm">Eslatma o\'rnatish</string>
+    <string name="which_day">Qaysi kuni?</string>
+    <string name="which_time">Soat nechada?</string>
+    <string name="select">Tanlang</string>
+
 </resources>

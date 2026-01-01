@@ -226,4 +226,17 @@
     <string name="color_blindness_detected">Reń kózi kórmegenligi anıqlandı</string>
     <string name="color_blindness_not_detected">Reń kóriwshiligi anıqlanbadı</string>
 
+    <string name="monday">Dúyshembi</string>
+    <string name="tuesday">Seyshembi</string>
+    <string name="wednesday">Sárshembi</string>
+    <string name="thursday">Peyshembi</string>
+    <string name="friday">Juma</string>
+    <string name="saturday">Shembi</string>
+    <string name="sunday">Jekshenbi</string>
+
+    <string name="set_alarm">Esletpe ornatıw</string>
+    <string name="which_day">Qaysı kún?</string>
+    <string name="which_time">Saat neshede?</string>
+    <string name="select">Tanlań</string>
+
 </resources>

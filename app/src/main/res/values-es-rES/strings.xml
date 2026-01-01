@@ -228,6 +228,16 @@
     <string name="color_blindness_detected">Se detectó daltonismo</string>
     <string name="color_blindness_not_detected">No se detectó daltonismo</string>
 
+    <string name="monday">Lunes</string>
+    <string name="tuesday">Martes</string>
+    <string name="wednesday">Miércoles</string>
+    <string name="thursday">Jueves</string>
+    <string name="friday">Viernes</string>
+    <string name="saturday">Sábado</string>
+    <string name="sunday">Domingo</string>
 
-
+    <string name="set_alarm">Establecer un recordatorio</string>
+    <string name="which_day">¿Qué día?</string>
+    <string name="which_time">¿A qué hora?</string>
+    <string name="select">Seleccionar</string>
 </resources>

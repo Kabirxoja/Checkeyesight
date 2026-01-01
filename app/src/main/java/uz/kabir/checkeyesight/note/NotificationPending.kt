@@ -10,7 +10,7 @@ import androidx.core.app.NotificationCompat
 import uz.kabir.checkeyesight.R
 import uz.kabir.checkeyesight.main.MainActivity
 
-class Notification {
+class NotificationPending {
     val channel_id = "com.example.checkeyesight"
     val channel_name = "android_channel"
     lateinit var pendingIntent:PendingIntent

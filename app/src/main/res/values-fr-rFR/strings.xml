@@ -225,4 +225,17 @@
     <string name="color_blindness_detected">Le daltonisme a été détecté</string>
     <string name="color_blindness_not_detected">Le daltonisme n\'a pas été détecté</string>
 
+    <string name="monday">Lundi</string>
+    <string name="tuesday">Mardi</string>
+    <string name="wednesday">Mercredi</string>
+    <string name="thursday">Jeudi</string>
+    <string name="friday">Vendredi</string>
+    <string name="saturday">Samedi</string>
+    <string name="sunday">Dimanche</string>
+
+    <string name="set_alarm">Définir un rappel</string>
+    <string name="which_day">Quel jour ?</string>
+    <string name="which_time">À quelle heure ?</string>
+    <string name="select">Sélectionner</string>
+
 </resources>

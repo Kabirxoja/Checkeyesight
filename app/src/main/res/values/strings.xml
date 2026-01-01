@@ -181,7 +181,18 @@
 
     <string name="color_blindness_detected"></string>
     <string name="color_blindness_not_detected"></string>
+    <string name="monday">monday</string>
+    <string name="tuesday">tuesday</string>
+    <string name="wednesday">wednesday</string>
+    <string name="thursday">thursday</string>
+    <string name="friday">friday</string>
+    <string name="saturday">saturday</string>
+    <string name="sunday">sunday</string>
 
+    <string name="set_alarm">set a reminder</string>
+    <string name="which_day">what day?</string>
+    <string name="which_time">what time?</string>
+    <string name="select">select</string>
 
 
 </resources>

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/btn_background_selected"
     android:orientation="vertical">
 
     <TextView
@@ -9,83 +11,293 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:gravity="center_horizontal"
-        android:text="Kunlarni tanlang"
+        android:text="@string/select"
         android:textSize="18sp"
+        android:textColor="@color/white"
 
         />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:weightSum="2"
 
-        <CheckBox
-            android:id="@+id/checkbox_monday"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Du" />
+        >
 
-        <CheckBox
-            android:id="@+id/checkbox_tuesday"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Se" />
+            android:layout_weight="1"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/which_day"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_marginBottom="12dp"
 
-        <CheckBox
-            android:id="@+id/checkbox_wednesday"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Chor" />
+                />
 
-        <CheckBox
-            android:id="@+id/checkbox_thursday"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Pay" />
 
-        <CheckBox
-            android:id="@+id/checkbox_friday"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Jum" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:orientation="vertical"
 
-        <CheckBox
-            android:id="@+id/checkbox_saturday"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Shan" />
+                >
 
-        <CheckBox
-            android:id="@+id/checkbox_sunday"
-            android:layout_width="wrap_content"
+                <CheckBox
+                    android:id="@+id/checkbox_monday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:button="@drawable/checkbox_circle"
+                    android:paddingStart="8dp"
+                    android:text="@string/monday"
+                    android:textSize="14sp"
+                    android:textColor="@drawable/checkbox_text_color"
+
+
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox_tuesday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:button="@drawable/checkbox_circle"
+                    android:paddingStart="8dp"
+                    android:text="@string/tuesday"
+                    android:textSize="14sp"
+                    android:textColor="@drawable/checkbox_text_color"
+
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox_wednesday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:button="@drawable/checkbox_circle"
+                    android:paddingStart="8dp"
+                    android:text="@string/wednesday"
+                    android:textSize="14sp"
+                    android:textColor="@drawable/checkbox_text_color"
+
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox_thursday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:button="@drawable/checkbox_circle"
+                    android:paddingStart="8dp"
+                    android:text="@string/thursday"
+                    android:textSize="14sp"
+                    android:textColor="@drawable/checkbox_text_color"
+
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox_friday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:button="@drawable/checkbox_circle"
+                    android:paddingStart="8dp"
+                    android:text="@string/friday"
+                    android:textSize="14sp"
+                    android:textColor="@drawable/checkbox_text_color"
+
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox_saturday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:button="@drawable/checkbox_circle"
+                    android:paddingStart="8dp"
+                    android:text="@string/saturday"
+                    android:textSize="14sp"
+                    android:textColor="@drawable/checkbox_text_color"
+
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox_sunday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/checkbox_circle"
+                    android:paddingStart="8dp"
+                    android:text="@string/sunday"
+                    android:textSize="14sp"
+                    android:textColor="@drawable/checkbox_text_color"
+
+                    />
+
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+        <View
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:background="#CCCCCC"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Yak" />
+            android:layout_weight="1"
+            android:orientation="vertical"
+
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/which_time"
+                android:textSize="18sp"
+                android:layout_marginBottom="12dp"
+                android:textColor="@color/white"
+
+                />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+
+                android:layout_gravity="center_horizontal"
+                >
+
+                <!-- HOUR -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/btnHourPlus"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ic_plus" />
+
+                    <EditText
+                        android:id="@+id/tvHour"
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:gravity="center"
+                        android:inputType="number"
+                        android:background="@drawable/bg_language_unselect"
+                        android:textColor="@color/white"
+                        android:layout_marginVertical="8dp"
+                        android:text="08"
+                        android:textSize="18sp" />
+
+                    <ImageButton
+                        android:id="@+id/btnHourMinus"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ic_minus" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="8dp"
+                    android:text=":"
+                    android:textColor="@color/white"
+                    android:textSize="24sp" />
+
+                <!-- MINUTE -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/btnMinutePlus"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ic_plus" />
+
+                    <EditText
+                        android:id="@+id/tvMinute"
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:gravity="center"
+                        android:inputType="number"
+                        android:text="5"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:background="@drawable/bg_language_unselect"
+                        android:layout_marginVertical="8dp"
+                        />
+
+
+                    <ImageButton
+                        android:id="@+id/btnMinuteMinus"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ic_minus" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+
 
 
     </LinearLayout>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:gravity="center_horizontal"
-        android:text="Vaqtni tanlang"
-        android:textSize="18sp"
 
-        />
 
-    <TimePicker
-        android:id="@+id/time_picker"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:timePickerMode="spinner" />
+
+
 
     <Button
         android:id="@+id/btn_set_alarm"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        style="?android:attr/buttonBarButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginVertical="10dp"
         android:layout_marginTop="16dp"
-        android:text="set alarm" />
+        android:background="@drawable/btn_background_unselected"
+        android:minHeight="32sp"
+        android:paddingHorizontal="12dp"
+        android:text="@string/set_alarm"
+        android:textAllCaps="false"
+        android:textColor="@color/dark_and_light"
+        android:textSize="14sp"
+
+        />
 
 </LinearLayout>
