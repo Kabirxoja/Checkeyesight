@@ -1,31 +1,29 @@
 package uz.kabir.checkeyesight.alarm
 
-import android.annotation.SuppressLint
 import android.app.AlarmManager
 import android.app.AlertDialog
 import android.app.PendingIntent
+import android.content.ActivityNotFoundException
 import android.content.Context
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
+import android.content.Intent
 import android.icu.util.Calendar
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
-import android.widget.NumberPicker
-import android.widget.TimePicker
-import androidx.core.content.res.ResourcesCompat
+import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import uz.kabir.checkeyesight.R
+import kotlinx.coroutines.withContext
 import uz.kabir.checkeyesight.custom.CustomPicker
 import uz.kabir.checkeyesight.databinding.CustomDialogAlarmBinding
 import uz.kabir.checkeyesight.databinding.FragmentAlarmMainScreenBinding
-
+import android.provider.Settings
 
 class AlarmMainScreen : Fragment() {
     private var viewBinding: FragmentAlarmMainScreenBinding? = null
@@ -91,6 +89,13 @@ class AlarmMainScreen : Fragment() {
             minuteEt = dialogBinding.tvMinute
         )
 
+        // Android 12+ exact alarm ruxsati tekshiruvi (faqat bir marta, saqlashdan oldin)
+//        if (!checkExactAlarmPermission(requireContext())) {
+//            Toast.makeText(requireContext(), "Reminderlar uchun ruxsat bering", Toast.LENGTH_LONG).show()
+//            dialog.dismiss()
+//            return
+//        }
+
 
         alarmItem?.let {
             Log.d("AlarmMainScreen", "alarmItem: $alarmItem")
@@ -102,15 +107,6 @@ class AlarmMainScreen : Fragment() {
             dialogBinding.checkboxFriday.isChecked = it.days.contains(Calendar.FRIDAY)
             dialogBinding.checkboxSaturday.isChecked = it.days.contains(Calendar.SATURDAY)
             dialogBinding.checkboxSunday.isChecked = it.days.contains(Calendar.SUNDAY)
-
-//            Log.d("AlarmMainScreen",  "SUNDAY: ${it.days.contains(Calendar.SUNDAY)}")
-//            Log.d("AlarmMainScreen", "SATURDAY: ${it.days.contains(Calendar.SATURDAY)}")
-//            Log.d("AlarmMainScreen", "FRIDAY: ${it.days.contains(Calendar.FRIDAY)}")
-//            Log.d("AlarmMainScreen", "THURSDAY: ${it.days.contains(Calendar.THURSDAY)}")
-//            Log.d("AlarmMainScreen", "WEDNESDAY: ${it.days.contains(Calendar.WEDNESDAY)}")
-//            Log.d("AlarmMainScreen", "TUESDAY: ${it.days.contains(Calendar.TUESDAY)}")
-//            Log.d("AlarmMainScreen", "MONDAY: ${it.days.contains(Calendar.MONDAY)}")
-
         }
 
         dialogBinding.btnHourPlus.setOnClickListener { timePicker.incHour() }
@@ -128,58 +124,168 @@ class AlarmMainScreen : Fragment() {
             if (dialogBinding.checkboxSaturday.isChecked) daysOfSetAlarm.add(Calendar.SATURDAY)
             if (dialogBinding.checkboxSunday.isChecked) daysOfSetAlarm.add(Calendar.SUNDAY)
 
-//            Log.d("AlarmMainScreen", "MONDAY ADD: ${daysOfSetAlarm.add(Calendar.MONDAY)}")
-//            Log.d("AlarmMainScreen", "TUESDAY ADD: ${daysOfSetAlarm.add(Calendar.TUESDAY)}")
-//            Log.d("AlarmMainScreen", "WEDNESDAY ADD: ${daysOfSetAlarm.add(Calendar.WEDNESDAY)}")
-//            Log.d("AlarmMainScreen", "THURSDAY ADD: ${daysOfSetAlarm.add(Calendar.THURSDAY)}")
-//            Log.d("AlarmMainScreen", "FRIDAY ADD: ${daysOfSetAlarm.add(Calendar.FRIDAY)}")
-//            Log.d("AlarmMainScreen", "SATURDAY ADD: ${daysOfSetAlarm.add(Calendar.SATURDAY)}")
-//            Log.d("AlarmMainScreen", "SUNDAY ADD: ${daysOfSetAlarm.add(Calendar.SUNDAY)}")
-
             val (hour, minute) = timePicker.getTime()
 
-            Log.d("timePicker", "hour: ${hour}")
-            Log.d("timePicker", "hour: ${minute}")
+            // Android 12+ exact alarm ruxsati tekshiruvi (faqat bir marta, saqlashdan oldin)
+//            if (!checkExactAlarmPermission(requireContext())) {
+//                Toast.makeText(
+//                    requireContext(),
+//                    "Reminderlar uchun ruxsat bering",
+//                    Toast.LENGTH_LONG
+//                ).show()
+//                dialog.dismiss()
+//                return@setOnClickListener
+//            }
 
+            lifecycleScope.launch {
+                if (alarmItem == null) {
+                    // YANGI ALARM yaratish
+                    val newAlarm = AlarmEntity(
+                        hour = hour,
+                        minute = minute,
+                        days = daysOfSetAlarm.toList()  // immutable List ga o'tkazamiz
+                    )
+                    val insertedId =
+                        dao.insertAlarm(newAlarm).toInt()  // Room insert odatda Long qaytaradi
 
-            if (alarmItem == null) {
-                val newAlarm = AlarmEntity(
-                    hour = hour,
-                    minute = minute,
-                    days = daysOfSetAlarm
-                )
-                lifecycleScope.launch {
-                    dao.insertAlarm(newAlarm)
-                }
-                Log.d("alarmItem", "alarmItem == null: hour ${hour}")
-                Log.d("alarmItem", "alarmItem == null: minute ${minute}")
-            } else {
-                // Edit — copy() orqali yangi obyekt yaratamiz
-                val updatedAlarm = alarmItem.copy(
-                    hour = hour,
-                    minute = minute,
-                    days = daysOfSetAlarm.toList()  // yangi roʻyxat
-                )
-                lifecycleScope.launch {
+                    // ID ni yangilab, schedule qilamiz
+                    val alarmWithId = newAlarm.copy(id = insertedId)
+                    scheduleAlarm(requireContext(), alarmWithId)
+
+                    withContext(Dispatchers.Main) {
+                        alarmList.add(alarmWithId)
+                        alarmAdapter.notifyItemInserted(alarmList.lastIndex)
+                    }
+
+                } else {
+                    // EDIT qilish — eski alarmlarni cancel qilamiz, yangisini schedule qilamiz
+                    val updatedAlarm = alarmItem.copy(
+                        hour = hour,
+                        minute = minute,
+                        days = daysOfSetAlarm.toList()
+                    )
+
+                    // 1. Eski alarmlarni bekor qilish
+                    cancelAlarm(requireContext(), alarmItem)
+
+                    // 2. Yangi parametrlar bilan qayta schedule qilish
+                    scheduleAlarm(requireContext(), updatedAlarm)
+
+                    // 3. Roomda yangilash
                     dao.updateAlarm(updatedAlarm)
+
+                    withContext(Dispatchers.Main) {
+                        val index = alarmList.indexOfFirst { it.id == alarmItem.id }
+                        if (index != -1) {
+                            alarmList[index] = updatedAlarm
+                            alarmAdapter.notifyItemChanged(index)
+                        }
+                    }
+
                 }
-                Log.d("updatedAlarm", "alarmItem != null: updatedAlarm ${updatedAlarm}")
             }
-            alarmAdapter.notifyDataSetChanged()
-            dialog.dismiss()
         }
         dialog.show()
     }
 
 
-
-
-    fun scheduleAlarm(context: Context, alarmEntity: AlarmEntity){
+    fun scheduleAlarm(context: Context, alarmEntity: AlarmEntity) {
         val alarmManager = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
 
+        alarmEntity.days.forEach { day ->  // day: 1=Sunday, 2=Monday, ..., 7=Saturday
+            val calendar = Calendar.getInstance().apply {
+                set(Calendar.HOUR_OF_DAY, alarmEntity.hour)
+                set(Calendar.MINUTE, alarmEntity.minute)
+                set(Calendar.SECOND, 0)
+                set(Calendar.MILLISECOND, 0)
+                set(Calendar.DAY_OF_WEEK, day)
+
+                // Agar o'tgan vaqt bo'lsa (shu kun o'tib ketgan bo'lsa), keyingi haftaga o'tkaz
+                if (before(Calendar.getInstance())) {
+                    add(Calendar.WEEK_OF_YEAR, 1)
+                }
+            }
+
+            val requestCode = alarmEntity.id * 10 + day
+
+            val intent = Intent(context, AlarmReceiver::class.java).apply {
+                putExtra("ALARM_ID", alarmEntity.id)
+                // Agar reminder nomi bo'lsa, uni ham qo'shishingiz mumkin
+                // putExtra("TITLE", alarmEntity.title)
+            }
+
+            val pendingIntent = PendingIntent.getBroadcast(
+                context,
+                requestCode,
+                intent,
+                PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
+            )
+
+            alarmManager.setExactAndAllowWhileIdle(
+                AlarmManager.RTC_WAKEUP,
+                calendar.timeInMillis,
+                pendingIntent
+            )
+        }
     }
 
+    /**
+     * Berilgan AlarmEntity uchun barcha kunlardagi scheduled alarmlarni bekor qiladi
+     */
+    private fun cancelAlarm(context: Context, alarmEntity: AlarmEntity) {
+        val alarmManager = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
 
+        alarmEntity.days.forEach { day ->  // day: Calendar.MONDAY (2), TUESDAY (3), ..., SUNDAY (1)
+            // scheduleAlarm da ishlatganimiz bilan bir xil requestCode
+            val requestCode = alarmEntity.id * 10 + day
+
+            val intent = Intent(context, AlarmReceiver::class.java).apply {
+                // Extra qo'shish shart emas, lekin moslik uchun qo'shish mumkin
+                putExtra("ALARM_ID", alarmEntity.id)
+            }
+
+            val pendingIntent = PendingIntent.getBroadcast(
+                context,
+                requestCode,
+                intent,
+                PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
+                // FLAG_NO_CREATE qo'shmasligimiz kerak, chunki cancel uchun PendingIntent mavjud bo'lishi shart
+            )
+
+            // Alarmni bekor qilish
+            alarmManager.cancel(pendingIntent)
+            // Qo'shimcha xavfsizlik uchun PendingIntent ni ham cancel qilish mumkin
+            pendingIntent.cancel()
+        }
+    }
+    private fun checkExactAlarmPermission(context: Context): Boolean {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {  // Android 12+
+            val alarmManager = context.getSystemService(AlarmManager::class.java)
+            if (!alarmManager.canScheduleExactAlarms()) {
+                // TO'G'RI ACTION: Settings dan olinadi
+                val intent = Intent(Settings.ACTION_REQUEST_SCHEDULE_EXACT_ALARM).apply {
+                    // Ba'zi hollarda package ni qo'shish yaxshi (tavsiya etiladi)
+                    data = android.net.Uri.fromParts("package", context.packageName, null)
+                    flags = Intent.FLAG_ACTIVITY_NEW_TASK
+                }
+
+                try {
+                    context.startActivity(intent)
+                } catch (e: Exception) {
+                    // Agar bu sahifa ochilmasa (ba'zi Xiaomi, Huawei va boshqa ROMlarda bo'ladi)
+                    // Zapas: Umumiy app settings ga yo'naltirish
+                    val fallbackIntent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS).apply {
+                        data = android.net.Uri.fromParts("package", context.packageName, null)
+                        flags = Intent.FLAG_ACTIVITY_NEW_TASK
+                    }
+                    context.startActivity(fallbackIntent)
+                    Toast.makeText(context, "Ilova sozlamalarida 'Alarms and reminders' ruxsatini yoqing", Toast.LENGTH_LONG).show()
+                }
+                return false
+            }
+        }
+        return true
+    }
 
     override fun onDestroyView() {
         super.onDestroyView()

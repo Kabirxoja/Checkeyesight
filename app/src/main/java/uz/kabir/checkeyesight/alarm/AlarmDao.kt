@@ -3,6 +3,7 @@ package uz.kabir.checkeyesight.alarm
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
+import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
 import kotlinx.coroutines.flow.Flow
@@ -10,8 +11,8 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface AlarmDao{
 
-    @Insert
-    suspend fun insertAlarm(alarmEntity: AlarmEntity)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertAlarm(alarmEntity: AlarmEntity):Long
 
     @Update
     suspend fun updateAlarm(alarmEntity: AlarmEntity)
