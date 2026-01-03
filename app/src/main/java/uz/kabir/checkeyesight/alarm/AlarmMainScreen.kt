@@ -1,11 +1,15 @@
 package uz.kabir.checkeyesight.alarm
 
+import android.Manifest
 import android.app.AlarmManager
 import android.app.AlertDialog
+import android.app.NotificationChannel
+import android.app.NotificationManager
 import android.app.PendingIntent
-import android.content.ActivityNotFoundException
 import android.content.Context
+import android.content.Context.NOTIFICATION_SERVICE
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.icu.util.Calendar
 import android.os.Build
 import android.os.Bundle
@@ -15,6 +19,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.coroutines.Dispatchers
@@ -23,7 +28,7 @@ import kotlinx.coroutines.withContext
 import uz.kabir.checkeyesight.custom.CustomPicker
 import uz.kabir.checkeyesight.databinding.CustomDialogAlarmBinding
 import uz.kabir.checkeyesight.databinding.FragmentAlarmMainScreenBinding
-import android.provider.Settings
+import androidx.core.content.ContextCompat
 
 class AlarmMainScreen : Fragment() {
     private var viewBinding: FragmentAlarmMainScreenBinding? = null
@@ -43,6 +48,9 @@ class AlarmMainScreen : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        notificationPermission()
+        alarmNotificationChannel()
 
         database = AlarmDatabase.alarmDatabase(requireContext())
         dao = database.daoAlarm()
@@ -83,18 +91,10 @@ class AlarmMainScreen : Fragment() {
         val dialog = AlertDialog.Builder(requireContext()).setView(dialogBinding.root).create()
         dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
 
-        // 🔥 CustomTimePicker yaratamiz
         val timePicker = CustomPicker(
             hourEt = dialogBinding.tvHour,
             minuteEt = dialogBinding.tvMinute
         )
-
-        // Android 12+ exact alarm ruxsati tekshiruvi (faqat bir marta, saqlashdan oldin)
-//        if (!checkExactAlarmPermission(requireContext())) {
-//            Toast.makeText(requireContext(), "Reminderlar uchun ruxsat bering", Toast.LENGTH_LONG).show()
-//            dialog.dismiss()
-//            return
-//        }
 
 
         alarmItem?.let {
@@ -126,16 +126,6 @@ class AlarmMainScreen : Fragment() {
 
             val (hour, minute) = timePicker.getTime()
 
-            // Android 12+ exact alarm ruxsati tekshiruvi (faqat bir marta, saqlashdan oldin)
-//            if (!checkExactAlarmPermission(requireContext())) {
-//                Toast.makeText(
-//                    requireContext(),
-//                    "Reminderlar uchun ruxsat bering",
-//                    Toast.LENGTH_LONG
-//                ).show()
-//                dialog.dismiss()
-//                return@setOnClickListener
-//            }
 
             lifecycleScope.launch {
                 if (alarmItem == null) {
@@ -221,7 +211,7 @@ class AlarmMainScreen : Fragment() {
                 PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
             )
 
-            alarmManager.setExactAndAllowWhileIdle(
+            alarmManager.setAndAllowWhileIdle(
                 AlarmManager.RTC_WAKEUP,
                 calendar.timeInMillis,
                 pendingIntent
@@ -258,36 +248,55 @@ class AlarmMainScreen : Fragment() {
             pendingIntent.cancel()
         }
     }
-    private fun checkExactAlarmPermission(context: Context): Boolean {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {  // Android 12+
-            val alarmManager = context.getSystemService(AlarmManager::class.java)
-            if (!alarmManager.canScheduleExactAlarms()) {
-                // TO'G'RI ACTION: Settings dan olinadi
-                val intent = Intent(Settings.ACTION_REQUEST_SCHEDULE_EXACT_ALARM).apply {
-                    // Ba'zi hollarda package ni qo'shish yaxshi (tavsiya etiladi)
-                    data = android.net.Uri.fromParts("package", context.packageName, null)
-                    flags = Intent.FLAG_ACTIVITY_NEW_TASK
-                }
 
-                try {
-                    context.startActivity(intent)
-                } catch (e: Exception) {
-                    // Agar bu sahifa ochilmasa (ba'zi Xiaomi, Huawei va boshqa ROMlarda bo'ladi)
-                    // Zapas: Umumiy app settings ga yo'naltirish
-                    val fallbackIntent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS).apply {
-                        data = android.net.Uri.fromParts("package", context.packageName, null)
-                        flags = Intent.FLAG_ACTIVITY_NEW_TASK
-                    }
-                    context.startActivity(fallbackIntent)
-                    Toast.makeText(context, "Ilova sozlamalarida 'Alarms and reminders' ruxsatini yoqing", Toast.LENGTH_LONG).show()
-                }
-                return false
+
+    private fun alarmNotificationChannel() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val channel = NotificationChannel(
+                "alarm_channel",
+                "Alarm Reminder",
+                NotificationManager.IMPORTANCE_HIGH
+            ).apply {
+                description = "Alarm Notification"
             }
+            val notificationManager = requireContext().getSystemService(NOTIFICATION_SERVICE) as NotificationManager
+            notificationManager.createNotificationChannel(channel)
         }
-        return true
     }
 
+
+    fun notificationPermission() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            if (ContextCompat.checkSelfPermission(
+                    requireContext(),
+                    Manifest.permission.POST_NOTIFICATIONS
+                ) != PackageManager.PERMISSION_GRANTED
+            ) {
+//                requestPermissions(arrayOf(android.Manifest.permission.POST_NOTIFICATIONS), 100) -> DEPRECATED
+                notificationPermissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS) /* Activity Result Launcher */
+            }
+        }
+    }
+
+    private val notificationPermissionLauncher =
+        registerForActivityResult(ActivityResultContracts.RequestPermission()) { granted ->
+            if (granted) {
+                Toast.makeText(
+                    requireContext(),
+                    "Notification permission granted",
+                    Toast.LENGTH_SHORT
+                ).show()
+            } else {
+                Toast.makeText(
+                    requireContext(),
+                    "Notification permission denied",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        }
+
     override fun onDestroyView() {
+        super.onDestroyView()
         super.onDestroyView()
         viewBinding = null
     }

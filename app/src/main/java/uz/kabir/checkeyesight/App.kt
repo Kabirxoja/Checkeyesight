@@ -7,6 +7,8 @@ class App : Application() {
 
     override fun onCreate() {
         super.onCreate()
+
         LanguageHelper.applySavedLocale(this)
+
     }
 }
