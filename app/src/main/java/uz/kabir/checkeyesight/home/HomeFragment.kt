@@ -2,6 +2,7 @@ package uz.kabir.checkeyesight.home
 
 import android.app.Activity.RESULT_OK
 import android.os.Bundle
+import android.util.Log
 import android.view.*
 import android.widget.Button
 import android.widget.TextView
@@ -12,6 +13,7 @@ import androidx.activity.result.ActivityResult
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.IntentSenderRequest
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.navigation.fragment.findNavController
 import com.google.android.material.tabs.TabLayoutMediator
 import com.google.android.play.core.appupdate.AppUpdateInfo
 import com.google.android.play.core.appupdate.AppUpdateManager
@@ -68,8 +70,18 @@ class HomeFragment : Fragment() {
             }
         }
         requireActivity().onBackPressedDispatcher.addCallback(this, onBackPressedCallback)
-
     }
+
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        viewBinding = FragmentHomeBinding.inflate(inflater, container, false)
+        val view = binding.root
+        return view
+    }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -88,8 +100,19 @@ class HomeFragment : Fragment() {
         }
 
         checkForUpdate()
-    }
 
+        val adapter = activity?.supportFragmentManager?.let { MyPagerAdapter(it, lifecycle) }
+        binding.viewpager.adapter = adapter
+
+        TabLayoutMediator(binding.tabs, binding.viewpager) { tab, position ->
+            when (position) {
+                0 -> tab.text = getString(R.string.tab_layout1)
+                1 -> tab.text = getString(R.string.tab_layout2)
+            }
+            marginTabLayout()
+        }.attach()
+
+    }
     private fun checkForUpdate() {
         val appUpdateInfoTask = appUpdateManager.appUpdateInfo
         appUpdateInfoTask.addOnSuccessListener { appUpdateInfo ->
@@ -101,7 +124,6 @@ class HomeFragment : Fragment() {
             }
         }
     }
-
     /* Start an update */
     private fun requestUpdate(appUpdateInfo: AppUpdateInfo) {
         appUpdateManager.startUpdateFlowForResult(
@@ -115,45 +137,50 @@ class HomeFragment : Fragment() {
         )
     }
 
-
     // Checks that the update is not stalled during 'onResume()'
     override fun onResume() {
         super.onResume()
         // Resume update if it was interrupted
         appUpdateManager.appUpdateInfo.addOnSuccessListener { appUpdateInfo ->
-                if (appUpdateInfo.updateAvailability() == UpdateAvailability.DEVELOPER_TRIGGERED_UPDATE_IN_PROGRESS) {
-                    // If an in-app update is already running, resume the update.
-                    appUpdateManager.startUpdateFlowForResult(appUpdateInfo, activityResultLauncher, AppUpdateOptions.newBuilder(AppUpdateType.IMMEDIATE).build())
+            if (appUpdateInfo.updateAvailability() == UpdateAvailability.DEVELOPER_TRIGGERED_UPDATE_IN_PROGRESS) {
+                // If an in-app update is already running, resume the update.
+                appUpdateManager.startUpdateFlowForResult(
+                    appUpdateInfo,
+                    activityResultLauncher,
+                    AppUpdateOptions.newBuilder(AppUpdateType.IMMEDIATE).build()
+                )
+            }
+        }
+    }
+
+    fun getNotificationIndex(){
+        val navController = findNavController()
+        val entry = navController.getBackStackEntry(R.id.homeFragment)
+        val handle = entry.savedStateHandle
+
+        // once to read
+        val tabIndex = handle.get<Int>("OPEN_TAB_INDEX")
+        if (tabIndex != null) {
+            Log.d("NOTIFICATION_TEST", "home (direct get) = $tabIndex")
+
+            binding.viewpager.post {
+                binding.viewpager.setCurrentItem(tabIndex, false)
+            }
+
+            // after using remove
+            handle.remove<Int>("OPEN_TAB_INDEX")
+        }
+
+        // if data comes again
+        handle.getLiveData<Int>("OPEN_TAB_INDEX")
+            .observe(viewLifecycleOwner) { index ->
+                Log.d("NOTIFICATION_TEST", "home (observe) = $index")
+                binding.viewpager.post {
+                    binding.viewpager.setCurrentItem(index, false)
                 }
+                handle.remove<Int>("OPEN_TAB_INDEX")
             }
     }
-
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        viewBinding = FragmentHomeBinding.inflate(inflater, container, false)
-        val view = binding.root
-
-        // Initialize AppUpdateManager here (after binding is initialized)
-        appUpdateManager = AppUpdateManagerFactory.create(requireContext())
-        checkForUpdate()
-
-        val adapter = activity?.supportFragmentManager?.let { MyPagerAdapter(it, lifecycle) }
-        binding.viewpager.adapter = adapter
-
-        TabLayoutMediator(binding.tabs, binding.viewpager) { tab, position ->
-            when (position) {
-                0 -> tab.text = getString(R.string.tab_layout1)
-                1 -> tab.text = getString(R.string.tab_layout2)
-            }
-            marginTabLayout()
-        }.attach()
-
-        return view
-    }
-
 
     private fun marginTabLayout() {
         for (i in 0 until binding.tabs.tabCount) {

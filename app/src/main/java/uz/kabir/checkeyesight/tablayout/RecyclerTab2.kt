@@ -22,7 +22,6 @@ class RecyclerTab2(var context: Context) : RecyclerView.Adapter<RecyclerTab2.Vie
     }
 
     // Provide a direct reference to each of the views with data items
-
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var image: ImageView
         var title: TextView

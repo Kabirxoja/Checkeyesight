@@ -29,6 +29,7 @@ import uz.kabir.checkeyesight.custom.CustomPicker
 import uz.kabir.checkeyesight.databinding.CustomDialogAlarmBinding
 import uz.kabir.checkeyesight.databinding.FragmentAlarmMainScreenBinding
 import androidx.core.content.ContextCompat
+import uz.kabir.checkeyesight.main.MainActivity
 
 class AlarmMainScreen : Fragment() {
     private var viewBinding: FragmentAlarmMainScreenBinding? = null
@@ -198,23 +199,24 @@ class AlarmMainScreen : Fragment() {
 
             val requestCode = alarmEntity.id * 10 + day
 
-            val intent = Intent(context, AlarmReceiver::class.java).apply {
+            val alarmIntent = Intent(context, AlarmReceiver::class.java).apply {
                 putExtra("ALARM_ID", alarmEntity.id)
+                flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                 // Agar reminder nomi bo'lsa, uni ham qo'shishingiz mumkin
                 // putExtra("TITLE", alarmEntity.title)
             }
 
-            val pendingIntent = PendingIntent.getBroadcast(
+            val alarmPendingIntent = PendingIntent.getBroadcast(
                 context,
                 requestCode,
-                intent,
+                alarmIntent,
                 PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
             )
 
             alarmManager.setAndAllowWhileIdle(
                 AlarmManager.RTC_WAKEUP,
                 calendar.timeInMillis,
-                pendingIntent
+                alarmPendingIntent
             )
         }
     }

@@ -31,96 +31,36 @@ class FirstTabFragment : Fragment(), AdapterView.OnItemClickListener,
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-
         viewBinding = FragmentFirstTabBinding.inflate(inflater, container, false)
         val view = binding.root
+        return view
+    }
 
-        val orientation = resources.configuration.orientation
-        if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            // In landscape
-            binding.recyclerViewTab1.layoutManager = GridLayoutManager(requireContext(), 2)
-        } else {
-            // In portrait
-            binding.recyclerViewTab1.layoutManager = GridLayoutManager(requireContext(), 1)
-        }
-        photoAdapter = RecyclerTab1(requireContext())
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val orientation = resources.configuration
+        orientationScreenState(orientation)
+
         photoAdapter = RecyclerTab1(requireContext())
         binding.recyclerViewTab1.adapter = photoAdapter
         photoAdapter.setOnClickListener(this)
 
-        //add data
-        dataList.add(
-            DataModelTab(
-                getString(R.string.title1),
-                R.drawable.item_e_chart
-            )
-        )
-        dataList.add(
-            DataModelTab(
-                getString(R.string.title2),
-                R.drawable.item_c_chart
-            )
-        )
-        dataList.add(
-            DataModelTab(
-                getString(R.string.title3),
-                R.drawable.item_snellen_test
-            )
-        )
-        dataList.add(
-            DataModelTab(
-                getString(R.string.title4),
-                R.drawable.item_number_test
-            )
-        )
-
-        dataList.add(
-            DataModelTab(
-                getString(R.string.title8),
-                R.drawable.item_bluetooth_test
-            )
-        )
-
-        dataList.add(
-            DataModelTab(
-                getString(R.string.title5),
-                R.drawable.item_colorblindness_test
-            )
-        )
-        dataList.add(
-            DataModelTab(
-                getString(R.string.title6),
-                R.drawable.item_duochrome_test
-            )
-        )
-        dataList.add(
-            DataModelTab(
-                getString(R.string.title7),
-                R.drawable.item_astigmatism
-            )
-        )
-        dataList.add(
-            DataModelTab(
-                getString(R.string.title9),
-                R.drawable.item_amslergrid_test
-            )
-        )
-        dataList.add(
-            DataModelTab(
-                getString(R.string.title10),
-                R.drawable.item_near_vision
-            )
-        )
-        dataList.add(
-            DataModelTab(
-                getString(R.string.title11),
-                R.drawable.item_contrast
-            )
+        val dataList = mutableListOf(
+            DataModelTab(getString(R.string.title1), R.drawable.item_e_chart),
+            DataModelTab(getString(R.string.title2), R.drawable.item_c_chart),
+            DataModelTab(getString(R.string.title3), R.drawable.item_snellen_test),
+            DataModelTab(getString(R.string.title4), R.drawable.item_number_test),
+            DataModelTab(getString(R.string.title8), R.drawable.item_bluetooth_test),
+            DataModelTab(getString(R.string.title5), R.drawable.item_colorblindness_test),
+            DataModelTab(getString(R.string.title6), R.drawable.item_duochrome_test),
+            DataModelTab(getString(R.string.title7), R.drawable.item_astigmatism),
+            DataModelTab(getString(R.string.title9), R.drawable.item_amslergrid_test),
+            DataModelTab(getString(R.string.title10), R.drawable.item_near_vision),
+            DataModelTab(getString(R.string.title11), R.drawable.item_contrast),
         )
 
         photoAdapter.setDataList(dataList)
-
-        return view
     }
 
     override fun onClicked(position: Int) {
@@ -266,7 +206,10 @@ class FirstTabFragment : Fragment(), AdapterView.OnItemClickListener,
 
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
-        // Checks the orientation of the screen
+        orientationScreenState(newConfig)
+    }
+
+    private fun orientationScreenState(newConfig: Configuration){
         if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
             binding.recyclerViewTab1.layoutManager = GridLayoutManager(requireContext(), 2)
 
