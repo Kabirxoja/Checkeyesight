@@ -6,12 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
 import uz.kabir.checkeyesight.R
 import uz.kabir.checkeyesight.databinding.FragmentResultColorBlindnessBinding
 
-class ResultColorBlindness : Fragment() {
-
+class ResultColorBlindnessFragment : Fragment() {
 
     private var viewBinding: FragmentResultColorBlindnessBinding? = null
     private val binding get() = viewBinding!!
@@ -21,9 +19,12 @@ class ResultColorBlindness : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         viewBinding = FragmentResultColorBlindnessBinding.inflate(inflater, container, false)
-        val view = binding.root
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         val result = arguments?.getInt("resultColorBlindness")!!
 
@@ -39,7 +40,6 @@ class ResultColorBlindness : Fragment() {
             view.findNavController().navigate(R.id.homeFragment)
         }
 
-        return view
     }
 
     override fun onDestroyView() {

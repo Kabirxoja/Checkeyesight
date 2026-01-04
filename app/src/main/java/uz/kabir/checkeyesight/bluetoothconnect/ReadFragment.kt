@@ -2,7 +2,6 @@ package uz.kabir.checkeyesight.bluetoothconnect
 
 import android.annotation.SuppressLint
 import android.bluetooth.BluetoothAdapter
-import android.bluetooth.BluetoothDevice
 import android.bluetooth.BluetoothServerSocket
 import android.bluetooth.BluetoothSocket
 import android.content.Intent
@@ -42,10 +41,6 @@ class ReadFragment : Fragment() {
     //Reference variable for BluetoothAdapter object
     lateinit var myBluetoothAdapter: BluetoothAdapter
 
-    //Array for paired BT Devices
-    private var pairedDevicesArray = arrayOfNulls<BluetoothDevice>(50)
-
-
     //Constants for the Handler
     private val STATE_LISTENING = 1
     private val STATE_CONNECTING = 2
@@ -81,13 +76,17 @@ class ReadFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-
         viewBinding = FragmentReadBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         binding.resultText.visibility = View.GONE
 
 
-        mQuestionsList = ListBlueTooth.getQuestions1()
+        mQuestionsList = ListBluetooth.getQuestions1()
 
         setQuestion(mCurrentPosition)
 
@@ -114,34 +113,32 @@ class ReadFragment : Fragment() {
         }
 
         implementListeners()
-        return binding.root
     }
 
 
-    @SuppressLint("MissingPermission")
     private fun implementListeners() {
         //Listen Button onClickListener
         binding.btnListen.setOnClickListener {
             val serverClass = ServerClass()
             serverClass.start()
         }
-
     }
 
     var handler = Handler(Handler.Callback { msg ->
+        val b = viewBinding?:return@Callback true
         when (msg.what) {
-            STATE_LISTENING -> binding.tvStatus.text = "Listening"
-            STATE_CONNECTING -> binding.tvStatus.text = "Connecting"
+            STATE_LISTENING -> b.tvStatus.text = "Listening"
+            STATE_CONNECTING -> b.tvStatus.text = "Connecting"
             STATE_CONNECTED -> {
-                binding.tvStatus.text = "Connected"
+                b.tvStatus.text = "Connected"
                 //ulanishi bilan ishlab ketadi
                 sendReceive.write("started".toByteArray())
                 visibleIsGone()
                 countList++
                 setQuestion(mCurrentPosition)
-                binding.resultText.visibility = View.VISIBLE
+                b.resultText.visibility = View.VISIBLE
             }
-            STATE_CONNECTION_FAILED -> binding.tvStatus.text = "Connection Failed"
+            STATE_CONNECTION_FAILED -> b.tvStatus.text = "Connection Failed"
             STATE_MESSAGE_RECEIVED -> {
                 /*
                 malumotlarni oqib olish
@@ -245,40 +242,6 @@ class ReadFragment : Fragment() {
         }
     }
 
-    @SuppressLint("MissingPermission")
-    inner class ClientClass(device: BluetoothDevice) : Thread() {
-        private lateinit var bluetoothSocket: BluetoothSocket
-        private var bluetoothDevice: BluetoothDevice = device
-
-        init {
-            try {
-                bluetoothSocket = bluetoothDevice.createRfcommSocketToServiceRecord(MY_UUID)
-            } catch (esasa: IOException) {
-                esasa.printStackTrace()
-            }
-        }
-
-        @SuppressLint("MissingPermission")
-        override fun run() {
-            try {
-                bluetoothSocket.connect()
-                val message = Message.obtain()
-                message.what = STATE_CONNECTED
-                handler.sendMessage(message)
-
-                //Do something for Send/Receive
-                sendReceive = SendReceive(bluetoothSocket)
-                sendReceive.start()
-            } catch (e: IOException) {
-                e.printStackTrace()
-                val message = Message.obtain()
-                message.what = STATE_CONNECTION_FAILED
-                handler.sendMessage(message)
-            }
-        }
-    }
-
-
     inner class SendReceive(socket: BluetoothSocket) : Thread() {
         private var bluetoothSocket: BluetoothSocket
         private var inputStream: InputStream
@@ -362,7 +325,6 @@ class ReadFragment : Fragment() {
             if (question.image == options[mSelectedOptionPosition - 1]) {
                 counter += 2//increase count of correct answers
 
-                Log.i("mytest", countList.toString())
                 if (countList == 1) {
                     resizeImagesLeft(counter)
                 } else {
@@ -602,9 +564,6 @@ class ReadFragment : Fragment() {
     private fun setImage(sizeImage: Float) {
         binding.ivImageView.layoutParams.width = sizeImage.toInt()
         binding.ivImageView.layoutParams.height = sizeImage.toInt()
-
-        Log.i("asosiysi",sizeImage.toString())
-
         binding.resultText.text = questionString
     }
 

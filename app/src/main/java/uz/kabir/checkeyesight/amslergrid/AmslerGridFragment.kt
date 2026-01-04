@@ -1,5 +1,6 @@
 package uz.kabir.checkeyesight.amslergrid
 
+import android.app.AlertDialog
 import android.content.Context
 import android.content.SharedPreferences
 import android.content.SharedPreferences.Editor
@@ -12,16 +13,16 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import uz.kabir.checkeyesight.R
+import uz.kabir.checkeyesight.databinding.CustomDialogInfoBinding
 import uz.kabir.checkeyesight.databinding.FragmentAmslerGridBinding
 
 
-class AmslerGrid : Fragment() {
+class AmslerGridFragment : Fragment() {
+    private var viewBinding: FragmentAmslerGridBinding? = null
+    private val binding get() = viewBinding!!
 
     private lateinit var sharedPreference:SharedPreferences
     lateinit var editor:Editor
-
-    private var viewBinding: FragmentAmslerGridBinding? = null
-    private val binding get() = viewBinding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,49 +39,32 @@ class AmslerGrid : Fragment() {
         editor = sharedPreference.edit()
 
         if (!sharedPreference.getBoolean(Constants.DO_NOT_SHOW,false))
-        {
-            dialog()
-        }
-
-
-
-
+            amslerDialog()
     }
 
 
-    private fun dialog() {
-
-        val builder = android.app.AlertDialog.Builder(context)
-        val dialogView: View = layoutInflater.inflate(R.layout.custom_dialog_info, null)
-        builder.setView(dialogView)
-
-        val cancel = dialogView.findViewById<Button>(R.id.dialog_cancel_button)
-        cancel.text = "don't mention"
-        val start = dialogView.findViewById<Button>(R.id.dialog_start_button)
-        start.text = "Ok"
-
-        val dialogTitle = dialogView.findViewById<TextView>(R.id.dialog_title)
-        val infoTitle = dialogView.findViewById<TextView>(R.id.info_title)
-        infoTitle.setText(R.string.info_amslergrid_test)
-
-        dialogTitle.text = getString(R.string.info_amslergrid_dialog)
-
-        val dialog = builder.create()
-        dialog.show()
-
-        cancel.setOnClickListener {
-            dialog.dismiss()
-
-
-            editor.putBoolean(Constants.DO_NOT_SHOW,true)
-            editor.commit()
-
-
+    private fun amslerDialog() {
+        val binding = CustomDialogInfoBinding.inflate(layoutInflater)
+        val dialog = AlertDialog.Builder(requireContext())
+            .setView(binding.root)
+            .create()
+        with(binding) {
+            dialogCancelButton.text = getString(R.string.dont_mention)
+            dialogStartButton.text = getString(R.string.okay)
+            infoTitle.setText(R.string.info_amslergrid_test)
+            dialogTitle.setText(R.string.info_amslergrid_dialog)
+            dialogCancelButton.setOnClickListener {
+                saveDoNotShow()
+                dialog.dismiss()
+            }
+            dialogStartButton.setOnClickListener {
+                dialog.dismiss()
+            }
         }
-        start.setOnClickListener {
-            dialog.dismiss()
-        }
-        dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+    }
+
+    private fun saveDoNotShow(){
+        editor.putBoolean(Constants.DO_NOT_SHOW, true).apply()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -97,7 +81,4 @@ class AmslerGrid : Fragment() {
         viewBinding=null
         super.onDestroyView()
     }
-
-
-
 }

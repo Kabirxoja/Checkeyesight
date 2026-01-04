@@ -9,7 +9,7 @@ import androidx.navigation.findNavController
 import uz.kabir.checkeyesight.R
 import uz.kabir.checkeyesight.databinding.FragmentResultAstigmatismBinding
 
-class ResultAstigmatism : Fragment() {
+class ResultAstigmatismFragment: Fragment() {
 
     private var viewBinding: FragmentResultAstigmatismBinding? = null
     private val binding get() = viewBinding!!
@@ -19,7 +19,6 @@ class ResultAstigmatism : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         viewBinding = FragmentResultAstigmatismBinding.inflate(inflater, container, false)
         return binding.root
     }

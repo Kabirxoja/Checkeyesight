@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import uz.kabir.checkeyesight.R
 import uz.kabir.checkeyesight.databinding.FragmentViewResultBinding
 
-class ViewResult: Fragment(), HistoryAdapter.OnUserClickedListener {
+class ViewResultFragment: Fragment(), HistoryAdapter.OnUserClickedListener {
 
     private lateinit var list: MutableList<HistoryEntity>
     private lateinit var database: UserDatabase
@@ -24,8 +24,13 @@ class ViewResult: Fragment(), HistoryAdapter.OnUserClickedListener {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-
         viewBinding = FragmentViewResultBinding.inflate(inflater,container,false)
+        return binding?.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
         database = UserDatabase.initDatabase(requireContext())
         list = database.userDao().getAllUsers() as MutableList<HistoryEntity>
         rvAdapter = HistoryAdapter(list)
@@ -35,8 +40,6 @@ class ViewResult: Fragment(), HistoryAdapter.OnUserClickedListener {
         binding?.recyclerView?.addItemDecoration(itemDecoration)
         binding?.recyclerView?.adapter = rvAdapter
         rvAdapter.setOnUserClickedListener(this)
-
-        return binding?.root
     }
 
 
@@ -55,9 +58,6 @@ class ViewResult: Fragment(), HistoryAdapter.OnUserClickedListener {
         val dialogTitle = dialogView.findViewById<TextView>(R.id.dialog_title)
         val infoTitle = dialogView.findViewById<TextView>(R.id.info_title)
         infoTitle.visibility = View.GONE
-
-
-        val action = ViewResultDirections
 
 
         dialogTitle.text = getString(R.string.delete_test_items)
@@ -99,12 +99,8 @@ class ViewResult: Fragment(), HistoryAdapter.OnUserClickedListener {
     }
 
 
-
     override fun onDestroyView() {
         viewBinding=null
         super.onDestroyView()
     }
-
-
-
 }

@@ -12,8 +12,7 @@ import uz.kabir.checkeyesight.databinding.FragmentAstigmatismTestBinding
 import uz.kabir.checkeyesight.swipetest.OnSwipeTouchListener
 
 
-class AstigmatismTest : Fragment() {
-
+class AstigmatismFragment : Fragment() {
 
     private var viewBinding: FragmentAstigmatismTestBinding? = null
     private val binding get() = viewBinding!!
@@ -25,7 +24,7 @@ class AstigmatismTest : Fragment() {
     private var correct: Int = 0
     private lateinit var list: List.QuestionAstigmatism
 
-    private val args: AstigmatismTestArgs by navArgs()
+    private val args: AstigmatismFragmentArgs by navArgs()
 
     private var valueEnter = -1
     private var leftEyeResult = 0
@@ -94,7 +93,7 @@ class AstigmatismTest : Fragment() {
 
                         } else {
                             val action =
-                                AstigmatismTestDirections.actionAstigmatismTestToRightEyeTest(
+                                AstigmatismFragmentDirections.actionAstigmatismTestToRightEyeTest(
                                     correct
                                 )
                             findNavController().navigate(action)
@@ -140,10 +139,10 @@ class AstigmatismTest : Fragment() {
         } else {
 
             if (valueEnter == 1) {
-                val action = AstigmatismTestDirections.actionAstigmatismTestToResultAstigmatism()
+                val action = AstigmatismFragmentDirections.actionAstigmatismTestToResultAstigmatism()
                 findNavController().navigate(action)
             } else {
-                val action = AstigmatismTestDirections.actionAstigmatismTestToRightEyeTest(correct)
+                val action = AstigmatismFragmentDirections.actionAstigmatismTestToRightEyeTest(correct)
                 findNavController().navigate(action)
             }
         }

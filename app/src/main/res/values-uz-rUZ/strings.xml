@@ -27,6 +27,7 @@
     <string name="close_app_question">Dasturdan chiqmoqchimisiz?</string>
     <string name="close_test_question">Testni muddatidan avval tugatmoqchimisiz?</string>
     <string name="close_eye_exercise">Ko\'z mashqini tugatmoqchimisiz?</string>
+    <string name="close_eye_repeat">Ko\'z tekshiruvini takrorlamoqchimisiz?</string>
     <string name="answer_yes">Ha</string>
     <string name="answer_no">Yo\'q</string>
 
@@ -72,10 +73,10 @@
     <string name="delete_test_items">Sinov natijalari o\'chirilsinmi?</string>
     <string name="need_turn_on_bluetooth_text">Ishga tushurish uchun Bluetoothni yoqishingiz kerak</string>
 
-    <string name="restoration_of_vision">Ko\'rish qobiliyatini tiklash</string>
-    <string name="exercise_for_farsightedness">Uzoqni ko\'rmaslik uchun mashq</string>
-    <string name="exercise_for_nearsightedness">Yaqinni ko\'rmaslik uchun mashq</string>
-    <string name="relaxation_of_vision">Ko\'rish qobiliyatini tiklash</string>
+    <string name="restoration_of_vision">#1. Ko\'z charchog\'ini kamaytirish mashqlari</string>
+    <string name="exercise_for_farsightedness">#2. Ko\'z mushaklarini bo\'shashtirish mashqlari</string>
+    <string name="exercise_for_nearsightedness">#3. Uzoq masofaga fokusni mashq qildirish</string>
+    <string name="relaxation_of_vision">#4. Fokusni yaxshilash mashqlari</string>
 
     <string name="exercise_up_and_down">Ko\'z harakati yuqoriga va pastga</string>
     <string name="exercise_diagonal">Ko\'zning diagonal harakati</string>
@@ -187,6 +188,7 @@
     <string name="result">Natija:\t</string>
     <string name="choose">Tanlash</string>
     <string name="okay">Yaxshi</string>
+    <string name="dont_mention">Eslatilmasin</string>
     <string name="conversion_table">Ko\'rishdagi o\'lchovlarni o\'zgarish jadvali</string>
     <string name="recommended_glasses">Tavsiya etilgan ko\'zoynak</string>
     <string name="alarm_soon">Tez kunda.\..</string>
@@ -211,11 +213,11 @@
     <string name="info_snellen_number_chart">Snellen "Raqam" ko\'z jadvali harflar o\'rniga raqamlardan foydalanadigan an\'anaviy Snellen jadvalining o\'zgarishidir. Bu lotin alifbosini bilmaydigan odamlar yoki hali o\'qishni o\'rganmagan yosh bolalar uchun mos keladi. Standart Snellen grafigi singari, raqamlar yuqoridan pastgacha kichrayadigan o\'lchamlarda joylashtirilgan. Sinovdan o\'tayotgan shaxs, ko\'rish keskinligini aniq ko\'ra oladigan eng kichik raqamlar qatorini aniqlaydi.</string>
 
     <string name="info_bluetooth">
-        "*Telefon ikkita qurilmani bluetooth orqali ulagandan so'ng, sinovni boshlashingiz mumkin.\n
-         *Buning uchun ikkala qurilmada ham Bluetooth yoqilgan boʻlishi va bir nechta ruxsatlar berilishi kerak, agar birinchi urinish muvaffaqiyatsiz bo'lsa, qayta urinib ko'ing.\n
-         *Sinov 4 m masofadan o'tkaziladi"</string>
+        "Telefon ikkita qurilmani bluetooth orqali ulagandan so'ng, sinovni boshlashingiz mumkin.\n
+         Buning uchun ikkala qurilmada ham Bluetooth yoqilgan boʻlishi va bir nechta ruxsatlar berilishi kerak, agar birinchi urinish muvaffaqiyatsiz bo'lsa, qayta urinib ko'ing.\n
+         Sinov 4 m masofadan o'tkaziladi"</string>
 
-    <string name="info_contrast">"Kontrast sezuvchanlik testi - bu odamning turli darajadagi kontrastni farqlash qobiliyatini baholash uchun ishlatiladigan vizual baholashning bir turi. Kontrast sezuvchanligi turli vizual vazifalar uchun, masalan, o\'qish, haydash va kam yorug\'lik sharoitida ob\'ektlarni tanib olish uchun juda muhimdir. Kontrast. sezuvchanlik testi odamning vizual stimulda yorug\'lik va qorong\'u elementlar o\'rtasidagi farqni aniqlash qobiliyatini o\'lchaydi, odatda naqsh yoki naqsh shaklida taqdim etiladi. harflar \n""*Sinov 40 sm da o\'tkaziladi \n"</string>
+    <string name="info_contrast">"Kontrast sezuvchanlik testi - bu odamning turli darajadagi kontrastni farqlash qobiliyatini baholash uchun ishlatiladigan vizual baholashning bir turi. Kontrast sezuvchanligi turli vizual vazifalar uchun, masalan, o\'qish, haydash va kam yorug\'lik sharoitida ob\'ektlarni tanib olish uchun juda muhimdir. Kontrast. sezuvchanlik testi odamning vizual stimulda yorug\'lik va qorong\'u elementlar o\'rtasidagi farqni aniqlash qobiliyatini o\'lchaydi, odatda naqsh yoki naqsh shaklida taqdim etiladi. harflar \n""Sinov 40 sm da o\'tkaziladi \n"</string>
 
     <string name="color_blindness_detected">Rang ko\'rligi aniqlandi</string>
     <string name="color_blindness_not_detected">Rang ko\'rligi aniqlanmadi</string>

@@ -1,183 +1,183 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Check Eyesight</string>
-
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-    <!-- Strings used for fragments for navigation -->
     <string name="next">Next</string>
     <string name="home">Home</string>
-
     <string name="title1">Test de vision du symbole "E"</string>
     <string name="title2">Test de vision du symbole "C"</string>
     <string name="title3">Test de vision alphabétique</string>
-    <string name="title4">Test de vision des nombres</string>
+    <string name="title4">Test de vision des chiffres</string>
     <string name="title5">Daltonisme</string>
     <string name="title6">Test de vision Duochrome</string>
     <string name="title7">Test de vision d\'astigmatisme</string>
     <string name="title8">Test de connexion Bluetooth "E"</string>
     <string name="title9">Test d\'Amsler</string>
 
-    <string name="second_screen">Exercício para os olhos</string>
-    <string name="first_screen">Teste de visão</string>
-    <string name="third_screen">Então, comece a proteger seus olhos</string>
+    <string name="second_screen">Exercices pour les yeux</string>
+    <string name="first_screen">Test de vision</string>
+    <string name="third_screen">Commencez dès maintenant à protéger vos yeux</string>
 
-    <string name="tab_layout1">Teste de visão</string>
-    <string name="tab_layout2">Exercício para os olhos</string>
+    <string name="tab_layout1">Test de vision</string>
+    <string name="tab_layout2">Exercices pour les yeux</string>
 
-    <string name="close_app_question">Deseja sair do programa?</string>
-    <string name="close_test_question">Deseja abortar o teste? </string>
-    <string name="close_eye_exercise">Deseja terminar o exercício para os olhos?</string>
-    <string name="answer_yes">Sim</string>
-    <string name="answer_no">Não</string>
+    <string name="close_app_question">Voulez-vous quitter l\'application?</string>
+    <string name="close_test_question">Voulez-vous interrompre le test?</string>
+    <string name="close_eye_exercise">Voulez-vous terminer l\'exercice pour les yeux?</string>
+    <string name="close_eye_repeat">Voulez-vous répéter le test oculaire?</string>
+    <string name="answer_yes">Oui</string>
+    <string name="answer_no">Non</string>
 
-    <string name="history">Histórico</string>
-    <string name="note">Nota</string>
-    <string name="language">Idioma</string>
+    <string name="history">Historique</string>
+    <string name="note">Note</string>
+    <string name="language">Langue</string>
 
-    <string name="delete">Excluir</string>
-    <string name="enter_text">Texto..\.</string>
+    <string name="delete">Supprimer</string>
+    <string name="enter_text">Texte…</string>
 
-    <string name="text_is_empty">O texto não deve estar vazio!</string>
+    <string name="text_is_empty">Le texte ne doit pas être vide!</string>
 
-    <string name="select_options">Selecione a opção indicada</string>
-    <string name="name">Nome.\..</string>
-    <string name="info">Informações</string>
-    <string name="skip">Ignorar</string>
-    <string name="check_your_eyesight">Verifique sua visão</string>
-    <string name="train_your_eyes">Você pode treinar seus olhos</string>
-    <string name="lets_go">Vamos lá</string>
-    <string name="distance">Você pode melhorar a precisão do teste especificando a distância exata para os centímetros de triagem (40–400)</string>
-    <string name="select_distance">Selecione a distância</string>
-    <string name="sit_down">Sente-se</string>
-    <string name="close_curtain">Certifique-se de que você não está refletindo nenhuma luz com seu dispositivo</string>
-    <string name="block_light">Bloqueie o excesso de luz</string>
-    <string name="correct_height">Ajuste para a altura correta</string>
-    <string name="height_device">Certifique-se de que está segurando o dispositivo no nível dos olhos do paciente</string>
-    <string name="stay_distance">Mantenha a distância especificada</string>
-    <string name="check_distance">Certifique-se de estar segurando o dispositivo na distância selecionada anteriormente.</string>
-
-    <string name="close_left_eye">Feche o olho esquerdo</string>
-    <string name="close_right_eye">Feche o olho direito</string>
-    <string name="close_eye_with_hand">Você também pode cobrir os olhos com a mão</string>
-    <string name="welcome_to_app">Obrigado por nos escolher!</string>
-    <string name="done">Concluído</string>
-    <string name="start_test">Iniciar teste</string>
-    <string name="cancel">Cancelar</string>
-
-    <string name="distance_is_empty">A distância deve ser selecionada</string>
-    <string name="left_eye">Olho esquerdo</string>
-    <string name="right_eye">Olho direito</string>
-    <string name="date_result">Data</string>
-    <string name="delete_test_items">Excluir resultados do teste</string>
-    <string name="need_turn_on_bluetooth_text">Você precisa ativar o Bluetooth para começar</string>
+    <string name="select_options">Sélectionnez l\'option indiquée</string>
+    <string name="name">Nom…</string>
+    <string name="info">Informations</string>
+    <string name="skip">Ignorer</string>
+    <string name="check_your_eyesight">Vérifiez votre vision</string>
+    <string name="train_your_eyes">Vous pouvez entraîner vos yeux</string>
+    <string name="lets_go">C\'est parti</string>
+    <string name="distance">Vous pouvez améliorer la précision du test en indiquant la distance exacte en centimètres (40–400)</string>
+    <string name="select_distance">Sélectionnez la distance</string>
+    <string name="sit_down">Asseyez-vous</string>
+    <string name="close_curtain">Assurez-vous que votre appareil ne reflète aucune lumière</string>
+    <string name="block_light">Bloquez l\'excès de lumière</string>
+    <string name="correct_height">Ajustez à la bonne hauteur</string>
+    <string name="height_device">Assurez-vous de tenir l\'appareil au niveau des yeux du patient</string>
+    <string name="stay_distance">Maintenez la distance indiquée</string>
+    <string name="check_distance">Assurez-vous de tenir l\'appareil à la distance sélectionnée précédemment.</string>
 
 
-    <string name="restoration_of_vision">Recuperação da visão</string>
-    <string name="exercise_for_farsightedness">Exercício para hipermetropia</string>
-    <string name="exercise_for_nearsightedness">Exercício para miopia</string>
-    <string name="relaxation_of_vision">Restauração da visão</string>
+    <string name="close_left_eye">Fermez l\'œil gauche</string>
+    <string name="close_right_eye">Fermez l\'œil droit</string>
+    <string name="close_eye_with_hand">Vous pouvez également couvrir l\'œil avec la main</string>
+    <string name="welcome_to_app">Merci de nous avoir choisis !</string>
+    <string name="done">Terminé</string>
+    <string name="start_test">Démarrer le test</string>
+    <string name="cancel">Annuler</string>
 
-    <string name="exercise_up_and_down">Movimento dos olhos para cima e para baixo</string>
-    <string name="exercise_diagonal">Movimento diagonal dos olhos</string>
-    <string name="exercise_left_near">Feche o olho esquerdo e foque primeiro no objeto próximo e depois no distante</string>
-    <string name="exercise_right_near">Feche o olho direito e foque primeiro no objeto próximo e depois no distante</string>
-    <string name="exercise_snake_trail">Trilha da cobra</string>
-    <string name="exercise_blink_fast">Feche os olhos a cada dois segundos</string>
-    <string name="exercise_blink">Feche os olhos por 2 segundos e abra-os por 5 segundos</string>
-    <string name="exercise_palming">Palmagem</string>
-    <string name="exercise_head_spinning">Mova sua cabeça da esquerda para a direita enquanto foca seu olhar no mesmo ponto</string>
-    <string name="exercise_focus_nose">Concentre-se no seu nariz</string>
-    <string name="exercise_massage_eyebrows">Massagem de sobrancelhas</string>
-    <string name="exercise_half_closed">Abra bem os olhos e aperte os olhos</string>
-    <string name="exercise_rectangle">Movimento ocular retangular</string>
-    <string name="exercise_hand_observation">Concentre-se na sua mão e mova-a para a direita</string>
-    <string name="exercise_rotate_left">Movimento circular do olho para a esquerda</string>
-    <string name="exercise_rotate_right">Movimento circular do olho para a esquerda</string>
-    <string name="exercise_horizontal">Movimento do olho da esquerda para a direita</string>
-    <string name="exercise_massage_eyes">Massagem ocular. Pressione levemente e imite uma vibração suave nas pálpebras</string>
+    <string name="distance_is_empty">La distance doit être sélectionnée</string>
+    <string name="left_eye">Œil gauche</string>
+    <string name="right_eye">Œil droit</string>
+    <string name="date_result">Date</string>
+    <string name="delete_test_items">Supprimer les résultats du test</string>
+    <string name="need_turn_on_bluetooth_text">Vous devez activer le Bluetooth pour commencer</string>
 
-    <string name="near_vision_test_level_250">Este texto tem a maior fonte e é o teste inicial</string>
-    <string name="near_vision_test_level_200">O texto está ficando menor e seu nível é 200</string>
-    <string name="near_vision_test_level_160">O texto está ficando menor e seu nível é 160</string>
-    <string name="near_vision_test_level_125">O texto está ficando menor e seu nível é 125</string>
-    <string name="near_vision_test_level_100">O texto está ficando menor e seu nível é 100</string>
-    <string name="near_vision_test_level_80">O texto está ficando menor e seu nível é 80</string>
-    <string name="near_vision_test_level_63">O texto está ficando menor e seu nível é 63</string>
-    <string name="near_vision_test_level_50">O texto está ficando menor e seu nível é 50</string>
-    <string name="near_vision_test_level_40">O texto está ficando menor e seu nível é 40</string>
-    <string name="near_vision_test_level_32">O texto está ficando menor e seu nível é 32</string>
-    <string name="near_vision_test_level_25">O texto está ficando menor e seu nível é 25</string>
-    <string name="near_vision_test_level_20">O texto está ficando menor e seu nível é 20</string>
-    <string name="near_vision_test_level_16">O texto está ficando menor e seu nível é 16</string>
+    <string name="restoration_of_vision">#1. Exercices pour réduire la fatigue oculaire</string>
+    <string name="exercise_for_farsightedness">#2. Exercices pour détendre les muscles oculaires</string>
+    <string name="exercise_for_nearsightedness">#3. S\'entraîner à la mise au point de loin</string>
+    <string name="relaxation_of_vision">#4. Exercices pour améliorer la mise au point</string>
+
+    <string name="exercise_up_and_down">Mouvement des yeux de haut en bas</string>
+    <string name="exercise_diagonal">Mouvement diagonal des yeux</string>
+    <string name="exercise_left_near">Fermez l\'œil gauche et focalisez d\'abord sur un objet proche puis sur un objet éloigné</string>
+    <string name="exercise_right_near">Fermez l\'œil droit et focalisez d\'abord sur un objet proche puis sur un objet éloigné</string>
+    <string name="exercise_snake_trail">Trajectoire du serpent</string>
+    <string name="exercise_blink_fast">Fermez les yeux toutes les deux secondes</string>
+    <string name="exercise_blink">Fermez les yeux pendant 2 secondes et ouvrez-les pendant 5 secondes</string>
+    <string name="exercise_palming">Palming</string>
+    <string name="exercise_head_spinning">Tournez la tête de gauche à droite tout en gardant le regard fixé sur un point</string>
+    <string name="exercise_focus_nose">Concentrez-vous sur votre nez</string>
+    <string name="exercise_massage_eyebrows">Massage des sourcils</string>
+    <string name="exercise_half_closed">Ouvrez grand les yeux puis plissez-les</string>
+    <string name="exercise_rectangle">Mouvement oculaire rectangulaire</string>
+    <string name="exercise_hand_observation">Concentrez-vous sur votre main et déplacez-la vers la droite</string>
+    <string name="exercise_rotate_left">Mouvement circulaire de l\'œil vers la gauche</string>
+    <string name="exercise_rotate_right">Mouvement circulaire de l\'œil vers la droite</string>
+    <string name="exercise_horizontal">Mouvement de l\'œil de gauche à droite</string>
+    <string name="exercise_massage_eyes">Massage des yeux. Appuyez légèrement et imitez une vibration douce sur les paupières</string>
+
+    <string name="near_vision_test_level_250">Ce texte a la plus grande taille de police et correspond au test initial</string>
+    <string name="near_vision_test_level_200">Le texte devient plus petit et son niveau est 200</string>
+    <string name="near_vision_test_level_160">Le texte devient plus petit et son niveau est 160</string>
+    <string name="near_vision_test_level_125">Le texte devient plus petit et son niveau est 125</string>
+    <string name="near_vision_test_level_100">Le texte devient plus petit et son niveau est 100</string>
+    <string name="near_vision_test_level_80">Le texte devient plus petit et son niveau est 80</string>
+    <string name="near_vision_test_level_63">Le texte devient plus petit et son niveau est 63</string>
+    <string name="near_vision_test_level_50">Le texte devient plus petit et son niveau est 50</string>
+    <string name="near_vision_test_level_40">Le texte devient plus petit et son niveau est 40</string>
+    <string name="near_vision_test_level_32">Le texte devient plus petit et son niveau est 32</string>
+    <string name="near_vision_test_level_25">Le texte devient plus petit et son niveau est 25</string>
+    <string name="near_vision_test_level_20">Le texte devient plus petit et son niveau est 20</string>
+    <string name="near_vision_test_level_16">Le texte devient plus petit et son niveau est 16</string>
 
 
     <string name="info_duochrome_test">
-         Um teste Duochrome é comumente usado para estimar se você é míope ou míope (ou se as lentes que você está usando são muito fracas ou muito fortes). Este teste funciona com base no princípio de que os comprimentos de onda da luz vermelha e verde são focados de forma ligeiramente diferente pelo olho, sendo o vermelho mais próximo da ratina com visão curta (ou seja, mais claro) e o verde focado mais próximo da retina na visão longa.
-         \nObservações:
-         \n1.O teste duocromático não tem valor se sua acuidade visual for de pelo menos 20/40 ou melhor.
-         \n2. O teste duocromático geralmente não é aplicável em uma idade jovem (abaixo de 20 anos), pois os caracteres aparecerão claramente em ambos os lados. Este teste é geralmente recomendado em idades mais avançadas e/ou em caso de problemas de visão.
-         \nInstruções!!!
-         \n1.Realize o teste em luz natural. A luz artificial dilata a pupila, o que aumenta a aberração cromática no olho.
-         \n2.Segure o telefone a aproximadamente 40 cm dos olhos (estique os braços ou coloque o telefone/tablet sobre algo). O centro da tela deve estar aproximadamente no nível dos olhos. Se você usa óculos ou lentes de contato, não os tire.
-         \n3.Cubra o olho esquerdo com as mãos esquerdas.
-         \n4.Olhe para as letras no lado vermelho e depois olhe para as letras no lado verde. Se você vir as letras no fundo vermelho com maior contraste e mais preto, significa que você é míope. Agora cubra o olho direito com a mão direita e faça o mesmo.
-     </string>
+    Le test duochromatique est couramment utilisé pour estimer si vous êtes myope ou hypermétrope (ou si les verres que vous portez sont trop faibles ou trop forts). Ce test repose sur le principe selon lequel les longueurs d\'onde de la lumière rouge et verte sont focalisées légèrement différemment par l\'œil : le rouge est focalisé plus près de la rétine en vision myopique (et apparaît donc plus net), tandis que le vert est focalisé plus près de la rétine en vision hypermétropique.
+    \nRemarques :
+    \n1. Le test duochromatique n\'a aucune valeur si votre acuité visuelle est d\'au moins 20/40 ou meilleure.
+    \n2. Le test duochromatique n\'est généralement pas applicable à un jeune âge (en dessous de 20 ans), car les caractères apparaissent clairement des deux côtés. Ce test est généralement recommandé à un âge plus avancé et/ou en cas de troubles de la vision.
+    \nInstructions !!!
+    \n1. Effectuez le test à la lumière naturelle. La lumière artificielle dilate la pupille, ce qui augmente l\'aberration chromatique de l\'œil.
+    \n2. Tenez le téléphone à environ 40 cm de vos yeux (tendez les bras ou posez le téléphone/la tablette sur un support). Le centre de l\'écran doit être approximativement au niveau des yeux. Si vous portez des lunettes ou des lentilles de contact, ne les retirez pas.
+    \n3. Couvrez l\'œil gauche avec la main gauche.
+    \n4. Regardez les lettres sur le fond rouge, puis celles sur le fond vert. Si les lettres sur le fond rouge apparaissent avec plus de contraste et plus noires, cela signifie que vous êtes myope. Couvrez ensuite l\'œil droit avec la main droite et répétez le test.
+    </string>
 
-
-    <string name="info_astigmatism_test">
-     O astigmatismo é uma condição de visão que causa visão turva devido ao formato irregular da córnea, à cobertura frontal transparente do olho ou, às vezes, à curvatura da lente dentro do olho. Nesse caso, a córnea não é totalmente uma cúpula circular, mas tem a forma de uma bola de futebol.
-     \nO astigmatismo dificulta a visualização de detalhes finos, seja de perto ou à distância. Se você tem astigmatismo não corrigido, pode ter vários sintomas, como visão embaçada, fadiga ocular, olhos cansados ou dores de cabeça. O astigmatismo pode ser corrigido rápida e facilmente com óculos, lentes de contato para astigmatismo ou cirurgia a laser.
-     \nInstruções!!!
-         \n1.Segure o telefone a aproximadamente 40 cm dos olhos. O centro da tela deve estar aproximadamente no nível dos seus olhos. Teste um olho de cada vez.
-         \n2.Na próxima tela, observe cada linha ou quadrado com atenção.
-         \n3. Todas as linhas são pretas e igualmente grossas? Todos os quadrados são da mesma cor preta? Ou uma ou mais cores aparecem cinza?
-         \nSe você vir algumas linhas cinzas ou distorcidas, você pode ter astigmatismo.
-     </string>
 
     <string name="info_amslergrid_test">
-         A grade de Amsler é uma grade de linhas horizontais e verticais usadas para monitorar o campo visual central de uma pessoa. É uma ferramenta diagnóstica que auxilia na detecção de distúrbios visuais causados por alterações na retina, principalmente na mácula, bem como no nervo óptico e no caminho visual para o cérebro.
-         \nInstruções
-         \n1. Coloque o telefone aprox. 40 cm de seus olhos com a grade ajustada ao nível dos olhos.
-         \n2. Olhe para o ponto no centro da grade.
-         \n3. Cubra o olho esquerdo com a mão esquerda enquanto continua a olhar para o ponto com o olho direito. Não mova seu olhar do ponto.
-         \n4. O ponto ou os quadrados ao redor do ponto mudaram de forma ou desapareceram quando você cobriu um olho? Você vê algum desfoque ou distorção na grade?
-         \n5. Agora repita todos os passos, cobrindo o olho direito.
-         \n6. Clique em Iniciar para fazer o teste.</string>
+    La grille d\'Amsler est une grille de lignes horizontales et verticales utilisée pour surveiller le champ visuel central. C\'est un outil de diagnostic qui aide à détecter les troubles visuels causés par des altérations de la rétine, principalement au niveau de la macula, ainsi que du nerf optique et des voies visuelles jusqu\'au cerveau.
+        \nInstructions
+        \n1. Placez le téléphone à environ 40 cm de vos yeux, la grille à hauteur des yeux.
+        \n2. Fixez le point au centre de la grille.
+        \n3. Couvrez votre œil gauche avec votre main gauche tout en continuant à fixer le point avec votre œil droit. Ne quittez pas le point des yeux.
+        \n4. Le point ou les carrés autour du point ont-ils changé de forme ou disparu lorsque vous avez couvert un œil? Observez-vous un flou ou une distorsion sur la grille?
+        \n5. Répétez maintenant toutes les étapes en couvrant votre œil droit.
+        \n6. Cliquez sur «Démarrer» pour effectuer le test.
+    </string>
+
+    <string name="info_astigmatism_test">
+    L’astigmatisme est une affection visuelle qui provoque une vision floue en raison de la forme irrégulière de la cornée, de la couche frontale transparente de l’œil ou parfois de la courbure du cristallin à l’intérieur de l’œil. Dans ce cas, la cornée n’est pas complètement un dôme circulaire, mais a une forme plus semblable à un ballon de football.
+    \nL’astigmatisme rend difficile la vision des détails fins, de près ou de loin. Si vous souffrez d’astigmatisme non corrigé, vous pouvez présenter divers symptômes tels qu’une vision floue, une fatigue oculaire, des yeux fatigués ou des maux de tête. L’astigmatisme peut être corrigé rapidement et facilement avec des lunettes, des lentilles de contact pour astigmatisme ou une chirurgie au laser.
+    \nInstructions !!!
+    \n1. Tenez votre téléphone à environ 40 cm de vos yeux. Le centre de l’écran doit être approximativement au niveau de vos yeux. Testez un œil à la fois.
+    \n2. Sur l’écran suivant, observez attentivement chaque ligne ou carré.
+    \n3. Toutes les lignes sont-elles noires et ont-elles la même épaisseur ? Tous les carrés sont-ils de la même couleur noire ? Ou certaines couleurs apparaissent-elles grisées ?
+    \nSi vous voyez des lignes grises ou déformées, vous souffrez peut-être d’astigmatisme.
+    </string>
 
 
-    <string name="info_duochrome_dialog">O que é um Duochrome?</string>
-    <string name="info_astigmatism_dialog">O que é um astigmatismo?</string>
-    <string name="info_amslergrid_dialog">O que é uma Rede Amsler?</string>
+    <string name="info_duochrome_dialog">Qu\'est-ce qu\'un film duochrome?</string>
+    <string name="info_astigmatism_dialog">Qu\'est-ce que l\'astigmatisme?</string>
+    <string name="info_amslergrid_dialog">Qu\'est-ce qu\'un réseau Amsler?</string>
 
-    <string name="info_color_blindness_test">O teste de daltonismo é um teste para medir sua capacidade de perceber as diferenças entre as cores. O daltonismo é mais frequentemente de natureza genética, mas também pode ocorrer devido a danos oculares, nervosos ou cerebrais ou devido à exposição a certos produtos químicos.
-     \nInstruções
-     \n1. Coloque o telefone aprox. 40 cm de seus olhos com cada círculo definido no nível dos olhos.
-     \n2. Tente identificar o número oculto em 5 segundos, mas não há limite de tempo. Então clique na imagem para ver a resposta com uma análise.
-     \n3. Deslize a tela para o lado e vá para o próximo teste
+    <string name="info_color_blindness_test">
+        Le test de daltonisme mesure votre capacité à percevoir les différences entre les couleurs. Le daltonisme est le plus souvent d\'origine génétique, mais il peut aussi être dû à des lésions oculaires, nerveuses ou cérébrales, ou à une exposition à certains produits chimiques.
+        \nInstructions
+        \n1. Placez le téléphone à environ 40 cm de vos yeux, chaque cercle étant à hauteur des yeux.
+        \n2. Essayez de trouver le nombre caché en moins de 5 secondes (il n\'y a pas de limite de temps). Cliquez ensuite sur l\'image pour afficher la réponse et son explication.
+        \n3. Faites glisser l\'écran latéralement pour passer au test suivant.
      </string>
-    <string name="info_color_blindness_dialog">O que é um teste de daltonismo?</string>
-    <string name="choose_language">Escolha o idioma</string>
-    <string name="uzbek">Uzbeque</string>
-    <string name="karakalpak">Karakalpak</string>
-    <string name="english">Inglês</string>
-    <string name="russian">Russo</string>
-    <string name="title10">Teste de visão de perto</string>
 
-    <string name="astigmatism_picture">Como é a imagem?</string>
-    <string name="same_line">Todas as linhas são iguais</string>
-    <string name="blurry_line">Existem linhas borradas</string>
-    <string name="astigmatism_result">Resultado do astigmatismo</string>
-    <string name="has_astigmatism_left">Seu olho esquerdo tem astigmatismo</string>
-    <string name="has_no_astigmatism_left">Seu olho esquerdo tem visão normal</string>
-    <string name="has_astigmatism_right">Seu olho direito tem astigmatismo</string>
-    <string name="has_no_astigmatism_right">Seu olho direito tem visão normal</string>
-    <string name="rotate_phone">Vire o telefone</string>
-    <string name="eye_exercise_done">Muito bem, você concluiu este treino!</string>
-    <string name="txt_congratulations">Parabéns!</string>
-    <string name="share">compartilhar</string>
-    <string name="rate_us">rate_us</string>
-    <string name="feedback">Feedback</string>
+    <string name="info_color_blindness_dialog">Qu\'est-ce qu\'un test de daltonisme?</string>
+    <string name="choose_language">Choisissez une langue</string>
+    <string name="uzbek">Ouzbek</string>
+    <string name="karakalpak">Karakalpak</string>
+    <string name="english">Anglais</string>
+    <string name="russian">Russe</string>
+    <string name="title10">Test de vision de près</string>
+    <string name="astigmatism_picture">À quoi ressemble l\'image?</string>
+    <string name="same_line">Toutes les lignes sont identiques</string>
+    <string name="blurry_line">Les lignes sont floues</string>
+    <string name="astigmatism_result">Résultat du test d\'astigmatisme</string>
+    <string name="has_astigmatism_left">Votre œil gauche est astigmate</string>
+    <string name="has_no_astigmatism_left">Votre œil gauche a une vision normale</string>
+    <string name="has_astigmatism_right">Votre œil droit est astigmate</string>
+    <string name="has_no_astigmatism_right">Votre œil droit a une vision normale</string>
+    <string name="rotate_phone">Retournez le téléphone.</string>
+    <string name="eye_exercise_done">Super, vous avez terminé cette séance d\'entraînement !</string>
+    <string name="txt_congratulations">Félicitations!</string>
+    <string name="share">Partager</string>
+    <string name="rate_us">Évaluez-nous</string>
+    <string name="feedback">Retour</string>
     <string name="exit">Saída</string>
     <string name="france">Francês</string>
     <string name="indonesia">Malaio</string>
@@ -187,6 +187,7 @@
     <string name="result">Résultat:\t</string>
     <string name="choose">Choisir</string>
     <string name="okay">D\'accord</string>
+    <string name="dont_mention">Ne mentionnez pas</string>
     <string name="conversion_table">Tableau de conversion de vision</string>
     <string name="recommended_glasses">Verres recommandés</string>
     <string name="alarm_soon">Bientôt.\..</string>
@@ -194,6 +195,7 @@
     <string name="schedule_break">Planifier une pause</string>
     <string name="infinity">Infini</string>
     <string name="n_a">N\'est pas applicable</string>
+
 
     <string name="info_near_vision_dialog">Le test a lieu à 40 cm</string>
 
@@ -212,15 +214,15 @@
 
 
     <string name="info_bluetooth">
-        "*Une fois que le téléphone a connecté deux appareils via Bluetooth, vous pouvez commencer les tests.\n
-         *Cela nécessite que le Bluetooth soit activé sur les deux appareils et que quelques autorisations soient accordées. Si la première tentative échoue, veuillez réessayer.\n
-         *Le test est effectué à une distance de 4 m"</string>
+        "Une fois que le téléphone a connecté deux appareils via Bluetooth, vous pouvez commencer les tests.\n
+         Cela nécessite que le Bluetooth soit activé sur les deux appareils et que quelques autorisations soient accordées. Si la première tentative échoue, veuillez réessayer.\n
+         Le test est effectué à une distance de 4 m"</string>
 
     <string name="info_contrast">
         "Le test de sensibilité au contraste est un type d'évaluation visuelle utilisé pour évaluer la capacité d'une personne à distinguer différents niveaux de contraste.
         La sensibilité au contraste est cruciale pour diverses tâches visuelles, telles que la lecture, la conduite et la reconnaissance d'objets dans des conditions de faible luminosité.
         Un contraste Le test de sensibilité mesure la capacité d'une personne à détecter la différence entre les éléments clairs et sombres dans un stimulus visuel, généralement présenté sous la forme de motifs ou de lettres. \n"
-        "*Le test a lieu à 40 cm \n"</string>
+        "Le test a lieu à 40 cm \n"</string>
 
     <string name="color_blindness_detected">Le daltonisme a été détecté</string>
     <string name="color_blindness_not_detected">Le daltonisme n\'a pas été détecté</string>
@@ -234,8 +236,8 @@
     <string name="sunday">Dimanche</string>
 
     <string name="set_alarm">Définir un rappel</string>
-    <string name="which_day">Quel jour ?</string>
-    <string name="which_time">À quelle heure ?</string>
+    <string name="which_day">Quel jour?</string>
+    <string name="which_time">À quelle heure?</string>
     <string name="select">Sélectionner</string>
 
 </resources>

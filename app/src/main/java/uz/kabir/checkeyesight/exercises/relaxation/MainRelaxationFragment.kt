@@ -1,4 +1,4 @@
-package uz.kabir.checkeyesight.exercises.nearsightedness
+package uz.kabir.checkeyesight.exercises.relaxation
 
 import android.graphics.drawable.AnimatedVectorDrawable
 import android.os.*
@@ -14,16 +14,15 @@ import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
 import androidx.core.content.ContextCompat
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
 import uz.kabir.checkeyesight.R
-import uz.kabir.checkeyesight.databinding.FragmentMainNearsightednessBinding
+import uz.kabir.checkeyesight.databinding.FragmentMainRelaxtionBinding
 import uz.kabir.checkeyesight.exercises.typeconstructor.ExerciseTypes
 import java.util.*
 
 
-class MainNearsightedness : Fragment() {
+class MainRelaxationFragment : Fragment() {
 
-    private var viewBinding: FragmentMainNearsightednessBinding? = null
+    private var viewBinding: FragmentMainRelaxtionBinding? = null
     private val binding get() = viewBinding!!
 
     private var lists: ArrayList<ExerciseTypes>? = null
@@ -35,7 +34,6 @@ class MainNearsightedness : Fragment() {
 
     private var nextTimerRunning = false
     private var mainTimerRunning = false
-
 
     private val START_TIME_IN_MILLIS_NEXT: Long = 5000
     private val START_TIME_IN_MILLIS_MAIN: Long = 40000
@@ -73,7 +71,8 @@ class MainNearsightedness : Fragment() {
                     dialog.dismiss()
                 }
                 start.setOnClickListener {
-                    findNavController().navigate(R.id.homeFragment)
+
+                    view?.findNavController()?.navigate(R.id.homeFragment)
                     dialog.dismiss()
                 }
 
@@ -89,16 +88,18 @@ class MainNearsightedness : Fragment() {
         savedInstanceState: Bundle?,
     ): View? {
 
-        viewBinding = FragmentMainNearsightednessBinding.inflate(inflater, container, false)
+        viewBinding = FragmentMainRelaxtionBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        visibilities(true)
 
-        lists = ListDataNearsightedness.getExercises()
+        lists = ListDataRelaxation.getExercise()
+
+
+        visibilities(true)
 
         binding.myAnimationView.setAnimation(lists?.get(listPosition)!!.images)
         binding.txtTypeExercise.setText(lists?.get(listPosition)!!.exerciseName)
@@ -106,8 +107,6 @@ class MainNearsightedness : Fragment() {
 
         pauseToPlay()
         pauseToPlayMain()
-
-
 
         binding.nextTimerBtn.setOnClickListener {
             if (!nextTimerRunning) {
@@ -117,8 +116,6 @@ class MainNearsightedness : Fragment() {
                 pauseNext()
                 pauseToPlay()
             }
-
-
         }
 
 
@@ -131,8 +128,6 @@ class MainNearsightedness : Fragment() {
                 pauseToPlayMain()
                 pauseMain()
             }
-
-
         }
 
     }
@@ -150,12 +145,17 @@ class MainNearsightedness : Fragment() {
 
             override fun onFinish() {
 
-                visibilities(false)
-
                 mainFun()
                 nextTimerMillis = START_TIME_IN_MILLIS_NEXT
 
+                visibilities(false)
+
+                binding.myAnimationView.loop(true)
+                binding.myAnimationView.playAnimation()
+                binding.myAnimationView.speed = 0.2F
+
                 nextTimerRunning = false
+
             }
 
         }.start()
@@ -174,30 +174,27 @@ class MainNearsightedness : Fragment() {
                 val millisecondToSecond = millisUntilFinished.toInt() / 1000
                 seekBarImageShow(millisecondToSecond)
 
+
             }
 
             override fun onFinish() {
                 //main Timer Finish
-
-                binding.myAnimationView.loop(true)
-                binding.myAnimationView.playAnimation()
-                binding.myAnimationView.speed = 0.2F
                 if (listPosition < lists!!.size - 1) {
                     nextFun()
+
+                    visibilities(true)
 
                     listPosition++
                     binding.myAnimationView.setAnimation(lists?.get(listPosition)!!.images)
                     binding.txtTypeExercise.setText(lists?.get(listPosition)!!.exerciseName)
 
-                    visibilities(true)
-
-
                 } else {
+
                     invisible()
-                    binding.toHome.setOnClickListener {
+
+                    binding.toHome.setOnClickListener{
                         view?.findNavController()?.navigate(R.id.homeFragment)
                     }
-
                 }
 
                 mainTimerMillis = START_TIME_IN_MILLIS_MAIN
@@ -231,7 +228,6 @@ class MainNearsightedness : Fragment() {
         }
         nextTimerRunning = false
         pauseToPlay()
-
     }
 
     private fun pauseMain() {
@@ -254,6 +250,7 @@ class MainNearsightedness : Fragment() {
         val x = 5 - valueProgress
         binding.progressBar.progress = x
     }
+
 
     private fun playToPause() {
         binding.nextTimerBtn.setImageResource(R.drawable.play_to_pause)
@@ -303,7 +300,36 @@ class MainNearsightedness : Fragment() {
         super.onDestroyView()
     }
 
+    private fun visibilities(visBoolean: Boolean) {
+        binding.myAnimationView.loop(false)
+        binding.myAnimationView.playAnimation()
+        binding.myAnimationView.speed = 0.2F
+        if (visBoolean) {
+            binding.nextTimerBtn.visibility = View.VISIBLE
+            binding.progressBar.visibility = View.VISIBLE
+            binding.toHome.visibility  =View.INVISIBLE
+            binding.txtTypeExercise.visibility = View.VISIBLE
 
+            binding.mainTimerBtn.visibility = View.INVISIBLE
+            binding.relativeLayout.visibility = View.INVISIBLE
+            binding.txtMain.visibility = View.INVISIBLE
+            binding.textView4.visibility = View.INVISIBLE
+            binding.seekBar.visibility = View.INVISIBLE
+            binding.myAnimationView.visibility = View.INVISIBLE
+        } else {
+            binding.nextTimerBtn.visibility = View.INVISIBLE
+            binding.progressBar.visibility = View.INVISIBLE
+            binding.toHome.visibility  =View.INVISIBLE
+            binding.txtTypeExercise.visibility = View.INVISIBLE
+
+            binding.mainTimerBtn.visibility = View.VISIBLE
+            binding.relativeLayout.visibility = View.VISIBLE
+            binding.txtMain.visibility = View.VISIBLE
+            binding.textView4.visibility = View.VISIBLE
+            binding.seekBar.visibility = View.VISIBLE
+            binding.myAnimationView.visibility = View.VISIBLE
+        }
+    }
     private fun invisible() {
         binding.nextTimerBtn.visibility = View.INVISIBLE
         binding.progressBar.visibility = View.INVISIBLE
@@ -329,6 +355,8 @@ class MainNearsightedness : Fragment() {
         a2.duration = 1000
         binding.txtTypeExercise.startAnimation(a2)
 
+        binding.toHome.visibility = View.VISIBLE
+
         binding.myAnimationView.setAnimation(R.raw.cup_anim)
         binding.myAnimationView.visibility = View.VISIBLE
         binding.myAnimationView.playAnimation()
@@ -342,38 +370,6 @@ class MainNearsightedness : Fragment() {
         binding.myAnimationView.loop(false)
 
     }
-    private fun visibilities(visBoolean: Boolean) {
-        binding.myAnimationView.loop(false)
-        binding.myAnimationView.playAnimation()
-        binding.myAnimationView.speed = 0.2F
-        if (visBoolean) {
-            binding.nextTimerBtn.visibility = View.VISIBLE
-            binding.progressBar.visibility = View.VISIBLE
-            binding.toHome.visibility  =View.INVISIBLE
-            binding.txtTypeExercise.visibility = View.VISIBLE
-
-            binding.mainTimerBtn.visibility = View.INVISIBLE
-            binding.relativeLayout.visibility = View.INVISIBLE
-            binding.txtMain.visibility = View.INVISIBLE
-            binding.textView4.visibility = View.INVISIBLE
-            binding.seekBar.visibility = View.INVISIBLE
-            binding.myAnimationView.visibility = View.INVISIBLE
-        } else {
-            binding.nextTimerBtn.visibility = View.INVISIBLE
-            binding.progressBar.visibility = View.INVISIBLE
-            binding.toHome.visibility  =View.INVISIBLE
-            binding.txtTypeExercise.visibility = View.VISIBLE
-
-            binding.mainTimerBtn.visibility = View.VISIBLE
-            binding.relativeLayout.visibility = View.VISIBLE
-            binding.txtMain.visibility = View.VISIBLE
-            binding.textView4.visibility = View.VISIBLE
-            binding.seekBar.visibility = View.VISIBLE
-            binding.myAnimationView.visibility = View.VISIBLE
-
-        }
-    }
-
 
 
 }

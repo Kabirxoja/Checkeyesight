@@ -13,7 +13,7 @@ import androidx.core.app.ActivityCompat
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import uz.kabir.checkeyesight.R
-import uz.kabir.checkeyesight.main.MainActivity
+import uz.kabir.checkeyesight.MainActivity
 
 class AlarmReceiver : BroadcastReceiver() {
 

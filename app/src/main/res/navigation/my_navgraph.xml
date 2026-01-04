@@ -338,7 +338,7 @@
     </fragment>
     <fragment
         android:id="@+id/viewResult"
-        android:name="uz.kabir.checkeyesight.history.ViewResult"
+        android:name="uz.kabir.checkeyesight.history.ViewResultFragment"
         tools:layout="@layout/fragment_view_result" >
         <action
             android:id="@+id/action_viewResult_to_lineChartFragment"
@@ -355,7 +355,7 @@
         tools:layout="@layout/fragment_line_chart" />
     <fragment
         android:id="@+id/choosingConnection"
-        android:name="uz.kabir.checkeyesight.bluetoothconnect.ChoosingConnection"
+        android:name="uz.kabir.checkeyesight.bluetoothconnect.ConnectionFragment"
         tools:layout="@layout/fragment_choosing_connection">
 
         <action
@@ -385,7 +385,7 @@
         tools:layout="@layout/fragment_write" />
     <fragment
         android:id="@+id/colorBlindnessTest"
-        android:name="uz.kabir.checkeyesight.colorblindness.ColorBlindnessTest"
+        android:name="uz.kabir.checkeyesight.colorblindness.ColorBlindnessFragment"
         tools:layout="@layout/fragment_color_blindness_test">
         <action
             android:id="@+id/action_colorBlindnessTest_to_resultColorBlindness"
@@ -399,7 +399,7 @@
     </fragment>
     <fragment
         android:id="@+id/resultColorBlindness"
-        android:name="uz.kabir.checkeyesight.colorblindness.ResultColorBlindness"
+        android:name="uz.kabir.checkeyesight.colorblindness.ResultColorBlindnessFragment"
         tools:layout="@layout/fragment_result_color_blindness">
         <action
             android:id="@+id/action_resultColorBlindness_to_homeFragment"
@@ -414,7 +414,7 @@
     </fragment>
     <fragment
         android:id="@+id/astigmatismTest"
-        android:name="uz.kabir.checkeyesight.astigmatism.AstigmatismTest"
+        android:name="uz.kabir.checkeyesight.astigmatism.AstigmatismFragment"
         tools:layout="@layout/fragment_astigmatism_test" >
         <action
             android:id="@+id/action_astigmatismTest_to_rightEyeTest"
@@ -443,7 +443,7 @@
     </fragment>
     <fragment
         android:id="@+id/duochromeTest"
-        android:name="uz.kabir.checkeyesight.duochrometest.DuochromeTest"
+        android:name="uz.kabir.checkeyesight.duochrometest.DuochromeFragment"
         tools:layout="@layout/fragment_duochrome_test" >
         <action
             android:id="@+id/action_duochromeTest_to_resultColorBlindness"
@@ -491,32 +491,32 @@
 
     <fragment
         android:id="@+id/mainRecovery"
-        android:name="uz.kabir.checkeyesight.exercises.recovery.MainRecovery"
+        android:name="uz.kabir.checkeyesight.exercises.recovery.MainRecoveryFragment"
         android:label="fragment_main_recovery"
         tools:layout="@layout/fragment_main_recovery" />
     <fragment
         android:id="@+id/mainNearsightedness"
-        android:name="uz.kabir.checkeyesight.exercises.nearsightedness.MainNearsightedness"
+        android:name="uz.kabir.checkeyesight.exercises.nearsightedness.MainNearsightednessFragment"
         android:label="fragment_main_nearsightedness"
         tools:layout="@layout/fragment_main_nearsightedness" />
     <fragment
         android:id="@+id/amslerGrid"
-        android:name="uz.kabir.checkeyesight.amslergrid.AmslerGrid"
+        android:name="uz.kabir.checkeyesight.amslergrid.AmslerGridFragment"
         android:label="fragment_amsler_grid"
         tools:layout="@layout/fragment_amsler_grid" />
     <fragment
         android:id="@+id/mainFarsightedness"
-        android:name="uz.kabir.checkeyesight.exercises.farsightedness.MainFarsightedness"
+        android:name="uz.kabir.checkeyesight.exercises.farsightedness.MainFarsightednessFragment"
         android:label="fragment_main_farsightedness"
         tools:layout="@layout/fragment_main_farsightedness" />
     <fragment
         android:id="@+id/mainRelaxation"
-        android:name="uz.kabir.checkeyesight.exercises.relaxation.MainRelaxation"
+        android:name="uz.kabir.checkeyesight.exercises.relaxation.MainRelaxationFragment"
         android:label="fragment_main_relaxtion"
         tools:layout="@layout/fragment_main_relaxtion" />
     <fragment
         android:id="@+id/leftEyeTest"
-        android:name="uz.kabir.checkeyesight.astigmatism.LeftEyeTest"
+        android:name="uz.kabir.checkeyesight.astigmatism.LeftEyeTestFragment"
         android:label="fragment_left_eye_test"
         tools:layout="@layout/fragment_left_eye_test" >
         <action
@@ -532,7 +532,7 @@
 
     <fragment
         android:id="@+id/rightEyeTest"
-        android:name="uz.kabir.checkeyesight.astigmatism.RightEyeTest"
+        android:name="uz.kabir.checkeyesight.astigmatism.RightEyeTestFragment"
         android:label="fragment_right_eye_test"
         tools:layout="@layout/fragment_right_eye_test" >
         <action
@@ -550,7 +550,7 @@
     </fragment>
     <fragment
         android:id="@+id/resultAstigmatism"
-        android:name="uz.kabir.checkeyesight.astigmatism.ResultAstigmatism"
+        android:name="uz.kabir.checkeyesight.astigmatism.ResultAstigmatismFragment"
         android:label="fragment_result_astigmatism"
         tools:layout="@layout/fragment_result_astigmatism" >
         <action
@@ -570,12 +570,12 @@
         tools:layout="@layout/fragment_near_vision_test" />
     <fragment
         android:id="@+id/contrastVisionTest"
-        android:name="uz.kabir.checkeyesight.contrast.ContrastVisionTest"
+        android:name="uz.kabir.checkeyesight.contrast.ContrastVisionFragment"
         android:label="fragment_contrast_vision_test"
         tools:layout="@layout/fragment_contrast_vision_test" />
     <fragment
         android:id="@+id/calculate"
-        android:name="uz.kabir.checkeyesight.calculate.Calculate"
+        android:name="uz.kabir.checkeyesight.calculate.CalculateFragment"
         android:label="fragment_calculate"
         tools:layout="@layout/fragment_calculate"
 
@@ -591,7 +591,7 @@
         tools:layout="@layout/fragment_show_result_glass" />
     <fragment
         android:id="@+id/alarmMainScreen"
-        android:name="uz.kabir.checkeyesight.alarm.AlarmMainScreen"
+        android:name="uz.kabir.checkeyesight.alarm.AlarmFragment"
         android:label="fragment_alarm_main_screen"
         tools:layout="@layout/fragment_alarm_main_screen" />
 

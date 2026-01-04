@@ -8,7 +8,7 @@ import android.content.Intent
 import android.os.Build
 import androidx.core.app.NotificationCompat
 import uz.kabir.checkeyesight.R
-import uz.kabir.checkeyesight.main.MainActivity
+import uz.kabir.checkeyesight.MainActivity
 
 class NotificationPending {
     val channel_id = "com.example.checkeyesight"

@@ -27,6 +27,7 @@
     <string name="close_app_question">Deseja sair do programa?</string>
     <string name="close_test_question">Deseja abortar o teste? </string>
     <string name="close_eye_exercise">Quer terminar o exercício para os olhos?</string>
+    <string name="close_eye_repeat">Deseja repetir o teste de visão?</string>
     <string name="answer_yes">Sim</string>
     <string name="answer_no">Não</string>
 
@@ -71,10 +72,10 @@
     <string name="delete_test_items">Apagar resultados do teste</string>
     <string name="need_turn_on_bluetooth_text">É necessário ativar o Bluetooth para começar</string>
 
-    <string name="restoration_of_vision">Recuperação da vista</string>
-    <string name="exercise_for_farsightedness">Exercício para hipermetropia</string>
-    <string name="exercise_for_nearsightedness">Exercício para miopia</string>
-    <string name="relaxation_of_vision">Restauração da visão</string>
+    <string name="restoration_of_vision">#1. Exercícios para reduzir o cansaço visual</string>
+    <string name="exercise_for_farsightedness">#2. Exercícios para relaxar os músculos oculares</string>
+    <string name="exercise_for_nearsightedness">#3. Pratique o foco à distância</string>
+    <string name="relaxation_of_vision">#4. Exercícios para melhorar o foco</string>
 
     <string name="exercise_up_and_down">Movimento ocular para cima e para baixo</string>
     <string name="exercise_diagonal">Movimento diagonal dos olhos</string>
@@ -188,6 +189,7 @@
     <string name="result">Resultado:\t</string>
     <string name="choose">Escolher</string>
     <string name="okay">OK</string>
+    <string name="dont_mention">Não mencione</string>
     <string name="conversion_table">Tabela de conversão de visão</string>
     <string name="recommended_glasses">Óculos recomendados</string>
     <string name="alarm_soon">Breve.\..</string>
@@ -213,15 +215,15 @@
 
 
     <string name="info_bluetooth">
-        "*Depois que o telefone conectar dois dispositivos via bluetooth, você poderá iniciar o teste.\n
-         *Isso requer que ambos os dispositivos tenham o Bluetooth ativado e algumas permissões concedidas. Se a primeira tentativa falhar, tente novamente.\n
-         *O teste é realizado a uma distância de 4 m"
+        "Depois que o telefone conectar dois dispositivos via bluetooth, você poderá iniciar o teste.\n
+         Isso requer que ambos os dispositivos tenham o Bluetooth ativado e algumas permissões concedidas. Se a primeira tentativa falhar, tente novamente.\n
+         O teste é realizado a uma distância de 4 m"
     </string>
 
     <string name="info_contrast">"O teste de sensibilidade ao contraste é um tipo de avaliação visual usado para avaliar a capacidade de uma pessoa de distinguir entre diferentes níveis de contraste.
         A sensibilidade ao contraste é crucial para várias tarefas visuais, como ler, dirigir e reconhecer objetos em condições de pouca luz.
         Um contraste O teste de sensibilidade mede a capacidade de uma pessoa de detectar a diferença entre elementos claros e escuros em um estímulo visual, geralmente apresentado na forma de padrões ou letras. \n"
-        "*O teste é realizado a 40 cm \n"</string>
+        "O teste é realizado a 40 cm \n"</string>
 
     <string name="color_blindness_detected">O daltonismo foi detectado</string>
     <string name="color_blindness_not_detected">O daltonismo não foi detectado</string>
@@ -235,7 +237,7 @@
     <string name="sunday">Domingo</string>
 
     <string name="set_alarm">Definir um lembrete</string>
-    <string name="which_day">Qual ​​​​dia?</string>
+    <string name="which_day">Qual dia?</string>
     <string name="which_time">A que horas?</string>
     <string name="select">Seleccionar</string>
 

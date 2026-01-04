@@ -27,6 +27,7 @@
     <string name="close_app_question">Do you want to exit the program?</string>
     <string name="close_test_question">Do you want to abort the test? </string>
     <string name="close_eye_exercise">Do you want to finish the eye exercise?</string>
+    <string name="close_eye_repeat">Do you want to repeat the eye test</string>
     <string name="answer_yes">Yes</string>
     <string name="answer_no">No</string>
 
@@ -71,11 +72,10 @@
     <string name="delete_test_items">Delete test results</string>
     <string name="need_turn_on_bluetooth_text">You need to turn on Bluetooth to get started</string>
 
-
-    <string name="restoration_of_vision">#1. Eyesight recovery</string>
-    <string name="exercise_for_farsightedness">#3. Exercise for farsightedness</string>
-    <string name="exercise_for_nearsightedness">#2. Exercise for nearsightedness</string>
-    <string name="relaxation_of_vision">#4. Restoration of vision</string>
+    <string name="restoration_of_vision">#1. Exercises to reduce eye strain</string>
+    <string name="exercise_for_farsightedness">#2. Exercises to relax eye muscles</string>
+    <string name="exercise_for_nearsightedness">#3. Practice focusing at a distance</string>
+    <string name="relaxation_of_vision">#4. Exercises to improve focus</string>
 
     <string name="exercise_up_and_down">Up and down eye motion</string>
     <string name="exercise_diagonal">Diagonal eye motion</string>
@@ -179,15 +179,16 @@
     <string name="rotate_phone">Turn your phone</string>
     <string name="eye_exercise_done">Well done, you\'ve completed this workout!</string>
     <string name="txt_congratulations">Congratulations!</string>
-    <string name="share">share</string>
-    <string name="rate_us">rate_us</string>
-    <string name="information">information</string>
+    <string name="share">Share</string>
+    <string name="rate_us">Rate us</string>
+    <string name="information">Information</string>
     <string name="feedback">Feedback</string>
     <string name="exit">Exit</string>
     <string name="title11">Contrast sensitivity chart</string>
     <string name="result">Result:\t</string>
     <string name="choose">Choose</string>
     <string name="okay">Okay</string>
+    <string name="dont_mention">Don\'t mention</string>
     <string name="conversion_table">Vision conversion table</string>
     <string name="recommended_glasses">Recommended glasses</string>
     <string name="alarm_soon">Soon.\..</string>
@@ -212,9 +213,9 @@
     <string name="info_snellen_number_chart">A Snellen "Number" Eye Chart is a variation of the traditional Snellen chart that uses numbers instead of letters. This makes it suitable for people who do not know the Latin alphabet or for young children who have not yet learned to read. Like the standard Snellen chart, the numbers are arranged in decreasing sizes from top to bottom. The person being tested identifies the smallest row of numbers they can clearly see, determining their visual acuity.</string>
 
 
-    <string name="info_bluetooth">"*After the phone connects two devices via bluetooth, you can start testing.\n" "*This requires both devices to have Bluetooth turned on and a few permissions granted, if the first attempt fails, please try again.\n" "*The test is carried out from a distance of 4 m"</string>
+    <string name="info_bluetooth">"After the phone connects two devices via bluetooth, you can start testing.\n" "This requires both devices to have Bluetooth turned on and a few permissions granted, if the first attempt fails, please try again.\n" "The test is carried out from a distance of 4 m"</string>
 
-    <string name="info_contrast">"Contrast sensitivity testing is a type of visual assessment used to evaluate a person\'s ability to distinguish between different levels of contrast.Contrast sensitivity is crucial for various visual tasks, such as reading, driving, and recognizing objects in low-light conditions.A contrast sensitivity test measures a person\'s ability to detect the difference between light and dark elements in a visual stimulus, typically presented in the form of patterns or letters. \n""*Test is held at 40 cm \n"</string>
+    <string name="info_contrast">"Contrast sensitivity testing is a type of visual assessment used to evaluate a person\'s ability to distinguish between different levels of contrast.Contrast sensitivity is crucial for various visual tasks, such as reading, driving, and recognizing objects in low-light conditions.A contrast sensitivity test measures a person\'s ability to detect the difference between light and dark elements in a visual stimulus, typically presented in the form of patterns or letters. \n""Test is held at 40 cm \n"</string>
 
     <string name="color_blindness_detected">Color blindness was detected</string>
     <string name="color_blindness_not_detected">Color blindness was not detected</string>

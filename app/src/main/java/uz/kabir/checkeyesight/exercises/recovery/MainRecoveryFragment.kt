@@ -1,5 +1,4 @@
-package uz.kabir.checkeyesight.exercises.farsightedness
-
+package uz.kabir.checkeyesight.exercises.recovery
 
 import android.graphics.drawable.AnimatedVectorDrawable
 import android.os.*
@@ -13,31 +12,28 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
 import androidx.core.content.ContextCompat
-import androidx.core.content.ContextCompat.getColor
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
 import uz.kabir.checkeyesight.R
-import uz.kabir.checkeyesight.databinding.FragmentMainFarsightednessBinding
+import uz.kabir.checkeyesight.databinding.FragmentMainRecoveryBinding
 import uz.kabir.checkeyesight.exercises.typeconstructor.ExerciseTypes
+import java.lang.String.format
 import java.util.*
 
 
-class MainFarsightedness : Fragment() {
+class MainRecoveryFragment : Fragment() {
 
-    private var viewBinding: FragmentMainFarsightednessBinding? = null
+    private var viewBinding: FragmentMainRecoveryBinding? = null
     private val binding get() = viewBinding!!
 
     private var lists: ArrayList<ExerciseTypes>? = null
     private var listPosition: Int = 0
-
 
     private var mainCountTimer: CountDownTimer? = null
     private var nextCountTimer: CountDownTimer? = null
 
     private var nextTimerRunning = false
     private var mainTimerRunning = false
-
 
     private val START_TIME_IN_MILLIS_NEXT: Long = 5000
     private val START_TIME_IN_MILLIS_MAIN: Long = 40000
@@ -75,7 +71,8 @@ class MainFarsightedness : Fragment() {
                     dialog.dismiss()
                 }
                 start.setOnClickListener {
-                    findNavController().navigate(R.id.homeFragment)
+
+                    view?.findNavController()?.navigate(R.id.homeFragment)
                     dialog.dismiss()
                 }
 
@@ -90,29 +87,22 @@ class MainFarsightedness : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-
-        viewBinding = FragmentMainFarsightednessBinding.inflate(inflater, container, false)
+        viewBinding = FragmentMainRecoveryBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.layout.setBackgroundColor(getColor(requireContext(),R.color.white))
-
-        lists = ListDataFarsightedness.getExercises()
+        lists = ListDataRecovery.getExercise()
 
         visibilities(true)
-
 
         binding.myAnimationView.setAnimation(lists?.get(listPosition)!!.images)
         binding.txtTypeExercise.setText(lists?.get(listPosition)!!.exerciseName)
 
-
         pauseToPlay()
         pauseToPlayMain()
-
-
 
         binding.nextTimerBtn.setOnClickListener {
             if (!nextTimerRunning) {
@@ -122,8 +112,6 @@ class MainFarsightedness : Fragment() {
                 pauseNext()
                 pauseToPlay()
             }
-
-
         }
 
 
@@ -131,15 +119,11 @@ class MainFarsightedness : Fragment() {
             if (!mainTimerRunning) {
                 playToPauseMain()
                 mainFun()
-
             } else {
                 pauseToPlayMain()
                 pauseMain()
             }
-
-
         }
-
     }
 
 
@@ -154,15 +138,18 @@ class MainFarsightedness : Fragment() {
             }
 
             override fun onFinish() {
-                visibilities(false)
-                
-                binding.myAnimationView.loop(true)
-                binding.myAnimationView.playAnimation()
-                binding.myAnimationView.speed = 0.2F
+                // next timer finish
+
 
                 mainFun()
                 nextTimerMillis = START_TIME_IN_MILLIS_NEXT
 
+
+                visibilities(false)
+
+                binding.myAnimationView.loop(true)
+                binding.myAnimationView.playAnimation()
+                binding.myAnimationView.speed = 0.2F
 
                 nextTimerRunning = false
 
@@ -185,13 +172,13 @@ class MainFarsightedness : Fragment() {
                 seekBarImageShow(millisecondToSecond)
 
 
-
             }
 
             override fun onFinish() {
                 //main Timer Finish
                 if (listPosition < lists!!.size - 1) {
                     nextFun()
+
                     visibilities(true)
 
                     listPosition++
@@ -199,15 +186,10 @@ class MainFarsightedness : Fragment() {
                     binding.txtTypeExercise.setText(lists?.get(listPosition)!!.exerciseName)
 
                 } else {
-
                     invisible()
-
-
                     binding.toHome.setOnClickListener {
                         view?.findNavController()?.navigate(R.id.homeFragment)
                     }
-
-
                 }
 
                 mainTimerMillis = START_TIME_IN_MILLIS_MAIN
@@ -229,8 +211,7 @@ class MainFarsightedness : Fragment() {
     private fun updateMainText() {
         val minutes = (mainTimerMillis / 1000).toInt() / 60
         val seconds = (mainTimerMillis / 1000).toInt() % 60
-        val timeLeftFormatted: String =
-            java.lang.String.format(Locale.getDefault(), "%02d:%02d", minutes, seconds)
+        val timeLeftFormatted: String = format(Locale.getDefault(), "%02d:%02d", minutes, seconds)
         binding.txtMain.text = timeLeftFormatted
     }
 
@@ -241,7 +222,6 @@ class MainFarsightedness : Fragment() {
         }
         nextTimerRunning = false
         pauseToPlay()
-
     }
 
     private fun pauseMain() {
@@ -265,6 +245,7 @@ class MainFarsightedness : Fragment() {
         binding.progressBar.progress = x
     }
 
+
     private fun playToPause() {
         binding.nextTimerBtn.setImageResource(R.drawable.play_to_pause)
         val avdPlayToPause = binding.nextTimerBtn.drawable as AnimatedVectorDrawable
@@ -279,7 +260,6 @@ class MainFarsightedness : Fragment() {
 
     private fun pauseToPlayMain() {
         binding.mainTimerBtn.setImageResource(R.drawable.play_to_pause)
-
         val avdPauseToPlay = binding.mainTimerBtn.drawable as AnimatedVectorDrawable
         avdPauseToPlay.start()
 
@@ -295,6 +275,7 @@ class MainFarsightedness : Fragment() {
         binding.myAnimationView.pauseAnimation()
 
     }
+
 
     override fun onPause() {
         super.onPause()
@@ -313,6 +294,7 @@ class MainFarsightedness : Fragment() {
         super.onDestroyView()
     }
 
+
     private fun invisible() {
         binding.nextTimerBtn.visibility = View.INVISIBLE
         binding.progressBar.visibility = View.INVISIBLE
@@ -323,7 +305,6 @@ class MainFarsightedness : Fragment() {
         binding.textView4.visibility = View.INVISIBLE
         binding.seekBar.visibility = View.INVISIBLE
         binding.toHome.visibility  =View.VISIBLE
-
 
         binding.textCongratulations.text = getString(R.string.eye_exercise_done)
         binding.textCongratulations.setTextColor(resources.getColor(R.color.white))
@@ -348,8 +329,9 @@ class MainFarsightedness : Fragment() {
                 R.color.main_color
             )
         )
-        binding.myAnimationView.speed = 0.5F
         binding.myAnimationView.loop(false)
+        binding.myAnimationView.playAnimation()
+        binding.myAnimationView.speed = 0.5F
 
     }
     private fun visibilities(visBoolean: Boolean) {
@@ -362,6 +344,7 @@ class MainFarsightedness : Fragment() {
             binding.toHome.visibility  =View.INVISIBLE
             binding.txtTypeExercise.visibility = View.VISIBLE
 
+
             binding.mainTimerBtn.visibility = View.INVISIBLE
             binding.relativeLayout.visibility = View.INVISIBLE
             binding.txtMain.visibility = View.INVISIBLE
@@ -372,6 +355,8 @@ class MainFarsightedness : Fragment() {
             binding.nextTimerBtn.visibility = View.INVISIBLE
             binding.progressBar.visibility = View.INVISIBLE
             binding.toHome.visibility  =View.INVISIBLE
+            binding.txtTypeExercise.visibility = View.INVISIBLE
+
 
             binding.mainTimerBtn.visibility = View.VISIBLE
             binding.relativeLayout.visibility = View.VISIBLE
@@ -379,14 +364,8 @@ class MainFarsightedness : Fragment() {
             binding.textView4.visibility = View.VISIBLE
             binding.seekBar.visibility = View.VISIBLE
             binding.myAnimationView.visibility = View.VISIBLE
-            binding.txtTypeExercise.visibility = View.INVISIBLE
-
         }
     }
-
-
-
-
 
 
 }

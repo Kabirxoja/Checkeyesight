@@ -29,9 +29,8 @@ import uz.kabir.checkeyesight.custom.CustomPicker
 import uz.kabir.checkeyesight.databinding.CustomDialogAlarmBinding
 import uz.kabir.checkeyesight.databinding.FragmentAlarmMainScreenBinding
 import androidx.core.content.ContextCompat
-import uz.kabir.checkeyesight.main.MainActivity
 
-class AlarmMainScreen : Fragment() {
+class AlarmFragment : Fragment() {
     private var viewBinding: FragmentAlarmMainScreenBinding? = null
     private val binding get() = viewBinding!!
     private lateinit var alarmAdapter: AlarmAdapter

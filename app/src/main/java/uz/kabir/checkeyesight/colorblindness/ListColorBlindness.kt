@@ -3,7 +3,7 @@ package uz.kabir.checkeyesight.colorblindness
 import uz.kabir.checkeyesight.R
 
 
-object List{
+object ListColorBlindness{
 
     fun getQuestionColorBlindness():ArrayList<QuestionColorBlindness>{
 

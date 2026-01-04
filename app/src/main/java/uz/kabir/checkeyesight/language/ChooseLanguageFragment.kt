@@ -11,7 +11,6 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import uz.kabir.checkeyesight.R
 import uz.kabir.checkeyesight.databinding.FragmentChooseLanguageBinding
-import uz.kabir.checkeyesight.duochrometest.Constant
 import uz.kabir.checkeyesight.language.Constants.KEY_PENDING_NAV
 import java.util.*
 import androidx.core.content.edit

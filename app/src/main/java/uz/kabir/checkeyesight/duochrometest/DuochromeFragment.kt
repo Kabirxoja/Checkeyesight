@@ -7,7 +7,7 @@ import uz.kabir.checkeyesight.R
 import uz.kabir.checkeyesight.databinding.FragmentDuochromeTestBinding
 
 
-class DuochromeTest : Fragment() {
+class DuochromeFragment : Fragment() {
 
     private var viewBinding: FragmentDuochromeTestBinding? = null
     private val binding get() = viewBinding!!
@@ -17,10 +17,8 @@ class DuochromeTest : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         viewBinding = FragmentDuochromeTestBinding.inflate(inflater, container, false)
-        val view = binding.root
-        return view
+        return binding.root
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,6 +35,4 @@ class DuochromeTest : Fragment() {
         viewBinding = null
         super.onDestroyView()
     }
-
-
 }

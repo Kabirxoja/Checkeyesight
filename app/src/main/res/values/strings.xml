@@ -28,6 +28,7 @@
     <string name="close_app_question">Do you want to exit the program?</string>
     <string name="close_test_question">Do you want to abort the test? </string>
     <string name="close_eye_exercise">Do you want to finish the eye exercise?</string>
+    <string name="close_eye_repeat">Do you want to repeat the eye test</string>
     <string name="answer_yes">Yes</string>
     <string name="answer_no">No</string>
 
@@ -71,10 +72,10 @@
     <string name="delete_test_items">Delete test results</string>
     <string name="need_turn_on_bluetooth_text">Text_Turn_On_Bluetooth</string>
 
-    <string name="restoration_of_vision">Restoration of vision</string>
-    <string name="exercise_for_farsightedness">Exercise for_farsightedness</string>
-    <string name="exercise_for_nearsightedness">Exercise for_nearsightedness</string>
-    <string name="relaxation_of_vision">Restoration of vision</string>
+    <string name="restoration_of_vision">#1. Exercises to reduce eye strain</string>
+    <string name="exercise_for_farsightedness">#2. Exercises to relax eye muscles</string>
+    <string name="exercise_for_nearsightedness">#3. Practice focusing at a distance</string>
+    <string name="relaxation_of_vision">#4. Exercises to improve focus</string>
 
     <string name="exercise_up_and_down">Up_and_Down</string>
     <string name="exercise_diagonal">Diagonal</string>
@@ -152,6 +153,7 @@
     <string name="result">Result</string>
     <string name="choose">Choose</string>
     <string name="okay">Okay</string>
+    <string name="dont_mention">Don\'t mention</string>
     <string name="conversion_table">conversion_table</string>
     <string name="recommended_glasses">Recommended glasses prescription</string>
     <string name="alarm_soon">Soon.\..</string>

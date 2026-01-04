@@ -13,7 +13,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import uz.kabir.checkeyesight.R
 import uz.kabir.checkeyesight.databinding.FragmentResultScreenBinding
-import uz.kabir.checkeyesight.main.MainActivity
+import uz.kabir.checkeyesight.MainActivity
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.math.abs

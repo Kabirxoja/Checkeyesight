@@ -5,8 +5,7 @@ import uz.kabir.checkeyesight.R
 import uz.kabir.checkeyesight.exercises.typeconstructor.ExerciseTypes
 
 object ListDataRelaxation {
-    fun getExercise():ArrayList<ExerciseTypes>
-    {
+    fun getExercise(): ArrayList<ExerciseTypes> {
 
         val exercises = ArrayList<ExerciseTypes>()
 

@@ -9,7 +9,7 @@ import android.os.LocaleList
 import android.util.Log
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.os.LocaleListCompat
-import uz.kabir.checkeyesight.main.MainActivity
+import uz.kabir.checkeyesight.MainActivity
 import java.util.Locale
 
 object LanguageHelper {

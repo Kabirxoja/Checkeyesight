@@ -10,7 +10,7 @@ import uz.kabir.checkeyesight.R
 import uz.kabir.checkeyesight.databinding.FragmentCalculateBinding
 
 
-class Calculate : Fragment() {
+class CalculateFragment : Fragment() {
 
     private var viewBinding: FragmentCalculateBinding? = null
     private val binding get() = viewBinding!!
@@ -21,7 +21,6 @@ class Calculate : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         viewBinding = FragmentCalculateBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -32,7 +31,6 @@ class Calculate : Fragment() {
         binding.btnFirst.setOnClickListener {
             findNavController().navigate(R.id.action_calculate_to_showResultGlass2)
         }
-
 
         binding.textResult.text = "0,0"
 

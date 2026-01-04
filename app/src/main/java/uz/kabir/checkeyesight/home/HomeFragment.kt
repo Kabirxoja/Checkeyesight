@@ -78,8 +78,7 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         viewBinding = FragmentHomeBinding.inflate(inflater, container, false)
-        val view = binding.root
-        return view
+        return binding.root
     }
 
 

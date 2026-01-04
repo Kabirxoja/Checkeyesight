@@ -27,6 +27,7 @@
     <string name="close_app_question">Quieres salir del programa?</string>
     <string name="close_test_question">Quiere cancelar la prueba?</string>
     <string name="close_eye_exercise">Quieres terminar el ejercicio de los ojos?</string>
+    <string name="close_eye_repeat">¿Desea repetir la prueba de la vista?</string>
     <string name="answer_yes">Sí</string>
     <string name="answer_no">No</string>
 
@@ -71,11 +72,10 @@
     <string name="delete_test_items">Eliminar resultados de la prueba</string>
     <string name="need_turn_on_bluetooth_text">Tienes que activar el Bluetooth para empezar</string>
 
-
-    <string name="restoration_of_vision">recuperación de la vista</string>
-    <string name="exercise_for_farsightedness">Ejercicio para la hipermetropía</string>
-    <string name="exercise_for_nearsightedness">Ejercicio para la miopía</string>
-    <string name="relaxation_of_vision">Restauración de la visión</string>
+    <string name="restoration_of_vision">#1. Ejercicios para reducir la fatiga visual</string>
+    <string name="exercise_for_farsightedness">#2. Ejercicios para relajar los músculos oculares</string>
+    <string name="exercise_for_nearsightedness">#3. Practica el enfoque a distancia</string>
+    <string name="relaxation_of_vision">#4. Ejercicios para mejorar el enfoque</string>
 
     <string name="exercise_up_and_down">Movimiento ocular arriba y abajo</string>
     <string name="exercise_diagonal">Movimiento ocular en diagonal</string>
@@ -176,7 +176,7 @@
     <string name="rotate_phone">Convierte tu teléfono</string>
     <string name="eye_exercise_done">Bien hecho, has completado este entrenamiento!</string>
     <string name="txt_congratulations">Felicidades!</string>
-    <string name="share">compartir</string>
+    <string name="share">Compartir</string>
     <string name="rate_us">Nos califica</string>
     <string name="information">información</string>
     <string name="feedback">Comentario</string>
@@ -189,6 +189,7 @@
     <string name="result">Resultado:\t</string>
     <string name="choose">Elegir</string>
     <string name="okay">Bueno</string>
+    <string name="dont_mention">No mencionar</string>
     <string name="conversion_table">Tabla de conversión de visión</string>
     <string name="recommended_glasses">Gafas recomendadas</string>
     <string name="alarm_soon">Pronto.\..</string>
@@ -214,16 +215,16 @@
 
 
     <string name="info_bluetooth">
-        "*Después de que el teléfono conecte dos dispositivos a través de bluetooth, puede comenzar a probar.\n
-         *Esto requiere que ambos dispositivos tengan Bluetooth activado y algunos permisos otorgados, si el primer intento falla, inténtalo de nuevo.\n
-         *La prueba se realiza a una distancia de 4 m"
+        "Después de que el teléfono conecte dos dispositivos a través de bluetooth, puede comenzar a probar.\n
+         Esto requiere que ambos dispositivos tengan Bluetooth activado y algunos permisos otorgados, si el primer intento falla, inténtalo de nuevo.\n
+         La prueba se realiza a una distancia de 4 m"
     </string>
 
     <string name="info_contrast">
         "La prueba de sensibilidad al contraste es un tipo de evaluación visual que se usa para evaluar la capacidad de una persona para distinguir entre diferentes niveles de contraste.
         La sensibilidad al contraste es crucial para varias tareas visuales, como leer, conducir y reconocer objetos en condiciones de poca luz.
         Una prueba de contraste La prueba de sensibilidad mide la capacidad de una persona para detectar la diferencia entre elementos claros y oscuros en un estímulo visual, que normalmente se presenta en forma de patrones o letras. \n"
-        "*La prueba se lleva a cabo a 40 cm \n"</string>
+        "La prueba se lleva a cabo a 40 cm \n"</string>
 
     <string name="color_blindness_detected">Se detectó daltonismo</string>
     <string name="color_blindness_not_detected">No se detectó daltonismo</string>

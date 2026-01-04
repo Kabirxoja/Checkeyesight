@@ -24,10 +24,10 @@
     <string name="tab_layout1">Kóriw testi</string>
     <string name="tab_layout2">Kóriw shınıǵıwı </string>
 
-
     <string name="close_app_question">Programmadan shıǵıwchimisiz?</string>
     <string name="close_test_question">Testti múddetinen aldın tugatmoqchimisiz?</string>
     <string name="close_eye_exercise">Kóz shınıǵıwın tugatmoqchimisiz?</string>
+    <string name="close_eye_repeat">Kóz testin tákirarlamaqshimisiz?</string>
     <string name="answer_yes">Awa</string>
     <string name="answer_no">Joq</string>
 
@@ -72,10 +72,10 @@
     <string name="delete_test_items">Sınaq nátiyjeleri óshirilsinmi?</string>
     <string name="need_turn_on_bluetooth_text">Ishga tushurish uchun Bluetoothni yoqishingiz kerak</string>
 
-    <string name="restoration_of_vision">Kóriw qábiletin qayta tiklew</string>
-    <string name="exercise_for_farsightedness">Uzaqtı kórmeslik ushın shınıǵıw</string>
-    <string name="exercise_for_nearsightedness">Jaqındı kórmeslik ushın shınıǵıw</string>
-    <string name="relaxation_of_vision">Kóriw qábiletin qayta tiklew</string>
+    <string name="restoration_of_vision">#1. Kóz sharshashın kemeyttiriwshi shınıǵıwlar</string>
+    <string name="exercise_for_farsightedness">#2. Kóz bulshiq etlerin bosastiriwshi shiniǵiwlar</string>
+    <string name="exercise_for_nearsightedness">#3. Uzoq masofaga fokusni mashq qildirish</string>
+    <string name="relaxation_of_vision">#4. Fokusni yaxshilash mashqlari</string>
 
 
     <string name="exercise_up_and_down">Kóz háreketi joqarıǵa hám tómenge</string>
@@ -192,6 +192,7 @@
     <string name="result">Nátiyje:\t</string>
     <string name="choose">Tańlaw </string>
     <string name="okay">Jaqsı</string>
+    <string name="dont_mention">Eske almaw</string>
     <string name="conversion_table">Kóriw degi ólshewlerdi ózgeris kestesi</string>
     <string name="recommended_glasses">Usınıs etilgen kóz áynek</string>
     <string name="alarm_soon">Tez kúnde.\..</string>
@@ -217,11 +218,11 @@
 
 
     <string name="info_bluetooth">
-        "*Telefon eki qurılmanı bluetooth arqalı baylanıstırǵandan keyin, sınaqtı baslawıńız múmkin. \n
-        *Onıń ushın eki qurılmada da Bluetooth qosılǵan bolıwı hám bir neshe ruxsatlar beriliwi kerek, eger birinshi urınıw áwmetsiz bolsa, qayta urınıp ko'ing. \n
-        *Sınaq 4 m aralıqtan ótkeriladi" </string>
+        "Telefon eki qurılmanı bluetooth arqalı baylanıstırǵandan keyin, sınaqtı baslawıńız múmkin. \n
+        Onıń ushın eki qurılmada da Bluetooth qosılǵan bolıwı hám bir neshe ruxsatlar beriliwi kerek, eger birinshi urınıw áwmetsiz bolsa, qayta urınıp ko'ing. \n
+        Sınaq 4 m aralıqtan ótkeriladi" </string>
 
-    <string name="info_contrast">"Kontrast seziwsheńlıq testi - bul adamdıń túrli dárejedegi kontrasttı parıqlaw qábiletin bahalaw ushın qollanıladıgen vizual bahalawdıń bir túri. Kontrast seziwsheńligi túrli vizual wazıypalar ushın, mısalı, oqıw, aydaw hám kem jaqtılıq sharayatında ob'ektlerdi teńib alıw ushın júdá zárúrli bolıp tabıladı. Kontrast. seziwsheńlıq testi adamdıń vizual stimulda jaqtılıq hám qaranǵi elementler arasındaǵı farqni anıqlaw qábiletin o'lchaydi, ádetde naǵıs yamasa naǵıs formasında usınıs etiledi. háripler \n""*Sınaq 40 sm de ótkeriledi \n"</string>
+    <string name="info_contrast">"Kontrast seziwsheńlıq testi - bul adamdıń túrli dárejedegi kontrasttı parıqlaw qábiletin bahalaw ushın qollanıladıgen vizual bahalawdıń bir túri. Kontrast seziwsheńligi túrli vizual wazıypalar ushın, mısalı, oqıw, aydaw hám kem jaqtılıq sharayatında ob'ektlerdi teńib alıw ushın júdá zárúrli bolıp tabıladı. Kontrast. seziwsheńlıq testi adamdıń vizual stimulda jaqtılıq hám qaranǵi elementler arasındaǵı farqni anıqlaw qábiletin o'lchaydi, ádetde naǵıs yamasa naǵıs formasında usınıs etiledi. háripler \n""Sınaq 40 sm de ótkeriledi \n"</string>
 
     <string name="color_blindness_detected">Reń kózi kórmegenligi anıqlandı</string>
     <string name="color_blindness_not_detected">Reń kóriwshiligi anıqlanbadı</string>

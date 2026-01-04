@@ -64,30 +64,20 @@ class WriteFragment : Fragment() {
         if (!myBluetoothAdapter.isEnabled) {
             val intentBTEnable = Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE)
             startActivityForResult(intentBTEnable, REQUEST_ENABLE_BLUETOOTH)
-
-            binding.rlFindDevices.visibility=View.GONE
-
-        }
-        else
-        {
-            binding.rlFindDevices.visibility=View.VISIBLE
-
+            binding.rlFindDevices.visibility = View.GONE
+        } else {
+            binding.rlFindDevices.visibility = View.VISIBLE
         }
 
         implementListeners()
-
-
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-
         viewBinding = FragmentWriteBinding.inflate(inflater, container, false)
-        val view = binding.root
-
-        return view
+        return  binding.root
     }
 
 
@@ -142,12 +132,12 @@ class WriteFragment : Fragment() {
 //        }
 
         binding.tvOptionOne.setOnClickListener {
-            object :CountDownTimer(2000,1000){
+            object : CountDownTimer(2000, 1000) {
                 override fun onTick(millisUntilFinished: Long) {
-                    binding.tvOptionOne.isSelected=true
-                    binding.tvOptionTwo.isSelected=false
-                    binding.tvOptionThree.isSelected=false
-                    binding.tvOptionFour.isSelected=false
+                    binding.tvOptionOne.isSelected = true
+                    binding.tvOptionTwo.isSelected = false
+                    binding.tvOptionThree.isSelected = false
+                    binding.tvOptionFour.isSelected = false
                     sendReceive.write("1".toByteArray())
                 }
 
@@ -158,17 +148,15 @@ class WriteFragment : Fragment() {
             }.start()
 
 
-
-
         }
         binding.tvOptionTwo.setOnClickListener {
 
-            object :CountDownTimer(1000,1000){
+            object : CountDownTimer(1000, 1000) {
                 override fun onTick(millisUntilFinished: Long) {
-                    binding.tvOptionOne.isSelected=false
-                    binding.tvOptionTwo.isSelected=true
-                    binding.tvOptionThree.isSelected=false
-                    binding.tvOptionFour.isSelected=false
+                    binding.tvOptionOne.isSelected = false
+                    binding.tvOptionTwo.isSelected = true
+                    binding.tvOptionThree.isSelected = false
+                    binding.tvOptionFour.isSelected = false
                     sendReceive.write("2".toByteArray())
                 }
 
@@ -179,16 +167,15 @@ class WriteFragment : Fragment() {
             }.start()
 
 
-
         }
         binding.tvOptionThree.setOnClickListener {
 
-            object :CountDownTimer(1000,1000){
+            object : CountDownTimer(1000, 1000) {
                 override fun onTick(millisUntilFinished: Long) {
-                    binding.tvOptionOne.isSelected=false
-                    binding.tvOptionTwo.isSelected=false
-                    binding.tvOptionThree.isSelected=true
-                    binding.tvOptionFour.isSelected=false
+                    binding.tvOptionOne.isSelected = false
+                    binding.tvOptionTwo.isSelected = false
+                    binding.tvOptionThree.isSelected = true
+                    binding.tvOptionFour.isSelected = false
                     sendReceive.write("3".toByteArray())
                 }
 
@@ -199,16 +186,15 @@ class WriteFragment : Fragment() {
             }.start()
 
 
-
         }
         binding.tvOptionFour.setOnClickListener {
 
-            object :CountDownTimer(1000,1000){
+            object : CountDownTimer(1000, 1000) {
                 override fun onTick(millisUntilFinished: Long) {
-                    binding.tvOptionOne.isSelected=false
-                    binding.tvOptionTwo.isSelected=false
-                    binding.tvOptionThree.isSelected=false
-                    binding.tvOptionFour.isSelected=true
+                    binding.tvOptionOne.isSelected = false
+                    binding.tvOptionTwo.isSelected = false
+                    binding.tvOptionThree.isSelected = false
+                    binding.tvOptionFour.isSelected = true
                     sendReceive.write("4".toByteArray())
                 }
 
@@ -223,35 +209,38 @@ class WriteFragment : Fragment() {
 
 
     }
-    private   fun clearBtnSelected(){
 
-        binding.tvOptionOne.isSelected=false
-        binding.tvOptionTwo.isSelected=false
-        binding.tvOptionThree.isSelected=false
-        binding.tvOptionFour.isSelected=false
+    private fun clearBtnSelected() {
+
+        binding.tvOptionOne.isSelected = false
+        binding.tvOptionTwo.isSelected = false
+        binding.tvOptionThree.isSelected = false
+        binding.tvOptionFour.isSelected = false
     }
 
     /*Create Handler for the status. This handler will listen the message from another thread and
     change the text of the Status TextView*/
     @SuppressLint("MissingInflatedId")
     var handler = Handler(Handler.Callback { msg ->
+        val b = viewBinding?:return@Callback true
         when (msg.what) {
-            STATE_LISTENING -> binding.status.text = "Listening"
-            STATE_CONNECTING -> binding.status.text = "Connecting"
-            STATE_CONNECTED -> binding.status.text = "Connected"
-            STATE_CONNECTION_FAILED -> binding.status.text = "Connection Failed"
+            STATE_LISTENING -> b.status.text = "Listening"
+            STATE_CONNECTING -> b.status.text = "Connecting"
+            STATE_CONNECTED -> b.status.text = "Connected"
+            STATE_CONNECTION_FAILED -> b.status.text = "Connection Failed"
             STATE_MESSAGE_RECEIVED -> {
                 val readBuff1 = msg.obj as ByteArray
 
                 val tempMsg1 = String(readBuff1, 0, msg.arg1)
 
                 val endSub = tempMsg1.substring(0, 7)
-                val endOfWords = tempMsg1.substring(7,tempMsg1.length)
+                val endOfWords = tempMsg1.substring(7, tempMsg1.length)
 
 
                 if (endSub == "restart") {
                     val builder = AlertDialog.Builder(context, R.style.myFullscreenAlertDialogStyle)
-                    val dialogView: View = layoutInflater.inflate(R.layout.custom_dialog_result, null)
+                    val dialogView: View =
+                        layoutInflater.inflate(R.layout.custom_dialog_result, null)
                     builder.setView(dialogView)
 
                     val cancel = dialogView.findViewById<Button>(R.id.dialog_cancel_button)
@@ -264,13 +253,17 @@ class WriteFragment : Fragment() {
                     val leftEye = endOfWords.split("/").get(0).toString()
                     val rightEye = endOfWords.split("/").get(1).toString()
 
-                    infoTitle.text = "leftEye = $leftEye\n" +
-                                        "right = $rightEye"
+                    infoTitle.text =
+                                "${resources.getString(R.string.left_eye)}: $leftEye\n" +
+                                "${resources.getString(R.string.left_eye)}: $rightEye"
 
 
-                    dialogTitle.text = "Qaytadan boshlamoqchimisz?"
+                    dialogTitle.text = resources.getString(R.string.result)
                     val dialog = builder.create()
-                    dialog.window?.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT)
+                    dialog.window?.setLayout(
+                        WindowManager.LayoutParams.MATCH_PARENT,
+                        WindowManager.LayoutParams.MATCH_PARENT
+                    )
                     dialog.setCancelable(false)
                     dialog.show()
 
@@ -287,12 +280,11 @@ class WriteFragment : Fragment() {
                 }
                 if (tempMsg1 == "finishing") {
                     dialogScreen("right")
-                    Log.i("ishladii", tempMsg1)
                 }
                 if (tempMsg1 == "started") {
                     dialogScreen("left")
-                    binding.rlFindDevices.visibility=View.GONE
-                    binding.linearVariants.visibility = View.VISIBLE
+                    b.rlFindDevices.visibility = View.GONE
+                    b.linearVariants.visibility = View.VISIBLE
                 }
 
             }
@@ -427,7 +419,7 @@ class WriteFragment : Fragment() {
 
     private fun dialogScreen(eye: String) {
 
-        val builder = AlertDialog.Builder(context,R.style.myFullscreenAlertDialogStyle)
+        val builder = AlertDialog.Builder(context, R.style.myFullscreenAlertDialogStyle)
         val dialogView: View = layoutInflater.inflate(R.layout.custom_dialog_bluetooth, null)
 
         builder.setView(dialogView)
@@ -447,7 +439,10 @@ class WriteFragment : Fragment() {
 
         val dialog = builder.create()
         dialog.window?.setGravity(Gravity.CENTER_VERTICAL)
-        dialog.window?.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT)
+        dialog.window?.setLayout(
+            WindowManager.LayoutParams.MATCH_PARENT,
+            WindowManager.LayoutParams.MATCH_PARENT
+        )
         dialog.setCancelable(false)
         dialog.show()
         next.setOnClickListener {
@@ -462,7 +457,7 @@ class WriteFragment : Fragment() {
     }
 
     override fun onDestroyView() {
-        viewBinding=null
+        viewBinding = null
         super.onDestroyView()
     }
 

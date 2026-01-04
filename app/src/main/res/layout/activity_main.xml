@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:theme="@style/Theme.CheckEyesight"
-    tools:context=".main.MainActivity">
+    tools:context=".MainActivity">
 
 
     <androidx.drawerlayout.widget.DrawerLayout

@@ -1,4 +1,4 @@
-package uz.kabir.checkeyesight.main
+package uz.kabir.checkeyesight
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -9,8 +9,9 @@ import android.graphics.drawable.ColorDrawable
 import android.os.Build
 import android.os.Bundle
 import android.text.Html
-import android.util.Log
-import android.view.*
+import android.view.Menu
+import android.view.View
+import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.widget.SwitchCompat
@@ -18,18 +19,18 @@ import androidx.core.content.ContextCompat
 import androidx.core.net.toUri
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
-import androidx.navigation.*
+import androidx.navigation.NavController
+import androidx.navigation.NavOptions
+import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.navigation.NavigationView
-import uz.kabir.checkeyesight.R
 import uz.kabir.checkeyesight.language.Constants
-import uz.kabir.checkeyesight.language.Constants.KEY_PENDING_NAV
 import uz.kabir.checkeyesight.language.LanguageHelper
-
 
 class MainActivity : AppCompatActivity() {
 
@@ -278,10 +279,10 @@ class MainActivity : AppCompatActivity() {
             MODE_PRIVATE
         )
 
-        val shouldNavigate = pref.getBoolean(KEY_PENDING_NAV, false)
+        val shouldNavigate = pref.getBoolean(Constants.KEY_PENDING_NAV, false)
         if (!shouldNavigate) return
 
-        pref.edit().putBoolean(KEY_PENDING_NAV, false).apply()
+        pref.edit().putBoolean(Constants.KEY_PENDING_NAV, false).apply()
         val onBoardingFinished = getSharedPreferences("onBoarding", MODE_PRIVATE).getBoolean("Finished", false)
 
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragment) as NavHostFragment
@@ -373,12 +374,18 @@ class MainActivity : AppCompatActivity() {
     }
     private fun rateApp() {
         try{
-            val marketIntent = Intent(Intent.ACTION_VIEW, "market://details?id=$APP_PACKAGE_NAME".toUri()).apply {
+            val marketIntent = Intent(
+                Intent.ACTION_VIEW,
+                "market://details?id=$APP_PACKAGE_NAME".toUri()
+            ).apply {
                 addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             }
             startActivity(marketIntent)
         }catch(e:Exception){
-            val webIntent = Intent(Intent.ACTION_VIEW, "https://play.google.com/store/apps/details?id=$APP_PACKAGE_NAME".toUri()).apply {
+            val webIntent = Intent(
+                Intent.ACTION_VIEW,
+                "https://play.google.com/store/apps/details?id=$APP_PACKAGE_NAME".toUri()
+            ).apply {
                 addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             }
             startActivity(webIntent)
@@ -397,6 +404,3 @@ class MainActivity : AppCompatActivity() {
 
 
 }
-
-
-

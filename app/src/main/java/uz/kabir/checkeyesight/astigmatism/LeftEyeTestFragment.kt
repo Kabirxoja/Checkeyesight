@@ -10,12 +10,10 @@ import uz.kabir.checkeyesight.R
 import uz.kabir.checkeyesight.databinding.FragmentLeftEyeTestBinding
 
 
-class LeftEyeTest : Fragment() {
+class LeftEyeTestFragment : Fragment() {
 
     private var viewBinding: FragmentLeftEyeTestBinding? = null
     private val binding get() = viewBinding!!
-
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

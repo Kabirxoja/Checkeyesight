@@ -4,7 +4,7 @@ import uz.kabir.checkeyesight.visiontest.Question
 import uz.kabir.checkeyesight.R
 import java.util.ArrayList
 
-object ListBlueTooth {
+object ListBluetooth {
 
 
         fun getQuestions1(): ArrayList<Question> {
@@ -12,7 +12,6 @@ object ListBlueTooth {
             //create ArrayList of type question to store data
             val questionsList = ArrayList<Question>()
 
-            //populate the questions
             val que1 = Question(
                 1,
                 R.drawable.e_chart_left,
@@ -147,35 +146,6 @@ object ListBlueTooth {
                 )
             )
             questionsList.add(que10)
-
-//
-//            val que11 = Question(
-//                11,
-//                R.drawable.e_chart_right,
-//                listOf(
-//                    R.drawable.e_chart_down,
-//                    R.drawable.e_chart_up,
-//                    R.drawable.e_chart_right,
-//                    R.drawable.e_chart_left
-//                )
-//            )
-//            questionsList.add(que11)
-//
-//            val que12 = Question(
-//                12,
-//                R.drawable.e_chart_down,
-//                listOf(
-//                    R.drawable.e_chart_down,
-//                    R.drawable.e_chart_up,
-//                    R.drawable.e_chart_right,
-//                    R.drawable.e_chart_left
-//                )
-//            )
-//            //que10.variants.shuffled()
-//
-//            questionsList.add(que12)
-
-//        questionsList.shuffle(Random(10))
 
             return  questionsList
         }

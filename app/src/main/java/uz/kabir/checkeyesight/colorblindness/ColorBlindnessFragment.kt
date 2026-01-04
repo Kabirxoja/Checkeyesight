@@ -10,14 +10,13 @@ import uz.kabir.checkeyesight.R
 import uz.kabir.checkeyesight.databinding.FragmentColorBlindnessTestBinding
 
 
-class ColorBlindnessTest : Fragment() {
+class ColorBlindnessFragment : Fragment() {
 
     private var viewBinding : FragmentColorBlindnessTestBinding? = null
     private val binding get() = viewBinding!!
 
     private val stringBuilder = StringBuilder()
     private var value : String = ""
-
     private var currentPosition = 1
     private var questionList: ArrayList<QuestionColorBlindness>? = null
     private var correctAnswer: Int = 0
@@ -27,17 +26,15 @@ class ColorBlindnessTest : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         viewBinding = FragmentColorBlindnessTestBinding.inflate(inflater,container,false)
-        val view = binding.root
-
-        questionList = List.getQuestionColorBlindness()
-
-        return view
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        questionList = ListColorBlindness.getQuestionColorBlindness()
+
 
         setQuestions()
 
@@ -157,9 +154,6 @@ class ColorBlindnessTest : Fragment() {
 
         if (listQuestion!!.answer == selectPosition) {
             correctAnswer += 1
-        }
-        else
-        {
         }
 
         currentPosition++

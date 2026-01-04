@@ -4,8 +4,7 @@ import uz.kabir.checkeyesight.R
 import uz.kabir.checkeyesight.exercises.typeconstructor.ExerciseTypes
 
 object ListDataFarsightedness {
-    fun getExercises():ArrayList<ExerciseTypes>
-    {
+    fun getExercises():ArrayList<ExerciseTypes> {
 
         val exercises = ArrayList<ExerciseTypes>()
 

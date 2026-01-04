@@ -10,12 +10,12 @@ import androidx.navigation.fragment.navArgs
 import uz.kabir.checkeyesight.databinding.FragmentRightEyeTestBinding
 
 
-class RightEyeTest : Fragment() {
+class RightEyeTestFragment : Fragment() {
 
     private var viewBinding: FragmentRightEyeTestBinding? = null
     private val binding get() = viewBinding!!
 
-    private val args: RightEyeTestArgs by navArgs()
+    private val args: RightEyeTestFragmentArgs by navArgs()
 
 
     override fun onCreateView(
@@ -23,18 +23,18 @@ class RightEyeTest : Fragment() {
         savedInstanceState: Bundle?,
     ): View? {
         viewBinding = FragmentRightEyeTestBinding.inflate(inflater, container, false)
+        return binding.root
+    }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-        val x = args.answer
+        val results = args.answer
 
         binding.vpBtn.setOnClickListener {
-            val action = RightEyeTestDirections.actionRightEyeTestToAstigmatismTest(x)
+            val action = RightEyeTestFragmentDirections.actionRightEyeTestToAstigmatismTest(results)
             findNavController().navigate(action)
         }
-
-
-
-        return binding.root
     }
 
 }
