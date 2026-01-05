@@ -30,12 +30,13 @@ import java.util.*
 
 class ReadFragment : Fragment() {
 
+    private var _binding: FragmentReadBinding? = null
+    private val binding get() = _binding!!
     private var mCurrentPosition: Int = 1
     private var mQuestionsList: ArrayList<Question>? = null //not initialised
     private var mSelectedOptionPosition: Int = 0
     private var counter = 0
     private var countList = 0
-
     private lateinit var options: List<Int?>
 
     //Reference variable for BluetoothAdapter object
@@ -57,14 +58,9 @@ class ReadFragment : Fragment() {
 
     //Reference variable for SendReceive object
     lateinit var sendReceive: SendReceive
-
-
     lateinit var dateTime: String
     lateinit var calendar: Calendar
     lateinit var simpleDateFormat: SimpleDateFormat
-
-    private var viewBinding: FragmentReadBinding? = null
-    private val binding get() = viewBinding!!
 
     private var rightEyeCount: Float = 1.0F
     private var leftEyeCount: Float = 1.0F
@@ -76,7 +72,7 @@ class ReadFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-        viewBinding = FragmentReadBinding.inflate(inflater, container, false)
+        _binding = FragmentReadBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -102,13 +98,11 @@ class ReadFragment : Fragment() {
             binding.btnListen.visibility = View.GONE
             binding.tvStatus.visibility = View.GONE
 
-        }
-        else
-        {
+        } else {
             binding.btnListen.visibility = View.VISIBLE
             binding.tvStatus.visibility = View.VISIBLE
             sizeImage = 43.65F
-            resultText(rightEyeCount,sizeImage,"3")
+            resultText(rightEyeCount, sizeImage, "3")
             setImage(convertSizeImage(sizeImage))
         }
 
@@ -125,7 +119,7 @@ class ReadFragment : Fragment() {
     }
 
     var handler = Handler(Handler.Callback { msg ->
-        val b = viewBinding?:return@Callback true
+        val b = _binding ?: return@Callback true
         when (msg.what) {
             STATE_LISTENING -> b.tvStatus.text = "Listening"
             STATE_CONNECTING -> b.tvStatus.text = "Connecting"
@@ -138,6 +132,7 @@ class ReadFragment : Fragment() {
                 setQuestion(mCurrentPosition)
                 b.resultText.visibility = View.VISIBLE
             }
+
             STATE_CONNECTION_FAILED -> b.tvStatus.text = "Connection Failed"
             STATE_MESSAGE_RECEIVED -> {
                 /*
@@ -150,6 +145,7 @@ class ReadFragment : Fragment() {
                     "1", "2", "3", "4" -> {
                         selectQuestion(Integer.parseInt(tempMsg))
                     }
+
                     "yes" -> {
 
                         //data save
@@ -168,6 +164,7 @@ class ReadFragment : Fragment() {
                         setImage(convertSizeImage(sizeImage))
                         resultText(leftEyeCount, sizeImage, "4 m")
                     }
+
                     "no" -> {
 
 
@@ -177,6 +174,7 @@ class ReadFragment : Fragment() {
                         findNavController().navigate(R.id.homeFragment)
 
                     }
+
                     "yesNext" -> {
                         countList++
                         mCurrentPosition = 1
@@ -190,6 +188,7 @@ class ReadFragment : Fragment() {
                         setImage(convertSizeImage(sizeImage))
                         resultText(rightEyeCount, sizeImage, "4 m")
                     }
+
                     else ->
                         Toast.makeText(requireContext(), "error toast", Toast.LENGTH_SHORT).show()
                 }
@@ -206,7 +205,8 @@ class ReadFragment : Fragment() {
         init {
             try {
                 //Initialisation of BluetoothServerSocket object
-                bluetoothServerSocket = myBluetoothAdapter.listenUsingRfcommWithServiceRecord(APP_NAME, MY_UUID)
+                bluetoothServerSocket =
+                    myBluetoothAdapter.listenUsingRfcommWithServiceRecord(APP_NAME, MY_UUID)
             } catch (e: IOException) {
                 e.printStackTrace()
             }
@@ -306,7 +306,6 @@ class ReadFragment : Fragment() {
             binding.tvStatus.visibility = View.INVISIBLE
             binding.ivImageView.visibility = View.VISIBLE
         }
-
 
 
         val question = mQuestionsList!![position - 1]
@@ -482,7 +481,7 @@ class ReadFragment : Fragment() {
             leftEyeCount = 0.7F
             sizeImage = 29.16F
             setImage(convertSizeImage(sizeImage))
-            Log.i("rasmbir",convertSizeImage(sizeImage).toString())
+            Log.i("rasmbir", convertSizeImage(sizeImage).toString())
             resultText(leftEyeCount, sizeImage, "4 m")
         }
         if (counter in 8..9) {
@@ -490,7 +489,7 @@ class ReadFragment : Fragment() {
             sizeImage = 23.16F
             setImage(convertSizeImage(sizeImage))
             resultText(leftEyeCount, sizeImage, "4 m")
-            Log.i("rasmikki",convertSizeImage(sizeImage).toString())
+            Log.i("rasmikki", convertSizeImage(sizeImage).toString())
 
         }
         if (counter in 10..11) {
@@ -549,16 +548,18 @@ class ReadFragment : Fragment() {
             resultText(leftEyeCount, sizeImage, "4 m")
         }
 
-        Log.i("qoshishi",counter.toString())
+        Log.i("qoshishi", counter.toString())
 
     }
 
 
     private fun convertSizeImage(currentSizeImageMillimeters: Float): Float {
         val r: Resources = resources
-        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_MM,
+        return TypedValue.applyDimension(
+            TypedValue.COMPLEX_UNIT_MM,
             currentSizeImageMillimeters,
-            r.displayMetrics)
+            r.displayMetrics
+        )
     }
 
     private fun setImage(sizeImage: Float) {
@@ -582,7 +583,14 @@ class ReadFragment : Fragment() {
 
         val database = UserDatabase.initDatabase(requireContext())
         database.userDao()
-            .insertUser(HistoryEntity(0, leftEyeCount.toString(), rightEyeCount.toString(), dateTime))
+            .insertUser(
+                HistoryEntity(
+                    0,
+                    leftEyeCount.toString(),
+                    rightEyeCount.toString(),
+                    dateTime
+                )
+            )
     }
 
     private fun visibleIsGone() {
@@ -591,8 +599,8 @@ class ReadFragment : Fragment() {
     }
 
     override fun onDestroyView() {
-        viewBinding=null
         super.onDestroyView()
+        _binding = null
     }
 
 }

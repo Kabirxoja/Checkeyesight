@@ -12,17 +12,15 @@ import uz.kabir.checkeyesight.databinding.FragmentRightEyeTestBinding
 
 class RightEyeTestFragment : Fragment() {
 
-    private var viewBinding: FragmentRightEyeTestBinding? = null
-    private val binding get() = viewBinding!!
-
+    private var _binding: FragmentRightEyeTestBinding? = null
+    private val binding get() = _binding!!
     private val args: RightEyeTestFragmentArgs by navArgs()
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-        viewBinding = FragmentRightEyeTestBinding.inflate(inflater, container, false)
+        _binding = FragmentRightEyeTestBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -37,4 +35,8 @@ class RightEyeTestFragment : Fragment() {
         }
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 }

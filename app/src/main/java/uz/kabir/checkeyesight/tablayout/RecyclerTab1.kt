@@ -13,7 +13,7 @@ import uz.kabir.checkeyesight.R
 
 class RecyclerTab1(var context: Context) : RecyclerView.Adapter<RecyclerTab1.ViewHolder>() {
 
-    var dataList = emptyList<DataModelTab>()
+    private var dataList = emptyList<DataModelTab>()
     private var listenerTabFirst: OnItemClickedListener? = null
 
     internal fun setDataList(dataList: List<DataModelTab>) {

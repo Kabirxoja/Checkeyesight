@@ -7,7 +7,7 @@
     android:background="@color/dark_night"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    tools:context=".history.ViewResult"
+    tools:context=".history.ViewResultFragment"
 
     >
     

@@ -21,10 +21,9 @@ import uz.kabir.checkeyesight.databinding.FragmentChoosingConnectionBinding
 
 class ConnectionFragment : Fragment() {
 
-    private var _viewBinding: FragmentChoosingConnectionBinding? = null
-    private val binding get() = _viewBinding!!
-
-    private val bluetoothAdapter by lazy{
+    private var _binding: FragmentChoosingConnectionBinding? = null
+    private val binding get() = _binding!!
+    private val bluetoothAdapter by lazy {
         BluetoothAdapter.getDefaultAdapter()
     }
 
@@ -32,10 +31,9 @@ class ConnectionFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View {
-        _viewBinding = FragmentChoosingConnectionBinding.inflate(inflater, container, false)
+        _binding = FragmentChoosingConnectionBinding.inflate(inflater, container, false)
         return binding.root
     }
-
 
 
     @RequiresApi(Build.VERSION_CODES.S)
@@ -45,7 +43,7 @@ class ConnectionFragment : Fragment() {
         checkBluetoothPermissions()
 
         binding.readBtn.setOnClickListener {
-            if(isBluetoothEnabled())
+            if (isBluetoothEnabled())
                 findNavController().navigate(R.id.action_choosingConnection_to_readFragment)
             else
                 enableBluetooth()
@@ -59,6 +57,7 @@ class ConnectionFragment : Fragment() {
         }
 
     }
+
     // Check if device supports Bluetooth and permissions are granted
     private fun checkBluetoothPermissions() {
         if (!hasBluetoothPermissions()) {
@@ -72,6 +71,7 @@ class ConnectionFragment : Fragment() {
             }
         }
     }
+
     // Permission request launcher
     private val bluetoothPermissionLauncher =
         registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { permissions ->
@@ -80,6 +80,7 @@ class ConnectionFragment : Fragment() {
                 Toast.makeText(context, "Bluetooth permission denied", Toast.LENGTH_SHORT).show()
             }
         }
+
     private fun hasBluetoothPermissions(): Boolean {
         return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
             ContextCompat.checkSelfPermission(
@@ -92,6 +93,7 @@ class ConnectionFragment : Fragment() {
                     ) == PackageManager.PERMISSION_GRANTED
         } else true
     }
+
     // Check if Bluetooth is enabled
     private fun isBluetoothEnabled(): Boolean {
         return bluetoothAdapter?.isEnabled == true
@@ -109,6 +111,7 @@ class ConnectionFragment : Fragment() {
             requestBluetoothLauncher.launch(intent)
         }
     }
+
     // Enable Bluetooth launcher
     private val requestBluetoothLauncher =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
@@ -130,8 +133,8 @@ class ConnectionFragment : Fragment() {
     }
 
     override fun onDestroyView() {
-        _viewBinding = null
         super.onDestroyView()
+        _binding = null
     }
 
 }

@@ -28,9 +28,8 @@ import uz.kabir.checkeyesight.tablayout.MyPagerAdapter
 
 class HomeFragment : Fragment() {
 
-    private var viewBinding: FragmentHomeBinding? = null
-    private val binding get() = viewBinding!!
-
+    private var _binding: FragmentHomeBinding? = null
+    private val binding get() = _binding!!
     private lateinit var appUpdateManager: AppUpdateManager
     private lateinit var activityResultLauncher: ActivityResultLauncher<IntentSenderRequest>
 
@@ -77,7 +76,7 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        viewBinding = FragmentHomeBinding.inflate(inflater, container, false)
+        _binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -112,6 +111,7 @@ class HomeFragment : Fragment() {
         }.attach()
 
     }
+
     private fun checkForUpdate() {
         val appUpdateInfoTask = appUpdateManager.appUpdateInfo
         appUpdateInfoTask.addOnSuccessListener { appUpdateInfo ->
@@ -123,6 +123,7 @@ class HomeFragment : Fragment() {
             }
         }
     }
+
     /* Start an update */
     private fun requestUpdate(appUpdateInfo: AppUpdateInfo) {
         appUpdateManager.startUpdateFlowForResult(
@@ -152,7 +153,7 @@ class HomeFragment : Fragment() {
         }
     }
 
-    fun getNotificationIndex(){
+    fun getNotificationIndex() {
         val navController = findNavController()
         val entry = navController.getBackStackEntry(R.id.homeFragment)
         val handle = entry.savedStateHandle
@@ -196,8 +197,8 @@ class HomeFragment : Fragment() {
     }
 
     override fun onDestroyView() {
-        viewBinding = null
         super.onDestroyView()
+        _binding = null
     }
 
 }

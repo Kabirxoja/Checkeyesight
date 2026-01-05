@@ -11,25 +11,24 @@ import uz.kabir.checkeyesight.R
 import uz.kabir.checkeyesight.databinding.FragmentTestScreenFirstBinding
 
 
-class TestScreenFirst : Fragment() {
+class TestScreenFirstFragment : Fragment() {
 
-    var viewBinding: FragmentTestScreenFirstBinding? = null
-    val binding get() = viewBinding!!
-
-
+    private var _binding: FragmentTestScreenFirstBinding? = null
+    private val binding get() = _binding!!
 
     private var positionSelect: Int? = GlobalFields.position
     private var distance: Int? = GlobalFields.distance
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
+        _binding = FragmentTestScreenFirstBinding.inflate(inflater, container, false)
+        return binding.root
+    }
 
-        viewBinding = FragmentTestScreenFirstBinding.inflate(inflater,container,false)
-
-
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         val viewPager1 = activity?.findViewById<ViewPager2>(R.id.vp_new)
         binding.vpBtn.setOnClickListener {
@@ -41,12 +40,16 @@ class TestScreenFirst : Fragment() {
         bundle.putInt("chooseDistance", distance!!)
 
         binding.skip.setOnClickListener {
-            findNavController().navigate(R.id.action_VPNewFragment_to_closingLeftEye,bundle)
+            findNavController().navigate(R.id.action_VPNewFragment_to_closingLeftEye, bundle)
         }
 
         binding.vpLottie.repeatCount = 2
+    }
 
-        return binding.root
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
 }

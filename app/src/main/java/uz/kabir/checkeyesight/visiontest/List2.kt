@@ -6,11 +6,6 @@ import java.util.ArrayList
 
 object List2 {
 
-    const val USER_NAME: String = "user_name"
-    const val TOTAL_QUESTIONS: String = "total_questions"
-    const val CORRECT_ANSWERS1: String = "correct_answers1"
-    const val CORRECT_ANSWERS2: String = "correct_answers2"
-
     fun getQuestions2(): ArrayList<Question> {
 
         //create ArrayList of type question to store data
@@ -27,7 +22,7 @@ object List2 {
                 R.drawable.digit_three
             )
         )
-        //que1.variants.shuffled()
+
         questionsList.add(que1)
 
         val que2 = Question(
@@ -40,7 +35,7 @@ object List2 {
                 R.drawable.digit_five
             )
         )
-        //que2.variants.shuffled()
+
         questionsList.add(que2)
 
         val que3 = Question(
@@ -53,7 +48,7 @@ object List2 {
                 R.drawable.digit_three
             )
         )
-        //que3.variants.shuffled()
+
 
         questionsList.add(que3)
 
@@ -67,7 +62,7 @@ object List2 {
                 R.drawable.digit_five
             )
         )
-        //que4.variants.shuffled()
+
 
         questionsList.add(que4)
 
@@ -81,7 +76,7 @@ object List2 {
                 R.drawable.digit_four
             )
         )
-        // que5.variants.shuffled()
+
         questionsList.add(que5)
 
         val que6 = Question(
@@ -94,7 +89,7 @@ object List2 {
                 R.drawable.digit_five
             )
         )
-        //  que6.variants.shuffled()
+        //
 
         questionsList.add(que6)
 
@@ -108,7 +103,7 @@ object List2 {
                 R.drawable.digit_three
             )
         )
-        //que7.variants.shuffled()
+
 
         questionsList.add(que7)
 
@@ -123,7 +118,7 @@ object List2 {
             )
 
         )
-        //que8.variants.shuffled()
+
         questionsList.add(que8)
 
 
@@ -137,7 +132,7 @@ object List2 {
                 R.drawable.digit_eight
             )
         )
-        //que9.variants.shuffled()
+
 
         questionsList.add(que9)
 
@@ -151,11 +146,8 @@ object List2 {
                 R.drawable.digit_two
             )
         )
-        //que10.variants.shuffled()
 
         questionsList.add(que10)
-
-//        questionsList.shuffle(Random(10))
 
         return  questionsList
     }

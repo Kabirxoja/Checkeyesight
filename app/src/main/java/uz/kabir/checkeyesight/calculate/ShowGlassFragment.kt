@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import uz.kabir.checkeyesight.R
 
 
-class ShowResultGlass : Fragment() {
+class ShowGlassFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

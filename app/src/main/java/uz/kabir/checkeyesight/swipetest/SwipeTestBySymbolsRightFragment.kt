@@ -1,66 +1,60 @@
-package uz.kabir.checkeyesight.visiontest
+package uz.kabir.checkeyesight.swipetest
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.res.Resources
+import android.os.Build
 import android.os.Bundle
-import android.os.CountDownTimer
+import android.os.VibrationEffect
+import android.os.Vibrator
+import android.os.VibratorManager
 import android.util.Log
 import android.util.TypedValue
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.navigation.fragment.findNavController
 import uz.kabir.checkeyesight.R
-import uz.kabir.checkeyesight.databinding.FragmentRightVisionTestBinding
+import uz.kabir.checkeyesight.databinding.FragmentSwipeTestBySymbolsRightBinding
 import uz.kabir.checkeyesight.history.HistoryEntity
 import uz.kabir.checkeyesight.history.UserDatabase
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.collections.ArrayList
 
-class TestVisionRight : Fragment() {
+class SwipeTestBySymbolsRightFragment : Fragment() {
 
-    private var viewBinding: FragmentRightVisionTestBinding? = null
-    private val binding get() = viewBinding!!
-
-    private var mCurrentPosition: Int = 1
-
-    private var mQuestionsList: ArrayList<Question>? = null //not initialised
-    private var mSelectedOptionPosition: Int = 0
-
-
-    private lateinit var options: List<Int?>
-
-    private lateinit var tvOptionOne: ImageButton
-    private lateinit var tvOptionTwo: ImageButton
-    private lateinit var tvOptionThree: ImageButton
-    private lateinit var tvOptionFour: ImageButton
-
-    private var counter: Int = 0
-
-    private lateinit var timer: CountDownTimer
-
-    lateinit var dateTime: String
-    lateinit var calendar: Calendar
-    lateinit var simpleDateFormat: SimpleDateFormat
-
-
+    private var _binding: FragmentSwipeTestBySymbolsRightBinding? = null
+    private val binding get() = _binding!!
+    private var currentPosition = 1
+    private var questionList: ArrayList<Questions>? = null
+    private var correctAnswer: Int = 0
     private var questionString = ""
     private var rightEyeCount: Float = 1.0F
     private var leftEyeCount: Float = 1.0F
-
     private var sizeImage: Float = 0F
     private var distance = 0
+    private lateinit var dateTime: String
+    private lateinit var calendar: Calendar
+    private lateinit var simpleDateFormat: SimpleDateFormat
+    private lateinit var layout: ConstraintLayout
 
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        _binding = FragmentSwipeTestBySymbolsRightBinding.inflate(inflater, container, false)
+        return binding.root
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        layout = binding.relativeLayout2
 
-        tvOptionOne = binding.tvOptionOne
-        tvOptionTwo = binding.tvOptionTwo
-        tvOptionThree = binding.tvOptionThree
-        tvOptionFour = binding.tvOptionFour
+
         distance = arguments?.getInt("chooseDistance")!!
 
         when (distance) {
@@ -69,16 +63,19 @@ class TestVisionRight : Fragment() {
                 resultText(rightEyeCount, sizeImage, "0,4")
                 setImage(convertSizeImage(sizeImage))
             }
+
             2 -> {
                 sizeImage = 29.1F
                 resultText(rightEyeCount, sizeImage, "2")
                 setImage(convertSizeImage(sizeImage))
             }
+
             3 -> {
                 sizeImage = 43.65F
                 resultText(rightEyeCount, sizeImage, "3")
                 setImage(convertSizeImage(sizeImage))
             }
+
             4 -> {
                 sizeImage = 58.2F
                 resultText(rightEyeCount, sizeImage, "4")
@@ -86,142 +83,83 @@ class TestVisionRight : Fragment() {
             }
         }
 
+
         when (arguments?.getInt("positionSend")) {
-            2 -> {
-                mQuestionsList = List1.getQuestions1()
+            0 -> {
+                questionList = ListQuestions.getQuestionSymbolE()
             }
-            3 -> {
-                mQuestionsList = List2.getQuestions2()
+
+            1 -> {
+                questionList = ListQuestions.getQuestionSymbolC()
             }
         }
 
+        layout.setOnTouchListener(object : OnSwipeTouchListener(context) {
+            override fun onSwipeLeft() {
+                super.onSwipeLeft()
+                selectQuestion("left")
+                vibratePhone()
+            }
 
-        tvOptionOne.setOnClickListener {
-            mSelectedOptionPosition = 1
-            selectQuestion(mSelectedOptionPosition)
-        }
-        tvOptionTwo.setOnClickListener {
-            mSelectedOptionPosition = 2
-            selectQuestion(mSelectedOptionPosition)
-        }
-        tvOptionThree.setOnClickListener {
-            mSelectedOptionPosition = 3
-            selectQuestion(mSelectedOptionPosition)
-        }
-        tvOptionFour.setOnClickListener {
-            mSelectedOptionPosition = 4
-            selectQuestion(mSelectedOptionPosition)
-        }
+            override fun onSwipeRight() {
+                super.onSwipeRight()
+                selectQuestion("right")
+                vibratePhone()
+            }
 
-        if (mCurrentPosition < 10) {
-            setQuestion(mCurrentPosition)
-        } else {
-            findNavController().navigate(R.id.action_leftVisionTest_to_closingRightEye)
-        }
+            override fun onSwipeUp() {
+                super.onSwipeUp()
+                selectQuestion("up")
+                vibratePhone()
+            }
 
+            override fun onSwipeDown() {
+                super.onSwipeDown()
+                selectQuestion("down")
+                vibratePhone()
+            }
+        })
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?,
-    ): View? {
-        viewBinding = FragmentRightVisionTestBinding.inflate(inflater, container, false)
-        return binding.root
+
+    override fun onResume() {
+        setQuestions()
+        super.onResume()
     }
 
-    private fun setQuestion(position: Int) {
-        val question = mQuestionsList!![position - 1]
-        //assign the progress bar value
-        binding.progressBar.progress = position
-        binding.tvProgress.text = "$position" + "/" + binding.progressBar.max
-        //set image
-        binding.ivImage.setImageResource(question.image)
-        options = question.variants
-        tvOptionOne.setBackgroundResource(options[0]!!)
-        tvOptionTwo.setBackgroundResource(options[1]!!)
-        tvOptionThree.setBackgroundResource(options[2]!!)
-        tvOptionFour.setBackgroundResource(options[3]!!)
-
-        timer = object : CountDownTimer(10000, 1000) {
-            override fun onTick(millisUntilFinished: Long) {
-                binding.ivImage.visibility = View.VISIBLE
-                binding.timerLeft.visibility = View.VISIBLE
-                binding.resultText.visibility = View.VISIBLE
-                tvOptionOne.visibility = View.GONE
-                tvOptionTwo.visibility = View.GONE
-                tvOptionThree.visibility = View.GONE
-                tvOptionFour.visibility = View.GONE
-                binding.timerLeft.text = (millisUntilFinished / 1000).toString()
-            }
-
-            override fun onFinish() {
-                binding.ivImage.visibility = View.GONE
-                binding.timerLeft.visibility = View.GONE
-                binding.resultText.visibility = View.GONE
-                tvOptionOne.visibility = View.VISIBLE
-                tvOptionTwo.visibility = View.VISIBLE
-                tvOptionThree.visibility = View.VISIBLE
-                tvOptionFour.visibility = View.VISIBLE
-
-            }
-        }
-        timer.start()
-
-        binding.buttonNext.setOnClickListener {
-            binding.ivImage.visibility = View.GONE
-            tvOptionOne.visibility = View.VISIBLE
-            tvOptionTwo.visibility = View.VISIBLE
-            tvOptionThree.visibility = View.VISIBLE
-            tvOptionFour.visibility = View.VISIBLE
-            binding.buttonNext.visibility = View.GONE
-            timer.cancel()
-        }
-        binding.buttonNext.visibility = View.VISIBLE
-
-        binding.resultText.text = questionString
-        binding.resultText.setTextColor(resources.getColor(R.color.pale_color))
-    }
 
     @SuppressLint("SimpleDateFormat")
-    private fun selectQuestion(select: Int) { //savolni tanlash
-        Log.i("app1", rightEyeCount.toString())
-        Log.i("app2", rightEyeCount.toString())
-
-
-        mSelectedOptionPosition = select // 1,2,3,4
-        val question = mQuestionsList!![mCurrentPosition - 1]
-
-        Log.v("QUESTIONS -----------> ", question.image.toString())
-        Log.v("OPTIONS>SELECTED ----> ", options[mSelectedOptionPosition - 1].toString())
-        Log.v("Question        -----> ", question.toString())
-
-        if (question.image == options[mSelectedOptionPosition - 1]) {
-            counter += 2//increase count of correct answers
+    private fun selectQuestion(selectPosition: String) {
+        val listQuestion = questionList?.get(currentPosition - 1)
+        Log.i("list number ", listQuestion.toString())
+        if (listQuestion!!.answer == selectPosition) {
+            if (currentPosition < questionList!!.size) {
+                correctAnswer += 2
+            }
             when (distance) {
-                1 -> resizeImages1(counter)
-                2 -> resizeImages2(counter)
-                3 -> resizeImages3(counter)
-                4 -> resizeImages4(counter)
+                1 -> resizeImages1(correctAnswer)
+                2 -> resizeImages2(correctAnswer)
+                3 -> resizeImages3(correctAnswer)
+                4 -> resizeImages4(correctAnswer)
             }
         } else {
-            counter -= 1
+            correctAnswer -= 1
             when (distance) {
-                1 -> resizeImages1(counter)
-                2 -> resizeImages2(counter)
-                3 -> resizeImages3(counter)
-                4 -> resizeImages4(counter)
+                1 -> resizeImages1(correctAnswer)
+                2 -> resizeImages2(correctAnswer)
+                3 -> resizeImages3(correctAnswer)
+                4 -> resizeImages4(correctAnswer)
             }
         }
 
-        mCurrentPosition++
+
+        currentPosition++
 
 
-
-        if (mCurrentPosition <= mQuestionsList!!.size) {
-            setQuestion(mCurrentPosition)
+        if (currentPosition <= questionList!!.size) {
+            setQuestions()
         } else {
-            //    findNavController().navigate(R.id.action_rightVisionTest_to_resultScreen)
-            // NavHostFragment.create(R.navigation.my_navgraph, bundle)
+            //  binding.resultText.text = correctAnswer.toString()
 
             calendar = Calendar.getInstance()
             simpleDateFormat = SimpleDateFormat("dd/MM/yy HH:mm")
@@ -230,15 +168,34 @@ class TestVisionRight : Fragment() {
 
             val bundle = Bundle()
             leftEyeCount = arguments?.getFloat("leftEyesCount")!!
+
             bundle.putFloat("left", leftEyeCount)
             bundle.putFloat("right", rightEyeCount)
 
             val database = UserDatabase.initDatabase(requireContext())
-            database.userDao()
-                .insertUser(HistoryEntity(0, leftEyeCount.toString(), rightEyeCount.toString(), dateTime))
+            database.userDao().insertUser(
+                HistoryEntity(
+                    0,
+                    leftEyeCount.toString(),
+                    rightEyeCount.toString(),
+                    dateTime
+                )
+            )
+            findNavController().navigate(
+                R.id.action_swipeTestBySymbolsRight_to_resultScreen,
+                bundle
+            )
 
-            findNavController().navigate(R.id.action_rightVisionTest_to_resultScreen, bundle)
         }
+
+    }
+
+
+    private fun setQuestions() {
+        val list = questionList?.get(currentPosition - 1)
+        binding.imageView.setImageResource(list!!.imageQuestions)
+        binding.resultText.text = questionString
+        binding.resultText.setTextColor(resources.getColor(R.color.pale_color))
     }
 
 
@@ -621,9 +578,10 @@ class TestVisionRight : Fragment() {
 
     }
 
+
     private fun setImage(sizeImage: Float) {
-        binding.ivImage.layoutParams.width = sizeImage.toInt()
-        binding.ivImage.layoutParams.height = sizeImage.toInt()
+        binding.imageView.layoutParams.width = sizeImage.toInt()
+        binding.imageView.layoutParams.height = sizeImage.toInt()
     }
 
     private fun convertSizeImage(currentSizeImageMillimeters: Float): Float {
@@ -642,8 +600,34 @@ class TestVisionRight : Fragment() {
                     "distance: " + distance
     }
 
+
+    fun Fragment.vibratePhone(duration: Long = 75L) {
+        if (!isAdded) return
+        val context = requireContext()
+
+        val vibrator = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            val vibratorManager = context.getSystemService(Context.VIBRATOR_MANAGER_SERVICE) as VibratorManager
+            vibratorManager.defaultVibrator
+        } else {
+            context.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+        }
+
+        if (!vibrator.hasVibrator()) return
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            vibrator.vibrate(
+                VibrationEffect.createOneShot(
+                    duration,
+                    VibrationEffect.DEFAULT_AMPLITUDE
+                )
+            )
+        } else {
+            vibrator.vibrate(duration)
+        }
+    }
+
     override fun onDestroyView() {
-        viewBinding = null
         super.onDestroyView()
+        _binding = null
     }
 }

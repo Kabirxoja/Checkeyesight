@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/dark_night"
-    tools:context=".visiontest.ResultScreen"
+    tools:context=".visiontest.ResultScreenFragment"
     tools:layout_editor_absoluteX="-12dp"
     tools:layout_editor_absoluteY="0dp">
 

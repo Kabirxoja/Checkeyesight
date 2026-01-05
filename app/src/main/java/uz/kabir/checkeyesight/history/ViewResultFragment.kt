@@ -11,20 +11,19 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import uz.kabir.checkeyesight.R
 import uz.kabir.checkeyesight.databinding.FragmentViewResultBinding
 
-class ViewResultFragment: Fragment(), HistoryAdapter.OnUserClickedListener {
+class ViewResultFragment : Fragment(), HistoryAdapter.OnUserClickedListener {
 
+    private var _binding: FragmentViewResultBinding? = null
+    private val binding get() = _binding
     private lateinit var list: MutableList<HistoryEntity>
     private lateinit var database: UserDatabase
     private lateinit var rvAdapter: HistoryAdapter
-
-    private var viewBinding : FragmentViewResultBinding?=null
-    private val binding get() = viewBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-        viewBinding = FragmentViewResultBinding.inflate(inflater,container,false)
+        _binding = FragmentViewResultBinding.inflate(inflater, container, false)
         return binding?.root
     }
 
@@ -100,7 +99,7 @@ class ViewResultFragment: Fragment(), HistoryAdapter.OnUserClickedListener {
 
 
     override fun onDestroyView() {
-        viewBinding=null
         super.onDestroyView()
+        _binding = null
     }
 }

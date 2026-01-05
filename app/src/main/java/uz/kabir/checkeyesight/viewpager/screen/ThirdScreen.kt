@@ -11,15 +11,19 @@ import uz.kabir.checkeyesight.databinding.FragmentThirdScreenBinding
 
 class ThirdScreen : Fragment() {
 
-    private var viewBinding: FragmentThirdScreenBinding? = null
-    private val binding get() = viewBinding!!
+    private var _binding: FragmentThirdScreenBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        viewBinding = FragmentThirdScreenBinding.inflate(inflater, container, false)
-        val view = binding.root
+        _binding = FragmentThirdScreenBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         val viewPager = activity?.findViewById<ViewPager2>(R.id.viewPager1)
 
@@ -29,11 +33,10 @@ class ThirdScreen : Fragment() {
         binding.thirdTextSkip.setOnClickListener {
             viewPager!!.currentItem = 3
         }
-
-
-        return view
     }
 
-
-
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 }

@@ -1,6 +1,7 @@
 package uz.kabir.checkeyesight.nearvisiontest
 
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.SharedPreferences
 import android.content.pm.ActivityInfo
@@ -21,30 +22,26 @@ import uz.kabir.checkeyesight.databinding.FragmentNearVisionTestBinding
 import uz.kabir.checkeyesight.swipetest.OnSwipeTouchListener
 
 
-class NearVisionTest : Fragment() {
+class NearVisionFragment : Fragment() {
 
-    var viewBinding: FragmentNearVisionTestBinding? = null
-    val binding get() = viewBinding
-
+    private var _binding: FragmentNearVisionTestBinding? = null
+    private val binding get() = _binding
     private lateinit var layout: ConstraintLayout
     private var sizeText: Float = 1.42f
     private var level = 0
-
     private lateinit var sharedPreference: SharedPreferences
     lateinit var editor: SharedPreferences.Editor
-
-
     private var resultText = ""
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-        viewBinding = FragmentNearVisionTestBinding.inflate(inflater, container, false)
+        _binding = FragmentNearVisionTestBinding.inflate(inflater, container, false)
         return binding?.root
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -306,10 +303,7 @@ class NearVisionTest : Fragment() {
     }
 
     override fun onDestroyView() {
-        viewBinding = null
         super.onDestroyView()
+        _binding = null
     }
-
-
-
 }

@@ -6,13 +6,14 @@ import android.view.GestureDetector
 import android.view.MotionEvent
 import android.view.View
 
-internal open class OnSwipeTouchListener(c: Context?) :
-    View.OnTouchListener {
+internal open class OnSwipeTouchListener(c: Context?) : View.OnTouchListener {
     private val gestureDetector: GestureDetector
+
     @SuppressLint("ClickableViewAccessibility")
     override fun onTouch(view: View, motionEvent: MotionEvent): Boolean {
         return gestureDetector.onTouchEvent(motionEvent)
     }
+
     private inner class GestureListener : GestureDetector.SimpleOnGestureListener() {
         private val SWIPE_THRESHOLD: Int = 100
         private val SWIPE_VELOCITY_THRESHOLD: Int = 100

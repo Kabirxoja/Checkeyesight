@@ -10,10 +10,7 @@
     android:fitsSystemWindows="true"
     app:layoutDescription="@xml/fragment_splash_scene"
     tools:context=".splash.SplashFragment"
-
-
     >
-
 
     <ImageView
         android:id="@+id/imageView"

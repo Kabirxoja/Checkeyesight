@@ -26,6 +26,8 @@ import java.util.*
 
 class WriteFragment : Fragment() {
 
+    private var _binding: FragmentWriteBinding? = null
+    private val binding get() = _binding!!
 
     //Reference variable for BluetoothAdapter object
     lateinit var myBluetoothAdapter: BluetoothAdapter
@@ -51,9 +53,6 @@ class WriteFragment : Fragment() {
     lateinit var sendReceive: SendReceive
 
 
-    private var viewBinding: FragmentWriteBinding? = null
-    private val binding get() = viewBinding!!
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -76,7 +75,7 @@ class WriteFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-        viewBinding = FragmentWriteBinding.inflate(inflater, container, false)
+        _binding = FragmentWriteBinding.inflate(inflater, container, false)
         return  binding.root
     }
 
@@ -222,7 +221,7 @@ class WriteFragment : Fragment() {
     change the text of the Status TextView*/
     @SuppressLint("MissingInflatedId")
     var handler = Handler(Handler.Callback { msg ->
-        val b = viewBinding?:return@Callback true
+        val b = _binding?:return@Callback true
         when (msg.what) {
             STATE_LISTENING -> b.status.text = "Listening"
             STATE_CONNECTING -> b.status.text = "Connecting"
@@ -457,8 +456,8 @@ class WriteFragment : Fragment() {
     }
 
     override fun onDestroyView() {
-        viewBinding = null
         super.onDestroyView()
+        _binding = null
     }
 
 }

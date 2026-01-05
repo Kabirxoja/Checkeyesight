@@ -11,15 +11,19 @@ import uz.kabir.checkeyesight.databinding.FragmentSecondScreenBinding
 
 class SecondScreen : Fragment() {
 
-    private var viewBinding: FragmentSecondScreenBinding? = null
-    private val binding get() = viewBinding!!
+    private var _binding: FragmentSecondScreenBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        viewBinding = FragmentSecondScreenBinding.inflate(inflater, container, false)
-        val view = binding.root
+        _binding = FragmentSecondScreenBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         val viewPager = activity?.findViewById<ViewPager2>(R.id.viewPager1)
 
@@ -30,10 +34,11 @@ class SecondScreen : Fragment() {
         binding.secondTextSkip.setOnClickListener {
             viewPager!!.currentItem = 3
         }
-
-        return view
     }
 
-
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 
 }

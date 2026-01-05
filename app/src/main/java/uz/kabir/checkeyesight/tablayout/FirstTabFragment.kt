@@ -16,24 +16,19 @@ import uz.kabir.checkeyesight.databinding.FragmentFirstTabBinding
 import uz.kabir.checkeyesight.home.HomeFragmentDirections
 
 
-class FirstTabFragment : Fragment(), AdapterView.OnItemClickListener,
-    RecyclerTab1.OnItemClickedListener {
+class FirstTabFragment : Fragment(), AdapterView.OnItemClickListener, RecyclerTab1.OnItemClickedListener {
 
-    private lateinit var photoAdapter: RecyclerTab1
-    private var dataList = mutableListOf<DataModelTab>()
-
-    private var viewBinding: FragmentFirstTabBinding? = null
-    private val binding get() = viewBinding!!
-
+    private var _binding: FragmentFirstTabBinding? = null
+    private val binding get() = _binding!!
+    private lateinit var recyclerAdapterTab1: RecyclerTab1
     private val navController by lazy(LazyThreadSafetyMode.NONE) { view?.findNavController() }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-        viewBinding = FragmentFirstTabBinding.inflate(inflater, container, false)
-        val view = binding.root
-        return view
+        _binding = FragmentFirstTabBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -42,9 +37,9 @@ class FirstTabFragment : Fragment(), AdapterView.OnItemClickListener,
         val orientation = resources.configuration
         orientationScreenState(orientation)
 
-        photoAdapter = RecyclerTab1(requireContext())
-        binding.recyclerViewTab1.adapter = photoAdapter
-        photoAdapter.setOnClickListener(this)
+        recyclerAdapterTab1 = RecyclerTab1(requireContext())
+        binding.recyclerViewTab1.adapter = recyclerAdapterTab1
+        recyclerAdapterTab1.setOnClickListener(this)
 
         val dataList = mutableListOf(
             DataModelTab(getString(R.string.title1), R.drawable.item_e_chart),
@@ -60,7 +55,7 @@ class FirstTabFragment : Fragment(), AdapterView.OnItemClickListener,
             DataModelTab(getString(R.string.title11), R.drawable.item_contrast),
         )
 
-        photoAdapter.setDataList(dataList)
+        recyclerAdapterTab1.setDataList(dataList)
     }
 
     override fun onClicked(position: Int) {
@@ -127,7 +122,7 @@ class FirstTabFragment : Fragment(), AdapterView.OnItemClickListener,
 
             4 -> {
                 infoTitle.text = getString(R.string.info_bluetooth)
-                dialogTitle.text =getString(R.string.title8)
+                dialogTitle.text = getString(R.string.title8)
             }
 
             5 -> {
@@ -154,6 +149,7 @@ class FirstTabFragment : Fragment(), AdapterView.OnItemClickListener,
                 infoTitle.text = getString(R.string.info_near_vision_dialog)
                 dialogTitle.text = getString(R.string.title10)
             }
+
             10 -> {
                 infoTitle.text = getString(R.string.info_contrast)
                 dialogTitle.text = getString(R.string.title11)
@@ -209,7 +205,7 @@ class FirstTabFragment : Fragment(), AdapterView.OnItemClickListener,
         orientationScreenState(newConfig)
     }
 
-    private fun orientationScreenState(newConfig: Configuration){
+    private fun orientationScreenState(newConfig: Configuration) {
         if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
             binding.recyclerViewTab1.layoutManager = GridLayoutManager(requireContext(), 2)
 
@@ -218,12 +214,11 @@ class FirstTabFragment : Fragment(), AdapterView.OnItemClickListener,
         }
     }
 
-    override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-    }
+    override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) { }
 
     override fun onDestroyView() {
-        viewBinding = null
         super.onDestroyView()
+        _binding = null
     }
 
 }

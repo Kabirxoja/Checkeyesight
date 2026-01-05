@@ -19,11 +19,11 @@ import kotlin.Int
 import kotlin.math.abs
 
 
-class ResultScreen : Fragment() {
+class ResultScreenFragment : Fragment() {
 
-    private var viewBinding: FragmentResultScreenBinding? = null
-    private val binding get() = viewBinding!!
-    private var progressing = 0
+    private var _binding: FragmentResultScreenBinding? = null
+    private val binding get() = _binding!!
+
     private val imageIds = intArrayOf(
         R.drawable.step_1,
         R.drawable.step_2,
@@ -39,8 +39,6 @@ class ResultScreen : Fragment() {
         R.drawable.step_12,
         R.drawable.step_13,
         R.drawable.step_14
-
-
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -58,8 +56,12 @@ class ResultScreen : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-        viewBinding = FragmentResultScreenBinding.inflate(inflater, container, false)
+        _binding = FragmentResultScreenBinding.inflate(inflater, container, false)
+        return binding.root
+    }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         val leftEyeResult = arguments?.getFloat("left", 0F)!!
         val rightEyeResult = arguments?.getFloat("right", 0F)!!
 
@@ -130,8 +132,6 @@ class ResultScreen : Fragment() {
 
                 }
             })
-
-        return binding.root
     }
 
     private fun seekBarImageShow(resultValue: Int) {
@@ -144,6 +144,11 @@ class ResultScreen : Fragment() {
         val x: Int = (progress / 10)
         val y: Int = (progress % 10)
         binding.textView.text = "$x,$y"
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
 }

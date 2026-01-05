@@ -10,10 +10,10 @@ import uz.kabir.checkeyesight.R
 import uz.kabir.checkeyesight.databinding.FragmentTestScreenThirdBinding
 
 
-class TestScreenThird : Fragment() {
+class TestScreenThirdFragment : Fragment() {
 
-    private var viewBinding: FragmentTestScreenThirdBinding? = null
-    private val binding get() = viewBinding!!
+    private var _binding: FragmentTestScreenThirdBinding? = null
+    private val binding get() = _binding!!
 
     private var positionSelect: Int? = GlobalFields.position
     private var distance: Int? = GlobalFields.distance
@@ -23,7 +23,7 @@ class TestScreenThird : Fragment() {
         savedInstanceState: Bundle?,
     ): View? {
 
-        viewBinding = FragmentTestScreenThirdBinding.inflate(inflater, container, false)
+        _binding = FragmentTestScreenThirdBinding.inflate(inflater, container, false)
         val view = binding.root
 
         val bundle = Bundle()
@@ -40,6 +40,8 @@ class TestScreenThird : Fragment() {
         return view
     }
 
-
-
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 }

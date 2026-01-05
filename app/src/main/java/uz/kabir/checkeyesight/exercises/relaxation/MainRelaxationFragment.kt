@@ -22,22 +22,16 @@ import java.util.*
 
 class MainRelaxationFragment : Fragment() {
 
-    private var viewBinding: FragmentMainRelaxtionBinding? = null
-    private val binding get() = viewBinding!!
-
+    private var _binding: FragmentMainRelaxtionBinding? = null
+    private val binding get() = _binding!!
     private var lists: ArrayList<ExerciseTypes>? = null
     private var listPosition: Int = 0
-
-
     private var mainCountTimer: CountDownTimer? = null
     private var nextCountTimer: CountDownTimer? = null
-
     private var nextTimerRunning = false
     private var mainTimerRunning = false
-
     private val START_TIME_IN_MILLIS_NEXT: Long = 5000
     private val START_TIME_IN_MILLIS_MAIN: Long = 40000
-
     private var nextTimerMillis: Long = START_TIME_IN_MILLIS_NEXT
     private var mainTimerMillis: Long = START_TIME_IN_MILLIS_MAIN
 
@@ -87,23 +81,19 @@ class MainRelaxationFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-
-        viewBinding = FragmentMainRelaxtionBinding.inflate(inflater, container, false)
+        _binding = FragmentMainRelaxtionBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
         lists = ListDataRelaxation.getExercise()
-
 
         visibilities(true)
 
         binding.myAnimationView.setAnimation(lists?.get(listPosition)!!.images)
         binding.txtTypeExercise.setText(lists?.get(listPosition)!!.exerciseName)
-
 
         pauseToPlay()
         pauseToPlayMain()
@@ -296,8 +286,8 @@ class MainRelaxationFragment : Fragment() {
     }
 
     override fun onDestroyView() {
-        viewBinding = null
         super.onDestroyView()
+        _binding = null
     }
 
     private fun visibilities(visBoolean: Boolean) {

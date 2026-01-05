@@ -190,7 +190,7 @@
 
     <fragment
         android:id="@+id/leftVisionEye"
-        android:name="uz.kabir.checkeyesight.visiontest.TestVisionLeft"
+        android:name="uz.kabir.checkeyesight.visiontest.TestVisionLeftFragment"
         tools:layout="@layout/fragment_first_vision_test">
         <action
             android:id="@+id/action_leftVisionTest_to_closingRightEye"
@@ -214,7 +214,7 @@
 
     <fragment
         android:id="@+id/closingLeftEye"
-        android:name="uz.kabir.checkeyesight.visiontest.abouttest.ClosingLeftEye"
+        android:name="uz.kabir.checkeyesight.visiontest.abouttest.ClosingLeftEyeFragment"
         tools:layout="@layout/fragment_closing_left_eye">
         <action
             android:id="@+id/action_closingLeftEye_to_leftVisionTest"
@@ -251,7 +251,7 @@
     </fragment>
     <fragment
         android:id="@+id/closingRightEye"
-        android:name="uz.kabir.checkeyesight.visiontest.abouttest.ClosingRightEye"
+        android:name="uz.kabir.checkeyesight.visiontest.abouttest.ClosingRightEyeFragment"
         tools:layout="@layout/fragment_closing_right_eye">
         <action
             android:id="@+id/action_closingRightEye_to_rightVisionTest"
@@ -274,7 +274,7 @@
     </fragment>
     <fragment
         android:id="@+id/rightVisionTest"
-        android:name="uz.kabir.checkeyesight.visiontest.TestVisionRight"
+        android:name="uz.kabir.checkeyesight.visiontest.TestVisionRightFragment"
         tools:layout="@layout/fragment_right_vision_test">
         <action
             android:id="@+id/action_rightVisionTest_to_resultScreen"
@@ -288,7 +288,7 @@
     </fragment>
     <fragment
         android:id="@+id/resultScreen"
-        android:name="uz.kabir.checkeyesight.visiontest.ResultScreen"
+        android:name="uz.kabir.checkeyesight.visiontest.ResultScreenFragment"
         tools:layout="@layout/fragment_result_screen">
         <action
             android:id="@+id/action_resultScreen_to_viewResult"
@@ -310,7 +310,7 @@
     </fragment>
     <fragment
         android:id="@+id/swipeTestBySymbols"
-        android:name="uz.kabir.checkeyesight.swipetest.SwipeTestBySymbolsLeft"
+        android:name="uz.kabir.checkeyesight.swipetest.SwipeTestBySymbolsLeftFragment"
         tools:layout="@layout/fragment_swipe_test_by_symbols">
         <action
             android:id="@+id/action_swipeTestBySymbols_to_closingRightEye"
@@ -324,7 +324,7 @@
     </fragment>
     <fragment
         android:id="@+id/swipeTestBySymbolsRight"
-        android:name="uz.kabir.checkeyesight.swipetest.SwipeTestBySymbolsRight"
+        android:name="uz.kabir.checkeyesight.swipetest.SwipeTestBySymbolsRightFragment"
         tools:layout="@layout/fragment_swipe_test_by_symbols_right">
         <action
             android:id="@+id/action_swipeTestBySymbolsRight_to_resultScreen"
@@ -454,26 +454,21 @@
             app:popExitAnim="@anim/nav_slide_out_right"
             />
     </fragment>
-    <fragment
-        android:id="@+id/noteScreen"
-        android:name="uz.kabir.checkeyesight.note.NoteScreen"
-        tools:layout="@layout/fragment_note_screen"
-        />
 
     <fragment
         android:id="@+id/testScreenSecond"
-        android:name="uz.kabir.checkeyesight.visiontest.firstViewPager.TestScreenSecond"
+        android:name="uz.kabir.checkeyesight.visiontest.firstViewPager.TestScreenSecondFragment"
         android:label="fragment_test_screen_second"
         tools:layout="@layout/fragment_test_screen_second" />
     <fragment
         android:id="@+id/testScreenThird"
-        android:name="uz.kabir.checkeyesight.visiontest.firstViewPager.TestScreenThird"
+        android:name="uz.kabir.checkeyesight.visiontest.firstViewPager.TestScreenThirdFragment"
         android:label="fragment_test_screen_third"
         tools:layout="@layout/fragment_test_screen_third" />
 
     <fragment
         android:id="@+id/chooseDistance"
-        android:name="uz.kabir.checkeyesight.visiontest.abouttest.ChooseDistance"
+        android:name="uz.kabir.checkeyesight.visiontest.abouttest.ChooseDistanceFragment"
         android:label="fragment_choose_distance"
         tools:layout="@layout/fragment_choose_distance" >
         <action
@@ -565,7 +560,7 @@
     </fragment>
     <fragment
         android:id="@+id/nearVisionTest"
-        android:name="uz.kabir.checkeyesight.nearvisiontest.NearVisionTest"
+        android:name="uz.kabir.checkeyesight.nearvisiontest.NearVisionFragment"
         android:label="fragment_near_vision_test"
         tools:layout="@layout/fragment_near_vision_test" />
     <fragment
@@ -586,7 +581,7 @@
     </fragment>
     <fragment
         android:id="@+id/showResultGlass2"
-        android:name="uz.kabir.checkeyesight.calculate.ShowResultGlass"
+        android:name="uz.kabir.checkeyesight.calculate.ShowGlassFragment"
         android:label="fragment_show_result_glass"
         tools:layout="@layout/fragment_show_result_glass" />
     <fragment

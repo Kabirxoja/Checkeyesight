@@ -23,21 +23,16 @@ import java.util.*
 
 class MainRecoveryFragment : Fragment() {
 
-    private var viewBinding: FragmentMainRecoveryBinding? = null
-    private val binding get() = viewBinding!!
-
+    private var _binding: FragmentMainRecoveryBinding? = null
+    private val binding get() = _binding!!
     private var lists: ArrayList<ExerciseTypes>? = null
     private var listPosition: Int = 0
-
     private var mainCountTimer: CountDownTimer? = null
     private var nextCountTimer: CountDownTimer? = null
-
     private var nextTimerRunning = false
     private var mainTimerRunning = false
-
     private val START_TIME_IN_MILLIS_NEXT: Long = 5000
     private val START_TIME_IN_MILLIS_MAIN: Long = 40000
-
     private var nextTimerMillis: Long = START_TIME_IN_MILLIS_NEXT
     private var mainTimerMillis: Long = START_TIME_IN_MILLIS_MAIN
 
@@ -87,7 +82,7 @@ class MainRecoveryFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-        viewBinding = FragmentMainRecoveryBinding.inflate(inflater, container, false)
+        _binding = FragmentMainRecoveryBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -290,8 +285,8 @@ class MainRecoveryFragment : Fragment() {
     }
 
     override fun onDestroyView() {
-        viewBinding = null
         super.onDestroyView()
+        _binding = null
     }
 
 
@@ -366,6 +361,8 @@ class MainRecoveryFragment : Fragment() {
             binding.myAnimationView.visibility = View.VISIBLE
         }
     }
+
+
 
 
 }

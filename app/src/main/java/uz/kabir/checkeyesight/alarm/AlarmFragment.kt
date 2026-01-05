@@ -31,8 +31,9 @@ import uz.kabir.checkeyesight.databinding.FragmentAlarmMainScreenBinding
 import androidx.core.content.ContextCompat
 
 class AlarmFragment : Fragment() {
-    private var viewBinding: FragmentAlarmMainScreenBinding? = null
-    private val binding get() = viewBinding!!
+
+    private var _binding: FragmentAlarmMainScreenBinding? = null
+    private val binding get() = _binding!!
     private lateinit var alarmAdapter: AlarmAdapter
     private val alarmList = mutableListOf<AlarmEntity>()
     private lateinit var database: AlarmDatabase
@@ -42,7 +43,7 @@ class AlarmFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        viewBinding = FragmentAlarmMainScreenBinding.inflate(inflater, container, false)
+        _binding = FragmentAlarmMainScreenBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -298,7 +299,6 @@ class AlarmFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
-        super.onDestroyView()
-        viewBinding = null
+        _binding = null
     }
 }

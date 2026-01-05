@@ -14,16 +14,20 @@ import uz.kabir.checkeyesight.viewpager.screen.ThirdScreen
 
 
 class ViewPagerFragment : Fragment() {
-    private var viewBinding: FragmentViewPagerBinding? = null
-    private val binding get() = viewBinding!!
+
+    private var _binding: FragmentViewPagerBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
+        _binding = FragmentViewPagerBinding.inflate(inflater, container, false)
+        return binding.root
+    }
 
-        viewBinding = FragmentViewPagerBinding.inflate(inflater, container, false)
-        val view = binding.root
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         val fragmentList = arrayListOf(
             FirstScreen(),
@@ -37,14 +41,12 @@ class ViewPagerFragment : Fragment() {
             lifecycle
         )
 
-
         binding.viewPager1.adapter = adapter
-        return view
     }
 
     override fun onDestroyView() {
-        viewBinding = null
         super.onDestroyView()
+        _binding = null
     }
 
 }

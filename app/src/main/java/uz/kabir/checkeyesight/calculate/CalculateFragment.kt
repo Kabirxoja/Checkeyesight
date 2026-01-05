@@ -12,16 +12,15 @@ import uz.kabir.checkeyesight.databinding.FragmentCalculateBinding
 
 class CalculateFragment : Fragment() {
 
-    private var viewBinding: FragmentCalculateBinding? = null
-    private val binding get() = viewBinding!!
-
+    private var _binding: FragmentCalculateBinding? = null
+    private val binding get() = _binding!!
     private var counter = 0
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        viewBinding = FragmentCalculateBinding.inflate(inflater, container, false)
+        _binding = FragmentCalculateBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -75,5 +74,10 @@ class CalculateFragment : Fragment() {
             12 -> binding.textViewResult.text = "-4,0"
             13 -> binding.textViewResult.text = "-4,5"
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

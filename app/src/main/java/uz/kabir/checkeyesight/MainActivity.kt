@@ -111,7 +111,7 @@ class MainActivity : AppCompatActivity() {
             when (destination.id) {
                 R.id.homeFragment -> setupHomeFragment(isDarkModeOn)
                 R.id.splashFragment -> setupSplashFragment()
-                R.id.chooseLanguageFragment, R.id.viewResult, R.id.noteScreen,
+                R.id.chooseLanguageFragment, R.id.viewResult,
                 R.id.lineChartFragment, R.id.colorBlindnessTest, R.id.duochromeTest,
                 R.id.amslerGrid, R.id.contrastVisionTest, R.id.calculate,
                 R.id.showResultGlass2, R.id.alarmMainScreen, R.id.chooseDistance -> setupActionBarFragment(isDarkModeOn)

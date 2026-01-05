@@ -8,8 +8,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import uz.kabir.checkeyesight.R
 import uz.kabir.checkeyesight.databinding.FragmentSplashBinding
 
@@ -17,25 +21,6 @@ class SplashFragment : Fragment() {
 
     private var _binding: FragmentSplashBinding? = null
     private val binding get() = _binding!!
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-
-
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-//            // Starting from Android 11, the status bar cannot be hidden completely
-//            // Use the WindowInsetsController to adjust the behavior of the status bar
-//            val controller = requireActivity().window.insetsController
-//            if (controller != null) {
-//                controller.hide(WindowInsets.Type.statusBars())
-//                controller.systemBarsBehavior = WindowInsetsController.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
-//            }
-//        } else {
-//            // For devices running on Android 10 or below
-//            requireActivity().window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
-//        }
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -50,18 +35,15 @@ class SplashFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-        Handler().postDelayed({
-            lifecycleScope.launchWhenResumed {
-                if (onBoarding()) {
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                delay(2000)
+                if(onBoarding())
                     findNavController().navigate(R.id.action_splashFragment_to_homeFragment)
-
-                } else {
+                else
                     findNavController().navigate(R.id.action_splashFragment_to_chooseLanguageFragment)
-                }
             }
-        }, 3000)
-
-
+        }
     }
 
 
@@ -71,11 +53,7 @@ class SplashFragment : Fragment() {
     }
 
     override fun onDestroyView() {
-        _binding = null
         super.onDestroyView()
+        _binding = null
     }
-
-
-
-
 }

@@ -12,11 +12,10 @@ import uz.kabir.checkeyesight.databinding.FragmentColorBlindnessTestBinding
 
 class ColorBlindnessFragment : Fragment() {
 
-    private var viewBinding : FragmentColorBlindnessTestBinding? = null
-    private val binding get() = viewBinding!!
-
+    private var _binding: FragmentColorBlindnessTestBinding? = null
+    private val binding get() = _binding!!
     private val stringBuilder = StringBuilder()
-    private var value : String = ""
+    private var value: String = ""
     private var currentPosition = 1
     private var questionList: ArrayList<QuestionColorBlindness>? = null
     private var correctAnswer: Int = 0
@@ -26,7 +25,7 @@ class ColorBlindnessFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        viewBinding = FragmentColorBlindnessTestBinding.inflate(inflater,container,false)
+        _binding = FragmentColorBlindnessTestBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -34,7 +33,6 @@ class ColorBlindnessFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         questionList = ListColorBlindness.getQuestionColorBlindness()
-
 
         setQuestions()
 
@@ -117,15 +115,13 @@ class ColorBlindnessFragment : Fragment() {
 
         binding.btnDelete.setOnClickListener {
             value = binding.textResult.text.toString()
-            if (value.isNotEmpty())
-            {
+            if (value.isNotEmpty()) {
                 value = value.substring(0, value.length - 1)
                 binding.textResult.text = value
                 value = ""
             }
 
-            if (stringBuilder.isNotEmpty())
-            {
+            if (stringBuilder.isNotEmpty()) {
                 stringBuilder.deleteCharAt(stringBuilder.length - 1)
                 binding.textResult.setText(R.string.enter_text)
             }
@@ -133,13 +129,11 @@ class ColorBlindnessFragment : Fragment() {
         }
 
         binding.btnNext.setOnClickListener {
-            if (value.isNotEmpty())
-            {
+            if (value.isNotEmpty()) {
                 selectQuestion(value)
                 value = ""
                 binding.textResult.setText(R.string.enter_text)
-            }
-            else
+            } else
                 Toast.makeText(requireContext(), R.string.text_is_empty, Toast.LENGTH_SHORT).show()
         }
 
@@ -165,15 +159,18 @@ class ColorBlindnessFragment : Fragment() {
             val bundle = Bundle()
             bundle.putInt("resultColorBlindness", correctAnswer)
 
-            findNavController().navigate(R.id.action_colorBlindnessTest_to_resultColorBlindness, bundle)
+            findNavController().navigate(
+                R.id.action_colorBlindnessTest_to_resultColorBlindness,
+                bundle
+            )
         }
 
     }
+
     private fun setQuestions() {
         val list = questionList?.get(currentPosition - 1)
         binding.imageColorBlindness.setImageResource(list!!.imageQuestions)
     }
-
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -187,7 +184,7 @@ class ColorBlindnessFragment : Fragment() {
     }
 
     override fun onDestroyView() {
-        viewBinding=null
         super.onDestroyView()
+        _binding = null
     }
 }

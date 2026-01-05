@@ -13,22 +13,23 @@ import uz.kabir.checkeyesight.databinding.FragmentFourthScreenBinding
 
 class FourthScreen : Fragment() {
 
-    private var viewBinding: FragmentFourthScreenBinding? = null
-    private val binding get() = viewBinding!!
-
+    private var _binding: FragmentFourthScreenBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-        viewBinding = FragmentFourthScreenBinding.inflate(inflater, container, false)
-        val view = binding.root
+        _binding = FragmentFourthScreenBinding.inflate(inflater, container, false)
+        return binding.root
+    }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         binding.thirdScreenButton.setOnClickListener {
             findNavController().navigate(R.id.action_viewPagerFragment_to_homeFragment)
             onBoardingFinished()
         }
-        return view
     }
 
 
@@ -37,6 +38,11 @@ class FourthScreen : Fragment() {
         val editor = sharedPref.edit()
         editor.putBoolean("Finished", true)
         editor.apply()
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
 

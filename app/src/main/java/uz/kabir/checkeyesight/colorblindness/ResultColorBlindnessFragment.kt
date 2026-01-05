@@ -11,15 +11,15 @@ import uz.kabir.checkeyesight.databinding.FragmentResultColorBlindnessBinding
 
 class ResultColorBlindnessFragment : Fragment() {
 
-    private var viewBinding: FragmentResultColorBlindnessBinding? = null
-    private val binding get() = viewBinding!!
+    private var _binding: FragmentResultColorBlindnessBinding? = null
+    private val binding get() = _binding!!
 
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        viewBinding = FragmentResultColorBlindnessBinding.inflate(inflater, container, false)
+        _binding = FragmentResultColorBlindnessBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -43,8 +43,8 @@ class ResultColorBlindnessFragment : Fragment() {
     }
 
     override fun onDestroyView() {
-        viewBinding = null
         super.onDestroyView()
+        _binding = null
     }
 
 }

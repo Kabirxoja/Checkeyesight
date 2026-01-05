@@ -10,8 +10,8 @@ import uz.kabir.checkeyesight.linechart.showlog
 
 class VPNewFragment : Fragment() {
 
-    private var viewBinding: FragmentVPNewBinding? = null
-    private val binding get() = viewBinding!!
+    private var _binding: FragmentVPNewBinding? = null
+    private val binding get() = _binding!!
 
 
     override fun onCreateView(
@@ -19,8 +19,12 @@ class VPNewFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View? {
 
-        viewBinding = FragmentVPNewBinding.inflate(inflater, container, false)
-        val view = binding.root
+        _binding = FragmentVPNewBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         val  p =  arguments?.getInt("position")
 
@@ -29,9 +33,9 @@ class VPNewFragment : Fragment() {
         "p = $p   global p  = ${GlobalFields.position}".showlog()
 
         val fragmentList = arrayListOf<Fragment>(
-            TestScreenFirst(),
-            TestScreenSecond(),
-            TestScreenThird(),
+            TestScreenFirstFragment(),
+            TestScreenSecondFragment(),
+            TestScreenThirdFragment(),
         )
         val adapter = VPAdapter(
             fragmentList,
@@ -39,9 +43,11 @@ class VPNewFragment : Fragment() {
             lifecycle
         )
 
-
         binding.vpNew.adapter = adapter
+    }
 
-        return view
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

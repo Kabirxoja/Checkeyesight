@@ -18,9 +18,9 @@ import uz.kabir.checkeyesight.databinding.FragmentAmslerGridBinding
 
 
 class AmslerGridFragment : Fragment() {
-    private var viewBinding: FragmentAmslerGridBinding? = null
-    private val binding get() = viewBinding!!
 
+    private var _binding: FragmentAmslerGridBinding? = null
+    private val binding get() = _binding!!
     private lateinit var sharedPreference:SharedPreferences
     lateinit var editor:Editor
 
@@ -28,7 +28,7 @@ class AmslerGridFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-        viewBinding = FragmentAmslerGridBinding.inflate(inflater,container,false)
+        _binding = FragmentAmslerGridBinding.inflate(inflater,container,false)
         return binding.root
     }
 
@@ -78,7 +78,7 @@ class AmslerGridFragment : Fragment() {
     }
 
     override fun onDestroyView() {
-        viewBinding=null
         super.onDestroyView()
+        _binding=null
     }
 }

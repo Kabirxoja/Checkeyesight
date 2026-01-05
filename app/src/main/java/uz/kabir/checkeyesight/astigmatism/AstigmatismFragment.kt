@@ -1,5 +1,6 @@
 package uz.kabir.checkeyesight.astigmatism
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.*
 import android.view.animation.TranslateAnimation
@@ -14,38 +15,31 @@ import uz.kabir.checkeyesight.swipetest.OnSwipeTouchListener
 
 class AstigmatismFragment : Fragment() {
 
-    private var viewBinding: FragmentAstigmatismTestBinding? = null
-    private val binding get() = viewBinding!!
-
-
+    private var _binding: FragmentAstigmatismTestBinding? = null
+    private val binding get() = _binding!!
     private var questionList: ArrayList<List.QuestionAstigmatism>? = null
     private var currentPosition = 1
     private var selected: Int = 0
     private var correct: Int = 0
     private lateinit var list: List.QuestionAstigmatism
-
     private val args: AstigmatismFragmentArgs by navArgs()
-
     private var valueEnter = -1
     private var leftEyeResult = 0
     private var swipeCount = -1
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-
-        viewBinding = FragmentAstigmatismTestBinding.inflate(inflater, container, false)
-        val view = binding.root
-
-        questionList = List.getListAstigmatism()
-
-        return view
+        _binding = FragmentAstigmatismTestBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        questionList = List.getListAstigmatism()
 
         visibleSecond()
 
@@ -53,9 +47,6 @@ class AstigmatismFragment : Fragment() {
         if (leftEyeResult in 0..4) {
             valueEnter = 1
         }
-
-
-
 
         binding.swipeAstigmatismLayout.setOnTouchListener(object : OnSwipeTouchListener(context) {
             override fun onSwipeLeft() {
@@ -172,7 +163,6 @@ class AstigmatismFragment : Fragment() {
         binding.btnYes.visibility = View.GONE
         binding.btnNo.visibility = View.GONE
         binding.questionText.visibility = View.GONE
-
         binding.imageAstigmatism.visibility = View.VISIBLE
         view?.slideOff(500)
     }
@@ -181,7 +171,6 @@ class AstigmatismFragment : Fragment() {
         binding.btnYes.visibility = View.GONE
         binding.btnNo.visibility = View.GONE
         binding.questionText.visibility = View.GONE
-
         binding.imageAstigmatism.visibility = View.VISIBLE
         view?.slideOff2(500)
     }
@@ -190,7 +179,6 @@ class AstigmatismFragment : Fragment() {
         binding.btnYes.visibility = View.VISIBLE
         binding.btnNo.visibility = View.VISIBLE
         binding.questionText.visibility = View.VISIBLE
-
         binding.imageAstigmatism.visibility = View.GONE
         view?.slideOn(500)
     }
@@ -227,8 +215,8 @@ class AstigmatismFragment : Fragment() {
     }
 
     override fun onDestroyView() {
-        viewBinding = null
         super.onDestroyView()
+        _binding = null
     }
 
 }

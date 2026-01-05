@@ -17,32 +17,26 @@ import androidx.core.content.edit
 
 class ChooseLanguageFragment : Fragment() {
 
-    private var viewBinding: FragmentChooseLanguageBinding? = null
-    private val binding get() = viewBinding!!
-
+    private var _binding: FragmentChooseLanguageBinding? = null
+    private val binding get() = _binding!!
     private var selectedLanguageCountry = ""
     private var selectedLanguageCode = ""
-
     private val navController by lazy(LazyThreadSafetyMode.NONE) {
         view?.findNavController()
     }
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-        viewBinding = FragmentChooseLanguageBinding.inflate(inflater, container, false)
-        val view = binding.root
-
-        return view
+        _binding = FragmentChooseLanguageBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val sharedPref =
-            context?.getSharedPreferences(Constants.SHARED_PREFERENCE_NAME, MODE_PRIVATE)
+        val sharedPref = context?.getSharedPreferences(Constants.SHARED_PREFERENCE_NAME, MODE_PRIVATE)
         val getCountry = sharedPref!!.getString(Constants.LANGUAGE, "")
 
         val languages = listOf(
@@ -137,8 +131,9 @@ class ChooseLanguageFragment : Fragment() {
     }
 
     override fun onDestroyView() {
-        viewBinding = null
         super.onDestroyView()
+        _binding = null
+
     }
 
 }

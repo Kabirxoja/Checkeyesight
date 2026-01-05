@@ -21,73 +21,70 @@ import uz.kabir.checkeyesight.history.UserDatabase
 
 class LineChartFragment : Fragment() {
 
-    private var viewBinding: FragmentLineChartBinding? = null
-    private val binding get() = viewBinding!!
-
+    private var _binding: FragmentLineChartBinding? = null
+    private val binding get() = _binding!!
     private lateinit var list: MutableList<HistoryEntity>
     private lateinit var database: UserDatabase
-
     private lateinit var label: ArrayList<String>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-        viewBinding = FragmentLineChartBinding.inflate(inflater, container, false)
-        val view = binding.root
+        _binding = FragmentLineChartBinding.inflate(inflater, container, false)
+        return binding.root
+    }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         database = UserDatabase.initDatabase(requireContext())
-
         list = database.userDao().getAllUsers() as MutableList<HistoryEntity>
-
         setLineChartData()
-
-        return view
     }
 
 
     private fun setLineChartData() {
-        val linevalues1 = ArrayList<Entry>()
-        val linevalues2 = ArrayList<Entry>()
+        val lineValues1 = ArrayList<Entry>()
+        val lineValues2 = ArrayList<Entry>()
 
         for (index in 0 until list.size) {
-            linevalues1.add(Entry(index.toFloat(), list[index].leftEye.toFloat()))
-            linevalues2.add(Entry(index.toFloat(), list[index].rightEye.toFloat()))
+            lineValues1.add(Entry(index.toFloat(), list[index].leftEye.toFloat()))
+            lineValues2.add(Entry(index.toFloat(), list[index].rightEye.toFloat()))
         }
 
-        val linedataset1 = LineDataSet(linevalues1, getString(R.string.left_eye))
-        val linedataset2 = LineDataSet(linevalues2, getString(R.string.right_eye))
+        val lineDataSet1 = LineDataSet(lineValues1, getString(R.string.left_eye))
+        val lineDataSet2 = LineDataSet(lineValues2, getString(R.string.right_eye))
 
-        linedataset1.lineWidth = 4f
-        linedataset2.lineWidth = 4f
+        lineDataSet1.lineWidth = 4f
+        lineDataSet2.lineWidth = 4f
 
         //line design
-        linedataset1.color = resources.getColor(R.color.line_chart_color_1)
-        linedataset1.circleRadius = 6f
-        linedataset1.setDrawFilled(false)
-        linedataset1.valueTextSize = 18F
-        linedataset1.fillColor = Color.WHITE
-        linedataset1.mode = LineDataSet.Mode.HORIZONTAL_BEZIER
-        linedataset1.formSize = 12f
-        linedataset1.valueTextColor = Color.WHITE
-        linedataset1.circleHoleColor = resources.getColor(R.color.line_chart_color_1)
-        linedataset1.setCircleColors(resources.getColor(R.color.night_and_light))
-        linedataset1.circleHoleRadius = 4f
+        lineDataSet1.color = resources.getColor(R.color.line_chart_color_1)
+        lineDataSet1.circleRadius = 6f
+        lineDataSet1.setDrawFilled(false)
+        lineDataSet1.valueTextSize = 18F
+        lineDataSet1.fillColor = Color.WHITE
+        lineDataSet1.mode = LineDataSet.Mode.HORIZONTAL_BEZIER
+        lineDataSet1.formSize = 12f
+        lineDataSet1.valueTextColor = Color.WHITE
+        lineDataSet1.circleHoleColor = resources.getColor(R.color.line_chart_color_1)
+        lineDataSet1.setCircleColors(resources.getColor(R.color.night_and_light))
+        lineDataSet1.circleHoleRadius = 4f
 
-        linedataset2.setDrawFilled(false)
-        linedataset2.valueTextSize = 18F
-        linedataset2.fillColor = Color.WHITE
-        linedataset2.mode = LineDataSet.Mode.HORIZONTAL_BEZIER
-        linedataset2.formSize = 12f
-        linedataset2.color = resources.getColor(R.color.line_chart_color_2)
-        linedataset2.circleRadius = 6f
-        linedataset2.valueTextColor = Color.WHITE
-        linedataset2.circleHoleColor = resources.getColor(R.color.line_chart_color_2)
-        linedataset2.setCircleColors(resources.getColor(R.color.night_and_light))
-        linedataset2.circleHoleRadius = 4f
+        lineDataSet2.setDrawFilled(false)
+        lineDataSet2.valueTextSize = 18F
+        lineDataSet2.fillColor = Color.WHITE
+        lineDataSet2.mode = LineDataSet.Mode.HORIZONTAL_BEZIER
+        lineDataSet2.formSize = 12f
+        lineDataSet2.color = resources.getColor(R.color.line_chart_color_2)
+        lineDataSet2.circleRadius = 6f
+        lineDataSet2.valueTextColor = Color.WHITE
+        lineDataSet2.circleHoleColor = resources.getColor(R.color.line_chart_color_2)
+        lineDataSet2.setCircleColors(resources.getColor(R.color.night_and_light))
+        lineDataSet2.circleHoleRadius = 4f
 
         //Connect our data to the UI Screen
-        val data1 = LineData(linedataset1, linedataset2)
+        val data1 = LineData(lineDataSet1, lineDataSet2)
 
         //Animation line chart
         binding.chartGraph.data = data1
@@ -107,20 +104,8 @@ class LineChartFragment : Fragment() {
         xAxis.labelCount = 10
         xAxis.setAxisMaxValue((list.size).toFloat() - 1)
 
-//        xAxis.setAxisMinValue((list.size- 1).toFloat()-1)
-
-    /* we can modify viewport, Scrolling the data from right to left allow
-    30 values to be displayed at once on the x-axis not allow more value
-    */
         binding.chartGraph.setVisibleXRangeMaximum(10f)
-//        binding.chartGraph.setVisibleXRangeMinimum(10f)
-//        binding.chartGraph.setVisibleYRangeMinimum(0.1f, linedataset1.axisDependency)
-    /*set the left edge of the chart to x-index 20
-    moveViewToX(...) also calls invalidate()
-    */
         binding.chartGraph.moveViewToX(10f)
-
-//        binding.chartGraph.scrollX = 10
 
 
         binding.chartGraph.setBackgroundColor(resources.getColor(R.color.dark_night))
@@ -195,7 +180,6 @@ class LineChartFragment : Fragment() {
 
             val buf = StringBuilder()
             buf.append(substringDay)
-//            buf.append("\n\n\n")
             buf.append(System.getProperty("line.separator"))
 
             buf.append(substringHour)
@@ -203,7 +187,6 @@ class LineChartFragment : Fragment() {
 
             label.add(buf.toString())
             Log.i("manashude = >", label.toString())
-
 
         }
 
@@ -222,11 +205,9 @@ class LineChartFragment : Fragment() {
     }
 
     override fun onDestroyView() {
-        viewBinding = null
         super.onDestroyView()
+        _binding = null
     }
-
-
 }
 
 

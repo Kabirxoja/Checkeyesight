@@ -15,24 +15,20 @@ import uz.kabir.checkeyesight.databinding.FragmentChooseDistanceBinding
 import uz.kabir.checkeyesight.linechart.showlog
 
 
-class ChooseDistance : Fragment() {
+class ChooseDistanceFragment : Fragment() {
 
-    private var viewBinding: FragmentChooseDistanceBinding? = null
-    private val binding get() = viewBinding!!
+    private var _binding: FragmentChooseDistanceBinding? = null
+    private val binding get() = _binding!!
     private var selectDistance: Int = 0
-
-    private val args: ChooseDistanceArgs by navArgs()
-
+    private val args: ChooseDistanceFragmentArgs by navArgs()
 
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-        viewBinding = FragmentChooseDistanceBinding.inflate(inflater, container, false)
-        val view = binding.root
-
-        return view
+        _binding = FragmentChooseDistanceBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -150,4 +146,9 @@ class ChooseDistance : Fragment() {
         setHasOptionsMenu(true)
     }
 
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding=null
+    }
 }

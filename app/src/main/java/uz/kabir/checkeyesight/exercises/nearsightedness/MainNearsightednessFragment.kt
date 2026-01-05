@@ -25,21 +25,14 @@ class MainNearsightednessFragment : Fragment() {
 
     private var viewBinding: FragmentMainNearsightednessBinding? = null
     private val binding get() = viewBinding!!
-
     private var lists: ArrayList<ExerciseTypes>? = null
     private var listPosition: Int = 0
-
-
     private var mainCountTimer: CountDownTimer? = null
     private var nextCountTimer: CountDownTimer? = null
-
     private var nextTimerRunning = false
     private var mainTimerRunning = false
-
-
     private val START_TIME_IN_MILLIS_NEXT: Long = 5000
     private val START_TIME_IN_MILLIS_MAIN: Long = 40000
-
     private var nextTimerMillis: Long = START_TIME_IN_MILLIS_NEXT
     private var mainTimerMillis: Long = START_TIME_IN_MILLIS_MAIN
 
@@ -88,7 +81,6 @@ class MainNearsightednessFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-
         viewBinding = FragmentMainNearsightednessBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -119,7 +111,6 @@ class MainNearsightednessFragment : Fragment() {
             }
         }
 
-
         binding.mainTimerBtn.setOnClickListener {
             if (!mainTimerRunning) {
                 playToPauseMain()
@@ -132,9 +123,7 @@ class MainNearsightednessFragment : Fragment() {
 
 
         }
-
     }
-
 
     private fun nextFun() {
         nextCountTimer = object : CountDownTimer(nextTimerMillis, 1000) {
@@ -160,7 +149,6 @@ class MainNearsightednessFragment : Fragment() {
         playToPause()
         nextTimerRunning = true
     }
-
 
     private fun mainFun() {
         mainCountTimer = object : CountDownTimer(mainTimerMillis, 1000) {
@@ -207,7 +195,6 @@ class MainNearsightednessFragment : Fragment() {
 
         mainTimerRunning = true
     }
-
 
     private fun updateNextText() {
         val minutes = (nextTimerMillis / 1000).toInt() / 60
@@ -283,7 +270,6 @@ class MainNearsightednessFragment : Fragment() {
 
     }
 
-
     override fun onPause() {
         super.onPause()
         pauseMain()
@@ -300,7 +286,6 @@ class MainNearsightednessFragment : Fragment() {
         viewBinding = null
         super.onDestroyView()
     }
-
 
     private fun invisible() {
         binding.nextTimerBtn.visibility = View.INVISIBLE
@@ -340,6 +325,7 @@ class MainNearsightednessFragment : Fragment() {
         binding.myAnimationView.loop(false)
 
     }
+
     private fun visibilities(visBoolean: Boolean) {
         binding.myAnimationView.loop(false)
         binding.myAnimationView.playAnimation()

@@ -14,24 +14,19 @@ import uz.kabir.checkeyesight.R
 import uz.kabir.checkeyesight.databinding.FragmentSecondTabBinding
 import uz.kabir.checkeyesight.home.HomeFragmentDirections
 
-class SecondTabFragment : Fragment(), AdapterView.OnItemClickListener,
-    RecyclerTab2.OnItemClickedListener {
+class SecondTabFragment : Fragment(), AdapterView.OnItemClickListener, RecyclerTab2.OnItemClickedListener {
 
-    private var viewBinding: FragmentSecondTabBinding? = null
-    private val binding get() = viewBinding!!
-
-    private lateinit var photoAdapter: RecyclerTab2
+    private var _binding: FragmentSecondTabBinding? = null
+    private val binding get() = _binding!!
+    private lateinit var recylerAdapterTab2: RecyclerTab2
     private val navController by lazy(LazyThreadSafetyMode.NONE) { view?.findNavController() }
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-        viewBinding = FragmentSecondTabBinding.inflate(inflater, container, false)
-        val view = binding.root
-        return view
+        _binding = FragmentSecondTabBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -40,9 +35,9 @@ class SecondTabFragment : Fragment(), AdapterView.OnItemClickListener,
         val orientation = resources.configuration
         orientationScreenState(orientation)
 
-        photoAdapter = RecyclerTab2(requireContext())
-        binding.recyclerViewTab2.adapter = photoAdapter
-        photoAdapter.setOnClickListener(this)
+        recylerAdapterTab2 = RecyclerTab2(requireContext())
+        binding.recyclerViewTab2.adapter = recylerAdapterTab2
+        recylerAdapterTab2.setOnClickListener(this)
 
         val dataList = mutableListOf<DataModelTab>(
             DataModelTab(
@@ -63,7 +58,7 @@ class SecondTabFragment : Fragment(), AdapterView.OnItemClickListener,
             )
 
         )
-        photoAdapter.setDataList(dataList)
+        recylerAdapterTab2.setDataList(dataList)
     }
 
     override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
@@ -104,7 +99,7 @@ class SecondTabFragment : Fragment(), AdapterView.OnItemClickListener,
     }
 
     override fun onDestroyView() {
-        viewBinding = null
         super.onDestroyView()
+        _binding = null
     }
 }

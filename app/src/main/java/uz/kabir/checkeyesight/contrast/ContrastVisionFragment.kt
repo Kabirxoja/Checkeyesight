@@ -14,8 +14,8 @@ import uz.kabir.checkeyesight.databinding.FragmentContrastVisionTestBinding
 class ContrastVisionFragment : Fragment() {
 
 
-    private var viewBinding: FragmentContrastVisionTestBinding? = null
-    private val binding get() = viewBinding!!
+    private var _binding: FragmentContrastVisionTestBinding? = null
+    private val binding get() = _binding!!
 
     private var timer: CountDownTimer? = null
     private var isViewCreated = false // Track if the view is created
@@ -24,7 +24,7 @@ class ContrastVisionFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        viewBinding = FragmentContrastVisionTestBinding.inflate(inflater, container, false)
+        _binding = FragmentContrastVisionTestBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -235,10 +235,10 @@ class ContrastVisionFragment : Fragment() {
     }
 
     override fun onDestroyView() {
-        viewBinding = null
+        super.onDestroyView()
+        _binding = null
         timer?.cancel()
         timer = null
-        isViewCreated = false // Set to false when view is destroyed
-        super.onDestroyView()
+        isViewCreated = false
     }
 }

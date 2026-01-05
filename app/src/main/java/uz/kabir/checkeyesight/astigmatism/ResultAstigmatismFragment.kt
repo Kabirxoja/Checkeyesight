@@ -11,15 +11,15 @@ import uz.kabir.checkeyesight.databinding.FragmentResultAstigmatismBinding
 
 class ResultAstigmatismFragment: Fragment() {
 
-    private var viewBinding: FragmentResultAstigmatismBinding? = null
-    private val binding get() = viewBinding!!
+    private var _binding: FragmentResultAstigmatismBinding? = null
+    private val binding get() = _binding!!
 
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        viewBinding = FragmentResultAstigmatismBinding.inflate(inflater, container, false)
+        _binding = FragmentResultAstigmatismBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -53,8 +53,8 @@ class ResultAstigmatismFragment: Fragment() {
     }
 
     override fun onDestroyView() {
-        viewBinding=null
         super.onDestroyView()
+        _binding=null
     }
 
 }
