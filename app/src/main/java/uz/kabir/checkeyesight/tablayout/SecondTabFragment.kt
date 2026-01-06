@@ -42,19 +42,23 @@ class SecondTabFragment : Fragment(), AdapterView.OnItemClickListener, RecyclerT
         val dataList = mutableListOf<DataModelTab>(
             DataModelTab(
                 getString(R.string.restoration_of_vision),
-                R.drawable.eye_focus
-            ),
-            DataModelTab(
-                getString(R.string.exercise_for_nearsightedness),
-                R.drawable.eye_focus
+                R.drawable.eye_focus,
+                false
             ),
             DataModelTab(
                 getString(R.string.exercise_for_farsightedness),
-                R.drawable.eye_focus
+                R.drawable.eye_focus,
+                false
+            ),
+            DataModelTab(
+                getString(R.string.exercise_for_nearsightedness),
+                R.drawable.eye_focus,
+                false
             ),
             DataModelTab(
                 getString(R.string.relaxation_of_vision),
-                R.drawable.eye_focus
+                R.drawable.eye_focus,
+                false
             )
 
         )

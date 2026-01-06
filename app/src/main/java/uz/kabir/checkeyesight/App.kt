@@ -1,6 +1,7 @@
 package uz.kabir.checkeyesight
 
 import android.app.Application
+import com.google.android.gms.ads.MobileAds
 import uz.kabir.checkeyesight.language.LanguageHelper
 
 class App : Application() {
@@ -9,6 +10,8 @@ class App : Application() {
         super.onCreate()
 
         LanguageHelper.applySavedLocale(this)
+
+        MobileAds.initialize(this)
 
     }
 }

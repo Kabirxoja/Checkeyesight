@@ -2,31 +2,31 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <!--vibration permission-->
+    <!-- Vibrate -->
     <uses-permission android:name="android.permission.VIBRATE" />
 
-    <!-- alarm manager  -->
-    <!-- AlarmManager uchun exact alarm (Android 12+ da tekshiriladi, lekin permission zarur emas, faqat manifestda e'lon qilish yetarli emas) -->
-    <!-- SCHEDULE_EXACT_ALARM permission normal emas, shuning uchun manifestga yozilmaydi -->
-    <!-- Notifications uchun (Android 13+ da runtime ruxsat so'raladi) -->
-    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-    <!-- Telefon reboot bo'lganda alarmlarni qayta schedule qilish uchun -->
+    <!-- Alarm -->
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-    <!-- Optional: Alarm vaqtida telefonni uyg'otish uchun (ko'pincha kerak emas, lekin xavfsizlik uchun) -->
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
+    <!-- Notifications -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
+    <!-- AdMob -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
 
-    <uses-feature
-        android:name="android.hardware.bluetooth"
-        android:required="true" />
-
+    <!-- Bluetooth (API 24–30) -->
     <uses-permission android:name="android.permission.BLUETOOTH" />
-    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
+    <!-- Bluetooth (API 31+) -->
     <uses-permission
         android:name="android.permission.BLUETOOTH_SCAN"
         android:usesPermissionFlags="neverForLocation"
+        tools:targetApi="s" />
+    <uses-permission
+        android:name="android.permission.BLUETOOTH_CONNECT"
         tools:targetApi="s" />
 
     <application
@@ -42,27 +42,28 @@
         tools:targetApi="31">
         <activity
             android:name=".MainActivity"
-            android:exported="true"
             android:configChanges="orientation|screenSize|smallestScreenSize|screenLayout"
+            android:exported="true"
             android:isScrollContainer="false"
-            android:windowSoftInputMode="adjustPan"
-            >
+            android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-<!--        <receiver android:name=".alarm.AlarmReceiver" android:enabled="true" android:exported="false">-->
-<!--            <intent-filter android:priority="1000">-->
-<!--                <action android:name="android.intent.action.BOOT_COMPLETED" />-->
-<!--            </intent-filter>
--->
-<!--        </receiver>-->
-
         <receiver
             android:name=".alarm.AlarmReceiver"
-            android:exported="false" />
+            android:exported="true"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-2308961496919002~5858959545" />
 
     </application>
 

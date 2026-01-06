@@ -2,6 +2,7 @@ package uz.kabir.checkeyesight.tablayout
 
 import android.content.res.Configuration
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,17 +12,26 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import com.google.android.gms.ads.AdError
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.FullScreenContentCallback
+import com.google.android.gms.ads.LoadAdError
+import com.google.android.gms.ads.OnUserEarnedRewardListener
+import com.google.android.gms.ads.rewarded.RewardedAd
+import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback
 import uz.kabir.checkeyesight.R
 import uz.kabir.checkeyesight.databinding.FragmentFirstTabBinding
 import uz.kabir.checkeyesight.home.HomeFragmentDirections
 
 
-class FirstTabFragment : Fragment(), AdapterView.OnItemClickListener, RecyclerTab1.OnItemClickedListener {
+class FirstTabFragment : Fragment(), AdapterView.OnItemClickListener,
+    RecyclerTab1.OnItemClickedListener {
 
     private var _binding: FragmentFirstTabBinding? = null
     private val binding get() = _binding!!
     private lateinit var recyclerAdapterTab1: RecyclerTab1
     private val navController by lazy(LazyThreadSafetyMode.NONE) { view?.findNavController() }
+    private var rewardedAdmob: RewardedAd? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,40 +47,60 @@ class FirstTabFragment : Fragment(), AdapterView.OnItemClickListener, RecyclerTa
         val orientation = resources.configuration
         orientationScreenState(orientation)
 
-        recyclerAdapterTab1 = RecyclerTab1(requireContext())
+        recyclerAdapterTab1 = RecyclerTab1()
         binding.recyclerViewTab1.adapter = recyclerAdapterTab1
         recyclerAdapterTab1.setOnClickListener(this)
 
         val dataList = mutableListOf(
-            DataModelTab(getString(R.string.title1), R.drawable.item_e_chart),
-            DataModelTab(getString(R.string.title2), R.drawable.item_c_chart),
-            DataModelTab(getString(R.string.title3), R.drawable.item_snellen_test),
-            DataModelTab(getString(R.string.title4), R.drawable.item_number_test),
-            DataModelTab(getString(R.string.title8), R.drawable.item_bluetooth_test),
-            DataModelTab(getString(R.string.title5), R.drawable.item_colorblindness_test),
-            DataModelTab(getString(R.string.title6), R.drawable.item_duochrome_test),
-            DataModelTab(getString(R.string.title7), R.drawable.item_astigmatism),
-            DataModelTab(getString(R.string.title9), R.drawable.item_amslergrid_test),
-            DataModelTab(getString(R.string.title10), R.drawable.item_near_vision),
-            DataModelTab(getString(R.string.title11), R.drawable.item_contrast),
+            DataModelTab(getString(R.string.title1), R.drawable.item_e_chart, true),
+            DataModelTab(getString(R.string.title2), R.drawable.item_c_chart, true),
+            DataModelTab(getString(R.string.title3), R.drawable.item_snellen_test, false),
+            DataModelTab(getString(R.string.title4), R.drawable.item_number_test, false),
+            DataModelTab(getString(R.string.title8), R.drawable.item_bluetooth_test, true),
+            DataModelTab(getString(R.string.title5), R.drawable.item_colorblindness_test, false),
+            DataModelTab(getString(R.string.title6), R.drawable.item_duochrome_test, false),
+            DataModelTab(getString(R.string.title7), R.drawable.item_astigmatism, false),
+            DataModelTab(getString(R.string.title9), R.drawable.item_amslergrid_test, false),
+            DataModelTab(getString(R.string.title10), R.drawable.item_near_vision, false),
+            DataModelTab(getString(R.string.title11), R.drawable.item_contrast, false),
         )
 
         recyclerAdapterTab1.setDataList(dataList)
     }
 
-    override fun onClicked(position: Int) {
+    override fun onClickedItem(position: Int) {
 
         val bundle = Bundle()
         bundle.putInt("position", position)
 
-        if (position < 4) {
+        if (position == 0 || position == 1) {
+            if (rewardedAdmob != null){
+                showRewardAdmob {
+                    navController?.navigate(
+                        HomeFragmentDirections.actionHomeFragmentToChooseDistance(
+                            position
+                        )
+                    )
+                }
+            }
+            else
+                loadReward()
+        } else if (position == 2 || position == 3) {
             navController?.navigate(
                 HomeFragmentDirections.actionHomeFragmentToChooseDistance(
                     position
                 )
             )
         } else if (position == 4) {
-            navController?.navigate(HomeFragmentDirections.actionHomeFragmentToChoosingConnectionFragment())
+            if (rewardedAdmob != null){
+                showRewardAdmob {
+                    navController?.navigate(
+                        HomeFragmentDirections.actionHomeFragmentToChoosingConnectionFragment()
+                    )
+                }
+            }
+            else
+                loadReward()
         } else if (position == 5) {
             navController?.navigate(HomeFragmentDirections.actionHomeFragmentToColorBlindnessTest())
         } else if (position == 6) {
@@ -87,7 +117,7 @@ class FirstTabFragment : Fragment(), AdapterView.OnItemClickListener, RecyclerTa
 
     }
 
-    override fun clickInfo(position: Int) {
+    override fun onClickedInfo(position: Int) {
         val builder = android.app.AlertDialog.Builder(context)
         val dialogView: View = layoutInflater.inflate(R.layout.custom_dialog_info, null)
         builder.setView(dialogView)
@@ -195,9 +225,7 @@ class FirstTabFragment : Fragment(), AdapterView.OnItemClickListener, RecyclerTa
 
         }
 
-
         dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
-
     }
 
     override fun onConfigurationChanged(newConfig: Configuration) {
@@ -214,7 +242,68 @@ class FirstTabFragment : Fragment(), AdapterView.OnItemClickListener, RecyclerTa
         }
     }
 
-    override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) { }
+    override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {}
+
+
+    private fun loadReward() {
+        val adRequest = AdRequest.Builder().build()
+        RewardedAd.load(
+            requireContext(),
+            "ca-app-pub-2308961496919002/3476656010",
+            adRequest,
+            object : RewardedAdLoadCallback() {
+                override fun onAdLoaded(ad: RewardedAd) {
+                    super.onAdLoaded(ad)
+                    rewardedAdmob = ad
+                    ad.fullScreenContentCallback = fullScreenContentCallbackAdmob()
+                }
+
+                override fun onAdFailedToLoad(loadError: LoadAdError) {
+                    super.onAdFailedToLoad(loadError)
+                    rewardedAdmob = null
+                }
+            })
+    }
+
+    fun fullScreenContentCallbackAdmob(): FullScreenContentCallback {
+        return object : FullScreenContentCallback() {
+            override fun onAdShowedFullScreenContent() {
+                super.onAdShowedFullScreenContent()
+            }
+
+            override fun onAdFailedToShowFullScreenContent(adError: AdError) {
+                super.onAdFailedToShowFullScreenContent(adError)
+                rewardedAdmob = null
+            }
+
+            override fun onAdDismissedFullScreenContent() {
+                super.onAdDismissedFullScreenContent()
+                rewardedAdmob = null
+            }
+
+            override fun onAdImpression() {
+                super.onAdImpression()
+            }
+
+            override fun onAdClicked() {
+                super.onAdClicked()
+            }
+
+
+        }
+    }
+
+    fun showRewardAdmob(onReward: () -> Unit) {
+        var rewardAmount = -1
+        var rewardType = ""
+        rewardedAdmob?.show(requireActivity(), OnUserEarnedRewardListener { rewardItem ->
+            rewardAmount = rewardItem.amount
+            rewardType = rewardItem.type
+            Log.d("ADMOB_STATE", "User earned the reward. Amount:$rewardAmount Type:$rewardType")
+            onReward()
+        })
+    }
+
 
     override fun onDestroyView() {
         super.onDestroyView()

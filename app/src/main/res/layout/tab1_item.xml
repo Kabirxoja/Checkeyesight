@@ -57,10 +57,9 @@
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
                 android:background="@drawable/ic_info"
-                android:backgroundTint="#3CB6B6"
                 android:padding="10sp"
                 android:textSize="12sp"
-
+                android:backgroundTint="@color/white_to_night"
 
                 />
         </RelativeLayout>

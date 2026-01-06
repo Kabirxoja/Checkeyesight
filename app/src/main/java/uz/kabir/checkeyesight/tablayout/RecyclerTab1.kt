@@ -11,24 +11,27 @@ import androidx.recyclerview.widget.RecyclerView
 import uz.kabir.checkeyesight.R
 
 
-class RecyclerTab1(var context: Context) : RecyclerView.Adapter<RecyclerTab1.ViewHolder>() {
+class RecyclerTab1() : RecyclerView.Adapter<RecyclerTab1.ViewHolder>() {
 
     private var dataList = emptyList<DataModelTab>()
     private var listenerTabFirst: OnItemClickedListener? = null
 
     internal fun setDataList(dataList: List<DataModelTab>) {
         this.dataList = dataList
+        notifyDataSetChanged()
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var image: ImageView
         var title: TextView
         var info: TextView
+        var adsImage: ImageView
 
         init {
             image = itemView.findViewById(R.id.image_tab1)
             title = itemView.findViewById(R.id.title_tab1)
             info = itemView.findViewById(R.id.info_tab1)
+            adsImage = itemView.findViewById(R.id.ads_image)
         }
     }
 
@@ -42,24 +45,28 @@ class RecyclerTab1(var context: Context) : RecyclerView.Adapter<RecyclerTab1.Vie
         val data = dataList[position]
         holder.title.text = data.title
         holder.image.setImageResource(data.image)
-
         holder.itemView.setOnClickListener {
-            if (position != RecyclerView.NO_POSITION) {
-                listenerTabFirst?.onClicked(position)
+            val currentPosition = holder.bindingAdapterPosition
+            if (currentPosition != RecyclerView.NO_POSITION) {
+                listenerTabFirst?.onClickedItem(position)
             }
         }
-
         holder.info.setOnClickListener {
-            if (position!=RecyclerView.NO_POSITION)
-            listenerTabFirst?.clickInfo(position)
+            val currentPosition = holder.bindingAdapterPosition
+            if (currentPosition!=RecyclerView.NO_POSITION)
+            listenerTabFirst?.onClickedInfo(position)
         }
+        if(data.ads)
+            holder.adsImage.visibility = View.VISIBLE
+        else
+            holder.adsImage.visibility = View.GONE
     }
 
     override fun getItemCount() = dataList.size
 
     interface OnItemClickedListener {
-        fun onClicked(position: Int)
-        fun clickInfo(position: Int)
+        fun onClickedItem(position: Int)
+        fun onClickedInfo(position: Int)
     }
 
     fun setOnClickListener(listenerUssd: OnItemClickedListener) {

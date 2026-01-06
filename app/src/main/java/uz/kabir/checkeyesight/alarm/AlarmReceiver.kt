@@ -12,6 +12,10 @@ import android.util.Log
 import androidx.core.app.ActivityCompat
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.forEach
+import kotlinx.coroutines.launch
 import uz.kabir.checkeyesight.R
 import uz.kabir.checkeyesight.MainActivity
 
@@ -20,6 +24,31 @@ class AlarmReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context?, intent: Intent?) {
         val safeContext = context ?: return
 
+        when (intent?.action) {
+            Intent.ACTION_BOOT_COMPLETED -> {
+                rescheduleAlarms(safeContext)
+            }
+
+            else -> {
+                showNotification(safeContext, intent)
+            }
+        }
+    }
+
+    private fun rescheduleAlarms(context: Context) {
+        val dao = AlarmDatabase.alarmDatabase(context).daoAlarm()
+        val alarms = dao.getAllAlarms()
+        CoroutineScope(Dispatchers.IO).launch {
+            alarms.collect { alarmList ->
+                alarmList.forEach { alarm ->
+                    AlarmScheduler.scheduleAlarm(context, alarm)
+                }
+            }
+        }
+    }
+
+
+    fun showNotification(context: Context, intent: Intent?) {
         Log.d("ALARM_TEST", "Alarm fired at ${System.currentTimeMillis()}")
 
         val alarmId = intent?.getIntExtra("ALARM_ID", 0) ?: 0
@@ -27,7 +56,7 @@ class AlarmReceiver : BroadcastReceiver() {
         // Android 13+ notification permission tekshiruvi
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             if (ActivityCompat.checkSelfPermission(
-                    safeContext,
+                    context,
                     Manifest.permission.POST_NOTIFICATIONS
                 ) != PackageManager.PERMISSION_GRANTED
             ) {
@@ -41,13 +70,13 @@ class AlarmReceiver : BroadcastReceiver() {
         openScreenIntent.putExtra("OPEN_TAB_INDEX", 1)
 
         val activityPendingIntent = PendingIntent.getActivity(
-            safeContext,
+            context,
             alarmId,
             openScreenIntent,
             PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
         )
 
-        val notification = NotificationCompat.Builder(safeContext, "alarm_channel")
+        val notification = NotificationCompat.Builder(context, "alarm_channel")
             .setSmallIcon(R.drawable.icon_language)
             .setContentTitle("Reminder")
             .setContentText("It is time to break!")
@@ -57,7 +86,9 @@ class AlarmReceiver : BroadcastReceiver() {
             .build()
 
         NotificationManagerCompat
-            .from(safeContext)
+            .from(context)
             .notify(alarmId, notification)
     }
+
+
 }
