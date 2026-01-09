@@ -18,8 +18,8 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.navigation.fragment.findNavController
 import uz.kabir.checkeyesight.R
 import uz.kabir.checkeyesight.databinding.FragmentSwipeTestBySymbolsRightBinding
-import uz.kabir.checkeyesight.history.HistoryEntity
-import uz.kabir.checkeyesight.history.UserDatabase
+import uz.kabir.checkeyesight.history.db.HistoryEntity
+import uz.kabir.checkeyesight.history.db.UserDatabase
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList

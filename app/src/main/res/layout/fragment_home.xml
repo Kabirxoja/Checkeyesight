@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white_to_night"
     android:fitsSystemWindows="true"
-    tools:context=".home.HomeFragment"
-    >
+    tools:context=".home.HomeFragment">
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabs"
@@ -23,18 +23,26 @@
         app:tabMode="fixed"
         app:tabRippleColor="@android:color/transparent"
         app:tabSelectedTextColor="@color/light_and_dark"
-        app:tabTextColor="@color/tab_text_unselected"
-        />
+        app:tabTextColor="@color/tab_text_unselected" />
 
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/tabs"
+        android:layout_above="@id/banner_ad_view"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tabs"
         />
+
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/banner_ad_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        app:layout_constraintBottom_toBottomOf="parent"
+        ads:adUnitId="ca-app-pub-2308961496919002/3361940097" />
 
 
 </RelativeLayout>

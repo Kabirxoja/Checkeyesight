@@ -8,6 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import uz.kabir.checkeyesight.R
+import uz.kabir.checkeyesight.history.db.HistoryEntity
 
 
 class HistoryAdapter(private val list: MutableList<HistoryEntity>): RecyclerView.Adapter<HistoryAdapter.ViewHolder>() {

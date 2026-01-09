@@ -1,7 +1,6 @@
 package uz.kabir.checkeyesight.alarm
 
 import android.Manifest
-import android.app.Notification
 import android.app.PendingIntent
 import android.content.BroadcastReceiver
 import android.content.Context
@@ -14,10 +13,14 @@ import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.forEach
 import kotlinx.coroutines.launch
 import uz.kabir.checkeyesight.R
 import uz.kabir.checkeyesight.MainActivity
+import uz.kabir.checkeyesight.alarm.db.AlarmDatabase
+import uz.kabir.checkeyesight.language.LanguageHelper.wrapContext
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 class AlarmReceiver : BroadcastReceiver() {
 
@@ -50,10 +53,18 @@ class AlarmReceiver : BroadcastReceiver() {
 
     fun showNotification(context: Context, intent: Intent?) {
         Log.d("ALARM_TEST", "Alarm fired at ${System.currentTimeMillis()}")
+        val localizedContext = wrapContext(context)
 
         val alarmId = intent?.getIntExtra("ALARM_ID", 0) ?: 0
+        val alarmTimeMillis = intent?.getLongExtra("ALARM_TITLE", 0L) ?: 0
 
-        // Android 13+ notification permission tekshiruvi
+        val formattedTime = if (alarmTimeMillis != 0L) {
+            SimpleDateFormat("HH:mm", Locale.getDefault()).format(Date(alarmTimeMillis))
+        } else {
+            ""
+        }
+
+        // Android 13+ notification permission check
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             if (ActivityCompat.checkSelfPermission(
                     context,
@@ -77,9 +88,9 @@ class AlarmReceiver : BroadcastReceiver() {
         )
 
         val notification = NotificationCompat.Builder(context, "alarm_channel")
-            .setSmallIcon(R.drawable.icon_language)
-            .setContentTitle("Reminder")
-            .setContentText("It is time to break!")
+            .setSmallIcon(R.drawable.icon_alarm)
+            .setContentTitle(localizedContext.getString(R.string.alarm_title))
+            .setContentText(formattedTime)
             .setContentIntent(activityPendingIntent)
             .setPriority(NotificationCompat.PRIORITY_HIGH)
             .setAutoCancel(true)

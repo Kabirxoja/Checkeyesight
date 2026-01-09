@@ -17,11 +17,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.navigation.fragment.findNavController
-import uz.kabir.checkeyesight.history.UserDatabase
+import uz.kabir.checkeyesight.history.db.UserDatabase
 import uz.kabir.checkeyesight.visiontest.Question
 import uz.kabir.checkeyesight.R
 import uz.kabir.checkeyesight.databinding.FragmentReadBinding
-import uz.kabir.checkeyesight.history.HistoryEntity
+import uz.kabir.checkeyesight.history.db.HistoryEntity
 import java.io.IOException
 import java.io.InputStream
 import java.io.OutputStream

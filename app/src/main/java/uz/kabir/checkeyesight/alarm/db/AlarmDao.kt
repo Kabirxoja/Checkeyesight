@@ -1,4 +1,4 @@
-package uz.kabir.checkeyesight.alarm
+package uz.kabir.checkeyesight.alarm.db
 
 import androidx.room.Dao
 import androidx.room.Delete

@@ -241,4 +241,6 @@
     <string name="which_day">¿Qué día?</string>
     <string name="which_time">¿A qué hora?</string>
     <string name="select">Seleccionar</string>
+
+    <string name="alarm_title">¡Es hora de hacer ejercicio ocular!</string>
 </resources>

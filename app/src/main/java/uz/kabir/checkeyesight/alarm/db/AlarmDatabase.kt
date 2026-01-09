@@ -1,10 +1,11 @@
-package uz.kabir.checkeyesight.alarm
+package uz.kabir.checkeyesight.alarm.db
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
+import uz.kabir.checkeyesight.alarm.db.TypeConvertor
 
 @Database(entities = [AlarmEntity::class], version = 1, exportSchema = false)
 @TypeConverters(TypeConvertor::class)

@@ -1,4 +1,4 @@
-package uz.kabir.checkeyesight.history;
+package uz.kabir.checkeyesight.history.db
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

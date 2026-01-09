@@ -15,8 +15,8 @@ import com.github.mikephil.charting.data.LineDataSet
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
 import uz.kabir.checkeyesight.R
 import uz.kabir.checkeyesight.databinding.FragmentLineChartBinding
-import uz.kabir.checkeyesight.history.HistoryEntity
-import uz.kabir.checkeyesight.history.UserDatabase
+import uz.kabir.checkeyesight.history.db.HistoryEntity
+import uz.kabir.checkeyesight.history.db.UserDatabase
 
 
 class LineChartFragment : Fragment() {

@@ -196,5 +196,6 @@
     <string name="which_time">what time?</string>
     <string name="select">select</string>
 
+    <string name="alarm_title">It\'s time to do eye exercise!</string>
 
 </resources>

@@ -1,14 +1,10 @@
 package uz.kabir.checkeyesight.alarm
 
 import android.Manifest
-import android.app.AlarmManager
 import android.app.AlertDialog
 import android.app.NotificationChannel
 import android.app.NotificationManager
-import android.app.PendingIntent
-import android.content.Context
 import android.content.Context.NOTIFICATION_SERVICE
-import android.content.Intent
 import android.content.pm.PackageManager
 import android.icu.util.Calendar
 import android.os.Build
@@ -31,6 +27,9 @@ import uz.kabir.checkeyesight.databinding.FragmentAlarmMainScreenBinding
 import androidx.core.content.ContextCompat
 import uz.kabir.checkeyesight.alarm.AlarmScheduler.cancelAlarm
 import uz.kabir.checkeyesight.alarm.AlarmScheduler.scheduleAlarm
+import uz.kabir.checkeyesight.alarm.db.AlarmDao
+import uz.kabir.checkeyesight.alarm.db.AlarmDatabase
+import uz.kabir.checkeyesight.alarm.db.AlarmEntity
 
 class AlarmFragment : Fragment() {
 
@@ -157,13 +156,13 @@ class AlarmFragment : Fragment() {
                         days = daysOfSetAlarm.toList()
                     )
 
-                    // 1. Eski alarmlarni bekor qilish
+                    // Eski alarmlarni bekor qilish
                     cancelAlarm(requireContext(), alarmItem)
 
-                    // 2. Yangi parametrlar bilan qayta schedule qilish
+                    // Yangi parametrlar bilan qayta schedule qilish
                     scheduleAlarm(requireContext(), updatedAlarm)
 
-                    // 3. Roomda yangilash
+                    // Roomda yangilash
                     dao.updateAlarm(updatedAlarm)
 
                     withContext(Dispatchers.Main) {

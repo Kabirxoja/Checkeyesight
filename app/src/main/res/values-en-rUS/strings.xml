@@ -232,4 +232,7 @@
     <string name="which_day">What day?</string>
     <string name="which_time">What time?</string>
     <string name="select">Select</string>
+
+    <string name="alarm_title">It\'s time to do eye exercise!</string>
+
 </resources>

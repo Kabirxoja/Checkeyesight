@@ -14,6 +14,7 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.IntentSenderRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.navigation.fragment.findNavController
+import com.google.android.gms.ads.AdRequest
 import com.google.android.material.tabs.TabLayoutMediator
 import com.google.android.play.core.appupdate.AppUpdateInfo
 import com.google.android.play.core.appupdate.AppUpdateManager
@@ -110,6 +111,13 @@ class HomeFragment : Fragment() {
             marginTabLayout()
         }.attach()
 
+        // Banner
+        bannerAdmob()
+    }
+
+    fun bannerAdmob(){
+        val adRequest= AdRequest.Builder().build()
+        binding.bannerAdView.loadAd(adRequest)
     }
 
     private fun checkForUpdate() {

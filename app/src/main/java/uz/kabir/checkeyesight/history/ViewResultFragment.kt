@@ -10,6 +10,8 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import uz.kabir.checkeyesight.R
 import uz.kabir.checkeyesight.databinding.FragmentViewResultBinding
+import uz.kabir.checkeyesight.history.db.HistoryEntity
+import uz.kabir.checkeyesight.history.db.UserDatabase
 
 class ViewResultFragment : Fragment(), HistoryAdapter.OnUserClickedListener {
 

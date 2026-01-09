@@ -1,4 +1,4 @@
-package uz.kabir.checkeyesight.history;
+package uz.kabir.checkeyesight.history.db
 
 import android.content.Context
 import androidx.room.Database

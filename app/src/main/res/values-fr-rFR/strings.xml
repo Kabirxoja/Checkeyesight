@@ -240,4 +240,6 @@
     <string name="which_time">À quelle heure?</string>
     <string name="select">Sélectionner</string>
 
+    <string name="alarm_title">Il est temps de faire des exercices pour les yeux!</string>
+
 </resources>
